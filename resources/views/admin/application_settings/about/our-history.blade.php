@@ -56,13 +56,14 @@
                                             <input  type="hidden" name="id" value="{{$ourHistory->id}}">
                                                 <div class="custom-form-group mb-3 col-lg-3">
                                                     <label for="year_{{ $ourHistory['id'] }}" class=" text-lg-right text-black">{{ __('Year') }} </label>
-                                                    <input type="number" name="year" id="year_{{ $ourHistory['id'] }}" value="{{ $ourHistory->year }}" class="form-control" placeholder="{{ __('Type year') }}" required>
+                                                    <input type="text" name="year" id="year_{{ $ourHistory['id'] }}" value="{{ $ourHistory->year }}" class="form-control" placeholder="{{ __('Type year') }}" required>
                                                 </div>
 
                                                 <div class="custom-form-group mb-3 col-lg-4">
                                                     <label for="title_{{ $ourHistory['id'] }}" class="text-lg-right text-black"> {{ __('Title') }} </label>
                                                     <input type="text" name="title" id="title_{{ $ourHistory['id'] }}" value="{{ $ourHistory->title }}" class="form-control" placeholder="{{ __('Type subtitle') }}" required>
                                                 </div>
+
                                                 <div class="custom-form-group mb-3 col-lg-4">
                                                     <label for="subtitle_{{ $ourHistory['id'] }}" class="text-lg-right text-black"> {{ __('Subtitle') }} </label>
                                                     <textarea name="subtitle" class="form-control" rows="5" id="subtitle_{{ $ourHistory['id'] }}" required>{{ $ourHistory->subtitle }}</textarea>
@@ -81,14 +82,14 @@
                                         <div data-repeater-item="" class="form-group row ">
                                             <div class="custom-form-group mb-3 col-lg-3">
                                                 <label for="upgrade_skill_title" class=" text-lg-right text-black">{{ __('Year') }} </label>
-                                                <input type="number" name="year" id="year" value="" class="form-control" placeholder="{{ __('Type year') }}" required>
+                                                <input type="text" name="year" id="year" value="" class="form-control" placeholder="{{ __('Type year') }}" required>
                                             </div>
 
                                             <div class="custom-form-group mb-3 col-lg-4">
                                                 <label for="title" class="text-lg-right text-black"> {{ __('Title') }} </label>
                                                 <input type="text" name="title" id="title" value="" class="form-control" placeholder="{{ __('Type subtitle') }}" required>
-
                                             </div>
+                                            
                                             <div class="custom-form-group mb-3 col-lg-4">
                                                 <label for="subtitle" class="text-lg-right text-black"> {{ __('Subtitle') }} </label>
                                                 <textarea name="subtitle" class="form-control" rows="5" id="subtitle" required></textarea>
@@ -118,7 +119,7 @@
                             <div class="row justify-content-end">
                                 <div class="col-md-2 text-right ">
                                     @updateButton
-                                </div>
+                                </div> 
                             </div>
                         </form>
                     </div>

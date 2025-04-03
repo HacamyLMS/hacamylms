@@ -58,7 +58,7 @@
                     </div>
                     <div class="header-nav-right-side d-flex">
                         <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown d-none">
                                 <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
                                    data-bs-toggle="dropdown">{{ __('More Pages') }}</a>
                                 <ul class="dropdown-menu {{ $selectedLanguage->rtl == 1 ? 'dropdown-menu-end' : '' }}">

@@ -9,7 +9,7 @@
   --white-72: rgba(255, 255, 255, 0.72);
   --black: #000000;
   --black-10: rgba(0, 0, 0, 0.1);
-  --main-color: #060667;
+  --main-color: #411472;
   --main-color-8: rgba(6, 6, 103, 0.08);
   --secondary-color: #754ffe;
   --red: #fc8068;
@@ -7379,7 +7379,7 @@ input[type=number] {
   color: var(--para-text-alt);
 }
 .landing-header-learning #mainNav .navbar-nav .nav-item .nav-link:hover {
-  background-color: var(--white) !important;
+  background-color: transparent !important;
 }
 .landing-header-learning .menu-language-btn img {
   max-width: 27px;

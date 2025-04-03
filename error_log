@@ -2395,3 +2395,95 @@ Stack trace:
 #16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}(Object(Illuminate\View\ViewException))
 #17 {main}
   thrown in /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php on line 467
+[22-Mar-2025 19:53:03 Africa/Lagos] PHP Fatal error:  Uncaught Symfony\Component\Routing\Exception\RouteNotFoundException: Route [/] not defined. in /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:467
+Stack trace:
+#0 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(826): Illuminate\Routing\UrlGenerator->route('/', Array, true)
+#1 /home/phqlbncp/demo.hacamy.com.ng/storage/framework/views/6a90d3cfccfce429d0e6c6f1fd83724a89576028.php(100): route('/')
+#2 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(109): require('/home/phqlbncp/...')
+#3 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(110): Illuminate\Filesystem\Filesystem::Illuminate\Filesystem\{closure}()
+#4 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\Filesystem\Filesystem->getRequire('/home/phqlbncp/...', Array)
+#5 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(70): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/phqlbncp/...', Array)
+#6 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/View.php(195): Illuminate\View\Engines\CompilerEngine->get('/home/phqlbncp/...', Array)
+#7 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/View.php(178): Illuminate\View\View->getContents()
+#8 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/View.php(147): Illuminate\View\View->renderContents()
+#9 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate\View\View->render()
+#10 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#11 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/ResponseFactory.php(57): Illuminate\Http\Response->__construct(Object(Illuminate\View\View), 500, Array)
+#12 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/ResponseFactory.php(87): Illuminate\Routing\ResponseFactory->make(Object(Illuminate\View\View), 500, Array)
+#13 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(626): Illuminate\Routing\ResponseFactory->view('errors::500', Array, 500, Array)
+#14 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(554): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#15 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(460): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#16 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(377): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse(Object(Illuminate\Http\Request), Object(Spatie\LaravelIgnition\Exceptions\ViewException))
+#17 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(233): Illuminate\Foundation\Exceptions\Handler->render(Object(Illuminate\Http\Request), Object(Spatie\LaravelIgnition\Exceptions\ViewException))
+#18 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(210): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(Illuminate\View\ViewException))
+#19 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(270): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(Illuminate\View\ViewException))
+#20 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}(Object(Illuminate\View\ViewException))
+#21 {main}
+
+Next Illuminate\View\ViewException: Route [/] not defined. (View: /home/phqlbncp/demo.hacamy.com.ng/resources/views/errors/500.blade.php) in /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:467
+Stack trace:
+#0 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(60): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(Symfony\Component\Routing\Exception\RouteNotFoundException), 0)
+#1 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(70): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/phqlbncp/...', Array)
+#2 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/View.php(195): Illuminate\View\Engines\CompilerEngine->get('/home/phqlbncp/...', Array)
+#3 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/View.php(178): Illuminate\View\View->getContents()
+#4 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/View.php(147): Illuminate\View\View->renderContents()
+#5 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate\View\View->render()
+#6 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/ResponseFactory.php(57): Illuminate\Http\Response->__construct(Object(Illuminate\View\View), 500, Array)
+#8 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/ResponseFactory.php(87): Illuminate\Routing\ResponseFactory->make(Object(Illuminate\View\View), 500, Array)
+#9 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(626): Illuminate\Routing\ResponseFactory->view('errors::500', Array, 500, Array)
+#10 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(554): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#11 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(460): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#12 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(377): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse(Object(Illuminate\Http\Request), Object(Spatie\LaravelIgnition\Exceptions\ViewException))
+#13 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(233): Illuminate\Foundation\Exceptions\Handler->render(Object(Illuminate\Http\Request), Object(Spatie\LaravelIgnition\Exceptions\ViewException))
+#14 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(210): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(Illuminate\View\ViewException))
+#15 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(270): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(Illuminate\View\ViewException))
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}(Object(Illuminate\View\ViewException))
+#17 {main}
+  thrown in /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php on line 467
+[23-Mar-2025 14:23:32 Africa/Lagos] PHP Fatal error:  Uncaught Symfony\Component\Routing\Exception\RouteNotFoundException: Route [/] not defined. in /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:467
+Stack trace:
+#0 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(826): Illuminate\Routing\UrlGenerator->route('/', Array, true)
+#1 /home/phqlbncp/demo.hacamy.com.ng/storage/framework/views/6a90d3cfccfce429d0e6c6f1fd83724a89576028.php(100): route('/')
+#2 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(109): require('/home/phqlbncp/...')
+#3 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(110): Illuminate\Filesystem\Filesystem::Illuminate\Filesystem\{closure}()
+#4 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\Filesystem\Filesystem->getRequire('/home/phqlbncp/...', Array)
+#5 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(70): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/phqlbncp/...', Array)
+#6 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/View.php(195): Illuminate\View\Engines\CompilerEngine->get('/home/phqlbncp/...', Array)
+#7 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/View.php(178): Illuminate\View\View->getContents()
+#8 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/View.php(147): Illuminate\View\View->renderContents()
+#9 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate\View\View->render()
+#10 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#11 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/ResponseFactory.php(57): Illuminate\Http\Response->__construct(Object(Illuminate\View\View), 500, Array)
+#12 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/ResponseFactory.php(87): Illuminate\Routing\ResponseFactory->make(Object(Illuminate\View\View), 500, Array)
+#13 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(626): Illuminate\Routing\ResponseFactory->view('errors::500', Array, 500, Array)
+#14 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(554): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#15 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(460): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#16 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(377): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse(Object(Illuminate\Http\Request), Object(Spatie\LaravelIgnition\Exceptions\ViewException))
+#17 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(233): Illuminate\Foundation\Exceptions\Handler->render(Object(Illuminate\Http\Request), Object(Spatie\LaravelIgnition\Exceptions\ViewException))
+#18 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(210): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(Illuminate\View\ViewException))
+#19 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(270): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(Illuminate\View\ViewException))
+#20 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}(Object(Illuminate\View\ViewException))
+#21 {main}
+
+Next Illuminate\View\ViewException: Route [/] not defined. (View: /home/phqlbncp/demo.hacamy.com.ng/resources/views/errors/500.blade.php) in /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:467
+Stack trace:
+#0 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(60): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(Symfony\Component\Routing\Exception\RouteNotFoundException), 0)
+#1 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(70): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/phqlbncp/...', Array)
+#2 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/View.php(195): Illuminate\View\Engines\CompilerEngine->get('/home/phqlbncp/...', Array)
+#3 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/View.php(178): Illuminate\View\View->getContents()
+#4 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/View/View.php(147): Illuminate\View\View->renderContents()
+#5 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Http/Response.php(69): Illuminate\View\View->render()
+#6 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/ResponseFactory.php(57): Illuminate\Http\Response->__construct(Object(Illuminate\View\View), 500, Array)
+#8 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/ResponseFactory.php(87): Illuminate\Routing\ResponseFactory->make(Object(Illuminate\View\View), 500, Array)
+#9 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(626): Illuminate\Routing\ResponseFactory->view('errors::500', Array, 500, Array)
+#10 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(554): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#11 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(460): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#12 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(377): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse(Object(Illuminate\Http\Request), Object(Spatie\LaravelIgnition\Exceptions\ViewException))
+#13 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(233): Illuminate\Foundation\Exceptions\Handler->render(Object(Illuminate\Http\Request), Object(Spatie\LaravelIgnition\Exceptions\ViewException))
+#14 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(210): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(Illuminate\View\ViewException))
+#15 /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(270): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(Illuminate\View\ViewException))
+#16 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}(Object(Illuminate\View\ViewException))
+#17 {main}
+  thrown in /home/phqlbncp/demo.hacamy.com.ng/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php on line 467

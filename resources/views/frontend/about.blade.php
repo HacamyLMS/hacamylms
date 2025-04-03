@@ -104,8 +104,8 @@
                     <li>
                         <h6 class="history-year">{{ $ourHistory->year }}</h6>
                         <div class="history-content">
-                            <h6 class="h6 fw-bold font-18">{{ Str::limit($ourHistory->title, 23) }}</h6>
-                            <p class="font-15 pt-1">{{ Str::limit($ourHistory->subtitle, 100) }}</p>
+                            <h6 class="h6 fw-bold font-18">{{ Str::limit($ourHistory->title, 30) }}</h6>
+                            <p class="font-15 pt-1">{{ $ourHistory->subtitle }}</p>
                         </div>
                     </li>
                     @endforeach
@@ -146,7 +146,7 @@
 <!-- Upgrade Your Skills Area End -->
 
 <!-- Our Passionate Team Member Area Start -->
-<section class="passionate-team-member-area bg-white">
+<section class="passionate-team-member-area bg-white d-none">
     <div class="container">
         <div class="row">
             <div class="col-12">

@@ -141,14 +141,6 @@
             </div>
             <!-- Contact page right side End-->
         </div>
-
-        <!-- Google Map Part Start-->
-        <div class="row google-map-area section-t-space">
-            <div class="col-12">
-                <iframe src="{{ get_option('contact_us_map_link') }}" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-        <!-- Google Map Part End-->
     </div>
 </section>
 <!-- Contact Page Area End -->

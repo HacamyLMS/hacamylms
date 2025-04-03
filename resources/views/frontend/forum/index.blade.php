@@ -84,7 +84,7 @@
                             <div class="single-feature-item d-flex align-items-center">
                                 <div class="flex-shrink-0 feature-img-wrap">
                                     <a href="{{ route('forum.forumCategoryPosts', $forumCategory->uuid) }}"><img
-                                            src="{{ getImageFile($forumCategory->logo) }}" alt="feature"></a>
+                                            src="{{ getImageFile($forumCategory->logo) }}" alt="feature" style="max-width: 50px;"></a>
                                 </div>
                                 <div class="flex-grow-1 ms-3 feature-content">
                                     <h6><a
@@ -241,63 +241,6 @@
         </section>
         <!-- Ask a question area end -->
 
-        @if (count($blogs) >= 1)
-            <!-- Forum community blog articles Area Start -->
-            <section class="community-blog-articles-area section-t-space section-b-85-space bg-page">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="section-title text-center">
-                                <h3 class="section-heading">{{ __('Community Blog Articles') }}</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        @foreach ($blogs as $blog)
-                            <!-- Blog Item Start -->
-                            <div class="col-md-6">
-                                <div class="blog-item">
-
-                                    <div class="blog-item-img-wrap overflow-hidden position-relative">
-                                        <a href="{{ route('blog-details', $blog->slug) }}"><img
-                                                src="{{ getImageFile($blog->image) }}" alt="img"
-                                                class="img-fluid"></a>
-                                        <div
-                                            class="blog-item-tag position-absolute font-12 font-semi-bold text-white bg-hover radius-3">
-                                            {{ @$blog->category->name }}</div>
-                                    </div>
-
-                                    <div class="blog-item-bottom-part">
-                                        <h3 class="card-title blog-title"><a
-                                                href="{{ route('blog-details', $blog->slug) }}">{{ Str::limit($blog->title, 50) }}</a>
-                                        </h3>
-                                        <p
-                                            class="blog-author-name-publish-date font-13 font-medium color-gray">
-                                            {{ $blog->user->name }}
-                                            / {{ $blog->created_at->format(' j  M, Y') }}</p>
-                                        <p class="card-text blog-content">{!! Str::limit($blog->details, 200) !!}</p>
-
-                                        <div class="blog-read-more-btn">
-                                            <a href="{{ route('blog-details', $blog->slug) }}"
-                                                class="theme-btn font-15 ps-0 font-medium color-hover">{{ __('Read More') }}
-                                                <i data-feather="arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Blog Item Start -->
-                        @endforeach
-                        <!-- section button start-->
-                        <div class="col-12 text-center section-btn">
-                            <a href="{{ route('blogs') }}" class="theme-btn theme-button1">{{ __('All Blogs') }} <i
-                                    data-feather="arrow-right"></i></a>
-                        </div>
-                        <!-- section button end-->
-                    </div>
-                </div>
-            </section>
-            <!-- Forum community blog articles Area End -->
-        @endif
     </div>
     <input type="hidden" class="renderForumCategoryPostsRoute" value="{{ route('forum.renderForumCategoryPosts') }}">
     <input type="hidden" class="searchForumRoute" value="{{ route('forum.search-forum.list') }}">

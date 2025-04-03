@@ -107,7 +107,7 @@
         --purple-light: {{ empty(get_option('language_theme_secondary_color')) ? '#7a5ede' : get_option('language_theme_secondary_color') }};
         --main-color: {{ empty(get_option('language_theme_heading_color')) ? '#0c0c0d' : get_option('language_theme_heading_color') }};
         --para-text: {{ empty(get_option('language_app_body_font_color')) ? '#767588' : get_option('language_app_body_font_color') }};
-        --language-header-bg: {{ empty(get_option('language_header_bg_color')) ? '#060667' : get_option('language_header_bg_color') }};
+        --language-header-bg: {{ empty(get_option('language_header_bg_color')) ? '#000000' : get_option('language_header_bg_color') }};
     @endif
 }
 
@@ -115,7 +115,7 @@
 
     @if (get_option('app_color_design_type') == 2)
         .landing-header-learning #mainNav.sticky {
-            background-color: var(--language-header-bg) !important;
+            background-color: #000000 !important;
         }
     @endif
 </style>
