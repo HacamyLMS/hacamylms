@@ -22,7 +22,7 @@
         <div class="instructor-create-new-quiz-page bg-white">
             <div class="instructor-my-courses-title d-flex justify-content-between align-items-center">
                 <h6>{{__('Create New Quiz')}}</h6>
-                <p>{{ @$course->title }}</p>
+                <p>Course Title : {{ @$course->title }}</p>
             </div>
             <div class="row">
                 <div class="col-12">
@@ -45,7 +45,7 @@
                                 <label class="label-text-title color-heading font-medium font-16 mb-3">{{__('Quiz Types')}}</label>
                                 <select name="type" id="type" class="form-select" required>
                                     <option value="multiple_choice">{{ __('Multiple Choice') }}</option>
-                                    <option value="true_false">{{ __('True False') }}</option>
+                                    <option value="true_false">{{ __('True or False') }}</option>
                                 </select>
                                 @if ($errors->has('type'))
                                     <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('type') }}</span>
@@ -69,7 +69,7 @@
 
                         <div>
                             <a href="{{route('instructor.course')}}" class="theme-btn theme-button3 quiz-back-btn">{{__('Back')}}</a>
-                            <button type="submit" class="theme-btn theme-button1">{{__('Create')}}</button>
+                            <button type="submit" class="theme-button1">{{__('Create')}}</button>
                         </div>
 
                     </form>

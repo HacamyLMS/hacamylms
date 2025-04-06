@@ -21,8 +21,8 @@
         <div class="instructor-add-question-page bg-white">
             <div class="instructor-my-courses-title d-flex justify-content-between align-items-center">
                 <h6>Question for {{$exam->name}}</h6>
-                <p>{{ @$exam->course->title }}</p>
-                <a href="javascript:void (0);"  data-bs-toggle="modal" data-bs-target="#bulkUpload" class="theme-btn theme-button1 add-question-form-btn">{{__('Bulk Upload')}}</a>
+                <p>Course Title : {{ @$exam->course->title }}</p>
+                <a href="javascript:void (0);"  data-bs-toggle="modal" data-bs-target="#bulkUpload" class="theme-button1 add-question-form-btn">{{__('Bulk Upload')}}</a>
             </div>
             <div class="row">
 
@@ -96,8 +96,8 @@
                         </div>
                         <div class="question-openion-btn-wrap d-flex justify-content-between align-items-start mb-20">
                             <div class="add-question-save-btns">
-                                <input type="submit" class="theme-btn theme-button1 mr-30" value="{{__('Save and another')}}" name="save_and_add">
-                                <input type="submit" class="theme-btn theme-button1" value="{{__('Save')}}" name="save">
+                                <input type="submit" class="theme-button1 mr-30" value="{{__('Add Question')}}" name="save_and_add">
+                                <input type="submit" class="theme-button1" value="{{__('Save')}}" name="save">
                             </div>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="bulkUpload">{{__('Bulk Upload')}}</h6>
+                    <h6 class="modal-title" id="bulkUpload">{{__('Bulk Upload Questions')}}</h6>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form method="POST" action="{{route('exam.bulk-upload-mcq', [$exam->uuid])}}" class="needs-validation" novalidate enctype="multipart/form-data">
@@ -126,13 +126,13 @@
                                     <div>
                                         <input type="file" name="question_file" accept=".csv" required class="form-control" title="Attach CSV File" />
                                     </div>
-                                    <p class="font-14 color-heading text-center mt-2 color-gray"><a href="{{url('bulk_upload/mcq-question.csv')}}" download=""> <i class="fa fa-download"></i> {{ __('View Sample File') }}</a> </p>
+                                    <p class="font-14 color-heading text-center mt-2 color-gray"><a href="{{url('bulk_upload/mcq-question.csv')}}" download=""> <i class="fa fa-download"></i> {{ __('Download and View Sample File') }}</a> </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-center align-items-center">
-                        <button type="submit" class="theme-btn theme-button1 default-hover-btn">{{__('Upload')}}</button>
+                        <button type="submit" class="theme-btn theme-button1 default-hover-btn">{{__('Upload Questions')}}</button>
                     </div>
                 </form>
             </div>

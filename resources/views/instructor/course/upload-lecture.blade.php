@@ -26,8 +26,8 @@
                         <ul id="progressbar"
                             class="upload-course-item-block d-flex align-items-center justify-content-center">
                             <li class="active" id="account"><strong>{{ __('Course Overview') }}</strong></li>
-                            <li class="active" id="personal"><strong>{{ __('Upload Video') }}</strong></li>
-                            <li id="instructor"><strong>{{ __('Instructors') }}</strong></li>
+                            <li class="active" id="personal"><strong>{{ __('Upload Contents') }}</strong></li>
+                            <li id="instructor"><strong>{{ __('Tutors') }}</strong></li>
                             <li id="confirm"><strong>{{ __('Submit Process') }}</strong></li>
                         </ul>
 
@@ -210,7 +210,7 @@
                                             <div id="slide_documentDiv" class="d-none">
                                                 <label
                                                     class="label-text-title color-heading font-medium font-16 mb-3">{{
-                                                    __('Write your Slide Embed Code') }}<span
+                                                    __('Enter your Slide Embed Code') }}<span
                                                         class="text-danger">*</span></label>
                                                 <div
                                                     class="upload-course-video-4-wrap upload-introduction-box-content-left d-flex align-items-center flex-column">
@@ -275,7 +275,7 @@
                                                         <div class="row mb-30">
                                                             <div class="col-md-12">
                                                                 <label class="label-text-title color-heading font-medium font-16 mb-3">{{ __('Lesson Title') }} <span class="text-danger">*</span></label>
-                                                                <input type="text" name="title" value="{{old('title')}}" class="form-control" placeholder="{{ __('First steps') }}" required>
+                                                                <input type="text" name="title" value="{{old('title')}}" class="form-control" placeholder="{{ __('Content Title or Topic') }}" required>
                                                             </div>
                                                         </div>
                                                         <div class="row mb-30">

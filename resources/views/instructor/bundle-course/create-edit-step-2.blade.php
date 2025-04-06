@@ -103,7 +103,7 @@
                     </div>
                     <div>
                         <a href="{{ route('instructor.bundle-course.editStepOne', $bundle->uuid) }}" class="theme-btn theme-button3 quiz-back-btn">{{ __('Back') }}</a>
-                        <a href="{{ route('instructor.bundle-course.index') }}" class="theme-btn theme-button1">{{ __('Done') }}</a>
+                        <a href="{{ route('instructor.bundle-course.index') }}" class="theme-button1">{{ __('Done') }}</a>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@
 @endpush
 @section('meta')
     @php
-        $metaData = getMeta('instructor');
+        $metaData = getMeta('Tutor');
     @endphp
 
     <meta name="description" content="{{ __($metaData['meta_description']) }}">

@@ -65,7 +65,7 @@
 
                                 <div class="instructor-courses-info-duration-wrap">
                                     <ul class="d-flex align-items-center justify-content-between">
-                                        <li class="font-medium font-12"><span class="iconify" data-icon="octicon:device-desktop-24"></span>Video<span class="instructor-courses-info-duration-wrap-text font-medium color-heading">({{ @$course->lectures->count() }})</span></li>
+                                        <li class="font-medium font-12"><span class="iconify" data-icon="octicon:device-desktop-24"></span>Contents<span class="instructor-courses-info-duration-wrap-text font-medium color-heading">({{ @$course->lectures->count() }})</span></li>
                                         <li class="font-medium font-12"><span class="iconify" data-icon="ant-design:clock-circle-outlined"></span>Duration<span class="instructor-courses-info-duration-wrap-text font-medium color-heading">({{ @$course->VideoDuration }})</span></li>
                                         <li class="font-medium font-12"><span class="iconify" data-icon="carbon:user-multiple"></span>Enrolled<span class="instructor-courses-info-duration-wrap-text font-medium color-heading">({{  courseStudents($course->id) }})</span></li>
                                     </ul>
@@ -74,7 +74,7 @@
                                 <div class="instructor-my-course-item-left">
                                     <h5 class="card-title course-title"><a href="{{ route('course-details', $course->slug) }}">{{ Str::limit($course->title, 40) }}</a></h5>
                                     <div class="course-item-bottom">
-                                        <div class="course-rating d-flex align-items-center">
+                                        <div class="course-rating d-flex align-items-center"> Course Rating : 
                                             <span class="font-medium font-14">{{ number_format($course->average_rating, 1) }}</span>
                                             <ul class="rating-list d-flex align-items-center">
                                                 @include('frontend.course.render-course-rating')

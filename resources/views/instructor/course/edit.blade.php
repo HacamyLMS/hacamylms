@@ -26,9 +26,9 @@
                         <ul id="progressbar"
                             class="upload-course-item-block d-flex align-items-center justify-content-center">
                             <li class="active" id="account"><strong>{{ __('Course Overview') }}</strong></li>
-                            <li id="personal"><strong>{{ __('Upload Video') }}</strong></li>
-                            <li id="instructor"><strong>{{ __('Instructors') }}</strong></li>
-                            <li id="confirm"><strong>{{ __('Submit process') }}</strong></li>
+                            <li id="personal"><strong>{{ __('Upload Contents') }}</strong></li>
+                            <li id="instructor"><strong>{{ __('Tutors') }}</strong></li>
+                            <li id="confirm"><strong>{{ __('Submit Course') }}</strong></li>
                         </ul>
 
                         <!-- Upload Course Step-1 Item Start -->
@@ -67,12 +67,10 @@
 
                                                 <select name="course_type" id="course_type" class="form-select"
                                                     required>
-                                                    <option value="">{{ __('Select Course
-                                                        Type') }}</option>
                                                     <option value="{{ COURSE_TYPE_GENERAL }}"
                                                         {{old('course_type', $course->course_type)==COURSE_TYPE_GENERAL ? 'selected' : '' }}>
                                                         General</option>
-                                                    <option value="{{ COURSE_TYPE_SCORM }}"
+                                                    <option class="d-none" value="{{ COURSE_TYPE_SCORM }}"
                                                         {{old('course_type', $course->course_type)==COURSE_TYPE_SCORM ? 'selected' : '' }}>
                                                         SCORM</option>
                                                 </select>
@@ -280,8 +278,7 @@
                                         <a href="{{route('instructor.course')}}"
                                             class="theme-btn theme-button3">{{__('Back')}}</a>
                                         <button type="submit"
-                                            class="theme-btn default-hover-btn theme-button1">{{__('Save and
-                                            continue')}}</button>
+                                            class="theme-button1">{{__('Save and continue')}}</button>
                                     </div>
                                 </form>
                             </div>

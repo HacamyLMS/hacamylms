@@ -21,7 +21,7 @@
         <div class="instructor-create-new-quiz-page instructor-create-assignment-page bg-white">
             <div class="instructor-my-courses-title d-flex justify-content-between align-items-center">
                 <h6>{{ __('Add Resource') }}</h6>
-                <p>{{ @$course->title }}</p>
+                <p>Course Title : {{ @$course->title }}</p>
             </div>
             <div class="row">
                 <div class="col-12">
@@ -31,7 +31,7 @@
                             <div class="col-md-12">
                                 <div class="create-assignment-upload-files">
                                     <div>
-                                        <input type="file" name="file" class="form-control" title="Upload Your Files" />
+                                        <input type="file" name="file" class="form-control" title="Upload a ZIP File" accept=".zip" />
                                     </div>
                                     <p class="font-14 color-heading text-center mt-2 color-gray">{{ __('Accepted files') }}: ZIP</p>
                                 </div>
@@ -42,7 +42,7 @@
                         </div>
 
                         <div>
-                            <button type="submit" class="theme-btn theme-button1">{{ __('Submit') }}</button>
+                            <button type="submit" class="theme-button1">{{ __('Upload Resource') }}</button>
                         </div>
                     </form>
                 </div>

@@ -120,11 +120,11 @@ function getPackageStatus($input = null)
 function dripType($input = null)
 {
     $output = [
-        DRIP_SHOW_ALL => __('Show all lesson'),
-        DRIP_SEQUENCE => __('Available sequentially'),
-        DRIP_AFTER_DAY => __('Unlock after x day from enrollment'),
-        DRIP_UNLOCK_DATE => __('Unlock content by date'),
-        DRIP_PRE_IDS => __('Unlock after finish pre-requisite'),
+        DRIP_SHOW_ALL => __('Show All Lesson Contents'),
+        DRIP_SEQUENCE => __('Unlock Lesson Contents Sequentially'),
+        DRIP_AFTER_DAY => __('Unlock after X Days from Enrollment'),
+        DRIP_UNLOCK_DATE => __('Unlock Content by Date'),
+        DRIP_PRE_IDS => __('Unlock after User Passes Course Pre-requisite'),
     ];
     if (is_null($input)) {
         return $output;
@@ -136,11 +136,11 @@ function dripType($input = null)
 function dripTypeHelpText($input = null)
 {
     $output = [
-        DRIP_SHOW_ALL => __('All lecture will open after purchase.'),
-        DRIP_SEQUENCE => __('Lecture will available sequentially one after other.'),
-        DRIP_AFTER_DAY => __('Lecture will available after x days of enrollment. In the lecture add step you have to set the days.'),
-        DRIP_UNLOCK_DATE => __('Lecture will available on the inputted date. In the lecture add step you have to set the date.'),
-        DRIP_PRE_IDS => __('Lecture will available after view the pre-requisite lecture. In the lecture add step you have to set the pre-requisite lecture.'),
+        DRIP_SHOW_ALL => __('All Lecture Contents will open after purchase.'),
+        DRIP_SEQUENCE => __('Lecture Contents will unlock sequentially - one after the other.'),
+        DRIP_AFTER_DAY => __('Lecture Contents will unlock after X days of enrollment. You have to set the days.'),
+        DRIP_UNLOCK_DATE => __('Lecture Contents will unlock on the set date. You have to set the date.'),
+        DRIP_PRE_IDS => __('Lecture Contents will unlock after User views the pre-requisite lecture contents. You have to set the pre-requisite lectures.'),
     ];
 
     if (is_null($input)) {

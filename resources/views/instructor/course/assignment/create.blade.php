@@ -21,7 +21,7 @@
         <div class="instructor-create-new-quiz-page instructor-create-assignment-page bg-white">
             <div class="instructor-my-courses-title d-flex justify-content-between align-items-center">
                 <h6>{{ __('Create New Assignment') }}</h6>
-                <p>{{ $course->title }}</p>
+                <p>Course Title : {{ $course->title }}</p>
             </div>
             <div class="row">
                 <div class="col-12">
@@ -61,7 +61,7 @@
                             <div class="col-md-12">
                                 <div class="create-assignment-upload-files">
                                     <div>
-                                        <input type="file" name="file" class="form-control" title="Upload Your Files" />
+                                        <input type="file" name="file" class="form-control" title="Upload Your Files" accept=".zip,.pdf" />
                                     </div>
                                     <p class="font-14 color-heading text-center mt-2 color-gray">{{ __('Accepted files') }} (PDF or ZIP) </p>
                                 </div>
@@ -72,7 +72,7 @@
                         @endif
                         <div>
                             <button class="theme-btn theme-button3 quiz-back-btn">{{ __('Back') }}</button>
-                            <button type="submit" class="theme-btn theme-button1">{{ __('Create') }}</button>
+                            <button type="submit" class="theme-button1">{{ __('Create') }}</button>
                         </div>
 
                     </form>

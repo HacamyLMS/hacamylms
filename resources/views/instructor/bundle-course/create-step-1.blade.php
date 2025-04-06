@@ -189,7 +189,7 @@
                     <div>
                         <a href="{{ route('instructor.bundle-course.index') }}"
                             class="theme-btn theme-button3 quiz-back-btn">{{ __('Back to List') }}</a>
-                        <button type="submit" class="theme-btn theme-button1">{{ __('Create & Next') }}</button>
+                        <button type="submit" class="theme-button1">{{ __('Create & Next') }}</button>
                     </div>
                 </form>
             </div>

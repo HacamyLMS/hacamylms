@@ -9,7 +9,7 @@
         <ol class="breadcrumb justify-content-center">
             <li class="breadcrumb-item font-14"><a href="{{route('instructor.dashboard')}}">{{__('Dashboard')}}</a></li>
             <li class="breadcrumb-item font-14"><a href="{{ route('instructor.course') }}">{{__('My Courses')}}</a></li>
-            <li class="breadcrumb-item font-14"><strong>{{ __('Instructors') }}</strong></li>
+            <li class="breadcrumb-item font-14"><strong>{{ __('Tutors') }}</strong></li>
             <li class="breadcrumb-item font-14 active" aria-current="page">{{__('Upload Course')}}</li>
         </ol>
     </nav>
@@ -27,9 +27,9 @@
                         <ul id="progressbar"
                             class="upload-course-item-block d-flex align-items-center justify-content-center">
                             <li class="active" id="account"><strong>{{ __('Course Overview') }}</strong></li>
-                            <li class="active" id="personal"><strong>{{ __('Upload Video') }}</strong></li>
-                            <li class="active" id="personal"><strong>{{ __('Instructors') }}</strong></li>
-                            <li id="confirm"><strong>{{ __('Submit Process') }}</strong></li>
+                            <li class="active" id="personal"><strong>{{ __('Upload Contents') }}</strong></li>
+                            <li class="active" id="personal"><strong>{{ __('Tutors') }}</strong></li>
+                            <li id="confirm"><strong>{{ __('Submit Course') }}</strong></li>
                         </ul>
 
                         <form method="POST" action="{{route('course.store.instructor', [$course->uuid])}}"
@@ -43,7 +43,7 @@
                                     @endphp
                                     <div class="col-md-12">
                                         <label class="label-text-title color-heading font-medium font-16 mb-3">{{
-                                            __('Other Instructors') }}
+                                            __('Add Co-Tutors') }}
                                             <span
                                                 class="cursor tooltip-show-btn share-referral-big-btn primary-btn get-referral-btn border-0"
                                                 data-toggle="popover" data-bs-placement="bottom"
@@ -68,7 +68,7 @@
                                         <table class="mt-3 table table-sm">
                                             <thead>
                                                 <tr>
-                                                    <th>{{ __('Instructor Name') }}</th>
+                                                    <th>{{ __('Tutor\'s Name') }}</th>
                                                     <th>{{ __('Revenew share (in % between 0 to 100)') }}</th>
                                                 </tr>
                                             </thead>

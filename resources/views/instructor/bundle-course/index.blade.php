@@ -76,7 +76,7 @@
                     <!-- If there is no data Show Empty Design Start -->
                     <div class="empty-data">
                         <img src="{{ asset('frontend/assets/img/empty-data-img.png') }}" alt="img" class="img-fluid">
-                        <h5 class="my-3">{{ __('Empty Bundles Courses') }}</h5>
+                        <h5 class="my-3">{{ __('No Bundles Courses') }}</h5>
                     </div>
                     <!-- If there is no data Show Empty Design End -->
                 </div>

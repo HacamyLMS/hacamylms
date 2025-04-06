@@ -21,7 +21,7 @@
 
             <div class="instructor-my-courses-title d-flex justify-content-between align-items-center">
                 <h6>{{ __('Resources') }}</h6>
-                <p>{{ @$course->title }}</p>
+                <p>Course Title :{{ @$course->title }}</p>
             </div>
 
             <div class="row">
@@ -62,13 +62,13 @@
                         <!-- If there is no data Show Empty Design Start -->
                         <div class="empty-data">
                             <img src="{{ asset('frontend') }}/assets/img/empty-data-img.png" alt="img" class="img-fluid">
-                            <h5 class="my-3">{{ __('Empty Resources') }}</h5>
+                            <h5 class="my-3">{{ __('No Resource Uploaded') }}</h5>
                         </div>
                         <!-- If there is no data Show Empty Design End -->
                     @endif
 
                     <!-- Add Resource Button Start -->
-                    <a href="{{ route('resource.create', $course->uuid) }}" class="add-resources-btn theme-btn theme-button1 default-hover-btn">{{ __('Add Resource') }}</a>
+                    <a href="{{ route('resource.create', $course->uuid) }}" class="add-resources-btn theme-button1">{{ __('Add a Resource') }}</a>
                     <!-- Add Resource Button End -->
 
                 </div>

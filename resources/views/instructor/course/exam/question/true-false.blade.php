@@ -41,6 +41,9 @@
 
                         <div class="row">
                             <div class="col-md-12 mb-30">
+                                <div>
+                                    <p class="font-12">Select the correct option</p>
+                                </div>
                                 <div class="true-false-item-wrap d-flex align-items-center">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio"  name="is_correct_answer" value="1" required id="correct_ans1">
@@ -59,7 +62,7 @@
                         </div>
                         <div class="question-openion-btn-wrap d-flex justify-content-between align-items-start mb-20">
                             <div class="add-question-save-btns">
-                                <input type="submit" class="theme-btn theme-button1 mr-30" value="{{__('Save and another')}}" name="save_and_add">
+                                <input type="submit" class="theme-btn theme-button1 mr-30" value="{{__('Add Question')}}" name="save_and_add">
                                 <input type="submit" class="theme-btn theme-button1" value="{{__('Save')}}" name="save">
                             </div>
                         </div>

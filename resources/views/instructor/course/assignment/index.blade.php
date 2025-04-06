@@ -55,7 +55,7 @@
                                 <tr>
                                     <td>{{ $assignment->name }}</td>
                                     <td>{{ $assignment->marks }}</td>
-                                    <td><a href="{{ route('assignment.assessment.index', [$course->uuid, $assignment->uuid]) }}" class="theme-btn theme-button1 default-hover-btn">{{ __('Click Here') }}</a></td>
+                                    <td><a href="{{ route('assignment.assessment.index', [$course->uuid, $assignment->uuid]) }}" class="theme-button1">{{ __('Click Here') }}</a></td>
                                     <td>
                                         <div class="dropdown">
                                             <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -78,7 +78,7 @@
                     <!-- If there is no data Show Empty Design Start -->
                     <div class="empty-data">
                         <img src="{{ asset('frontend/assets/img/empty-data-img.png') }}" alt="img" class="img-fluid">
-                        <h5 class="my-3">{{ __('Empty Assignment') }}</h5>
+                        <h5 class="my-3">{{ __('No Assignment') }}</h5>
                     </div>
                     <!-- If there is no data Show Empty Design End -->
                     @endif

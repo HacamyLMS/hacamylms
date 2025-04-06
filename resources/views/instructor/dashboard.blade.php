@@ -29,7 +29,7 @@
                         <div class="flex-grow-1 ms-3">
 
                             <div class="d-flex justify-content-between align-items-center">
-                                <h6 class="para-color font-11 font-semi-bold">{{__('Earning')}} <span
+                                <h6 class="para-color font-14 font-semi-bold">{{__('Total Earnings')}} <span
                                         class="color-gray font-13 font-normal">({{__('This Month')}})</span></h6>
                             </div>
 
@@ -50,7 +50,7 @@
                             <span class="iconify" data-icon="carbon:user-multiple"></span>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h6 class="para-color font-11 font-semi-bold">{{__('Total Enroll')}} <span
+                            <h6 class="para-color font-14 font-semi-bold">{{__('Total Enrollments')}} <span
                                     class="color-gray font-13 font-normal">({{__('This Month')}})</span></h6>
                             <h5>{{ @$total_enroll_this_month ?? 0 }}</h5>
                         </div>
@@ -63,7 +63,7 @@
                             <span class="iconify" data-icon="ion:diamond-outline"></span>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h6 class="para-color font-11 font-semi-bold">{{__('Best Selling Course')}}
+                            <h6 class="para-color font-14 font-semi-bold">{{__('Best Selling Course')}}
                             </h6>
                             <h5>{{ Str::limit(@$best_selling_course->course->title, 25) }}</h5>
                         </div>
@@ -74,11 +74,11 @@
 
             <div class="row recently-added-courses">
 
-                <div class="col-lg-12 col-xl-6 mb-30">
+                <div class="col-lg-12 col-xl-12 mb-30">
                     <div class="recently-added-courses-box radius-8">
                         <div class="recently-added-courses-title d-flex justify-content-between align-items-center mb-4">
                             <h6 class="font-18">{{__('Recently Added Courses')}}</h6>
-                            <a href="{{route('instructor.course')}}" class="bg-transparent color-heading font-11 font-medium">{{ __('View All') }}</a>
+                            <a href="{{route('instructor.course')}}" class="bg-transparent color-heading font-14 font-medium">{{ __('View All') }}</a>
                         </div>
                         <div class="recently-added-course-item-wrap">
                             @foreach($recentCourses as $recentCourse)
@@ -91,24 +91,24 @@
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1 ms-3">
-                                                <h6 class="font-15">{{ Str::limit($recentCourse->title, 25) }}</h6>
-                                                <p class="font-14">{{ courseStudents($recentCourse->id) }} {{__('Enroll')}} </p>
+                                                <h6 class="font-14">{{ Str::limit($recentCourse->title, 25) }}</h6>
+                                                <p class="font-13">{{ courseStudents($recentCourse->id) }} {{__('Enroll')}} </p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="recently-added-course-item-right flex-grow-1 justify-content-end text-end ms-3">
-                                        <button class="font-12 font-medium color-gray">{{@$recentCourse->created_at->diffForHumans()}}</button>
+                                        <button class="font-14 font-medium color-gray">{{@$recentCourse->created_at->diffForHumans()}}</button>
                                     </div>
                                 </div>
                             @endforeach
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-xl-6 mb-30">
+                <div class="col-lg-12 col-xl-12 mb-30">
                     <div class="recently-added-courses-box radius-8">
                         <div class="your-rank-title d-flex justify-content-between align-items-center mb-4">
                             <h6 class="font-18">{{ __('Your Rank') }}</h6>
-                            <a href="{{ route('instructor.ranking-level') }}" class="bg-transparent color-hover font-11 font-medium">{{__('List of Rank')}}</a>
+                            <a href="{{ route('instructor.ranking-level') }}" class="bg-transparent color-hover font-14 font-medium">{{__('View All Rank')}}</a>
                         </div>
 
                         <div class="ranking-items-wrap">
@@ -186,15 +186,17 @@
                 </div>
             </div>
 
-            <div class="row upload-your-course-today mb-lg-0">
-                <div class="col-lg-12 col-xl-6 mb-30">
+            <div class="row upload-your-course-today mb-lg-0 d-none">
+                <div class="col-lg-12 col-xl-12 mb-30">
                     <div class="upload-your-course-part radius-8">
                         <h6 class="font-18 text-white">{{__('Upload Your Course Today')}}</h6>
                         <a href="{{route('instructor.course.create')}}" class="upload-your-course-today-btn bg-hover text-white font-12 font-medium">{{__('Upload Course')}}</a>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-lg-6 mb-30">
+            <div class="row upload-your-course-today mb-lg-0">
+                <div class="col-lg-12 mb-30">
                     <div class="instructor-dashboard-chart-box radius-8">
                         <div class="chart-title d-flex justify-content-between align-items-center">
                             <h6 class="font-18">{{__('Sale Statistics')}}</h6>

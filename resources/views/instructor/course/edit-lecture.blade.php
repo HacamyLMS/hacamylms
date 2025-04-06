@@ -9,7 +9,7 @@
             <ol class="breadcrumb justify-content-center">
                 <li class="breadcrumb-item font-14"><a href="{{route('instructor.dashboard')}}">{{__('Dashboard')}}</a></li>
                 <li class="breadcrumb-item font-14"><a href="{{ route('instructor.course') }}">{{__('My Courses')}}</a></li>
-                <li class="breadcrumb-item font-14 active" aria-current="page">{{__('Upload Course')}}</li>
+                <li class="breadcrumb-item font-14 active" aria-current="page">{{__('Upload Course Contents')}}</li>
             </ol>
         </nav>
     </div>
@@ -25,8 +25,8 @@
                             <!-- progressbar -->
                             <ul id="progressbar" class="upload-course-item-block d-flex align-items-center justify-content-center">
                                 <li class="active" id="account"><strong>{{ __('Course Overview') }}</strong></li>
-                                <li class="active"  id="personal"><strong>{{ __('Upload Video') }}</strong></li>
-                                <li id="confirm"><strong>{{ __('Submit Process') }}</strong></li>
+                                <li class="active"  id="personal"><strong>{{ __('Upload Contents') }}</strong></li>
+                                <li id="confirm"><strong>{{ __('Submit Course') }}</strong></li>
                             </ul>
 
                             <!-- Upload Course Step-1 Item Start -->
@@ -45,7 +45,7 @@
                                                             <div class="label-text-title color-heading font-medium font-16 mb-3 mr-15">Type: </div>
                                                             <div>
                                                                 <label class="mr-15"><input type="radio" name="type" value="video" {{$lecture->type == 'video' ? 'checked' : '' }}  class="lecture-type"> Upload Video</label>
-                                                                <label class="mr-15"><input type="radio" name="type" value="youtube" {{$lecture->type == 'youtube' ? 'checked' : '' }} class="lecture-type"> Youtube </label>
+                                                                <label class="mr-15"><input type="radio" name="type" value="youtube" {{$lecture->type == 'youtube' ? 'checked' : '' }} class="lecture-type"> Youtube Video </label>
                                                                 <label class="mr-15"><input type="radio" name="type" value="vimeo" {{$lecture->type == 'vimeo' ? 'checked' : '' }} class="lecture-type">  Vimeo</label>
                                                                 <label class="mr-15"><input type="radio" name="type" value="text" {{$lecture->type == 'text' ? 'checked' : '' }} class="lecture-type" id="lectureTypeText"> Text </label>
                                                                 <label class="mr-15"><input type="radio" name="type" value="image" {{$lecture->type == 'image' ? 'checked' : '' }} class="lecture-type" id="lectureTypeImage"> Image </label>
@@ -53,7 +53,7 @@
                                                                 <label class="mr-15"><input type="radio" name="type" value="slide_document" {{$lecture->type == 'slide_document' ? 'checked' : '' }} class="lecture-type" id="lectureTypeSlideDocument"> Slide Document </label>
                                                                 <label class="mr-15"><input type="radio" name="type" value="audio" {{$lecture->type == 'audio' ? 'checked' : '' }} class="lecture-type" id="lectureTypeAudio"> Audio </label>
                                                             </div>
-                                                        </div>
+                                                        </div> 
                                                     </div>
                                                 </div>
 
