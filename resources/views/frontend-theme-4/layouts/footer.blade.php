@@ -1,4 +1,4 @@
-<footer class="footer-area footer-gradient-bg position-relative landing-footer sf-landing-footer landing-footer-learning" style="background: #411472 !important;">
+<footer class="footer-area footer-gradient-bg position-relative landing-footer sf-landing-footer landing-footer-learning" style="background: #000000 !important;">
     <div class="section-overlay">
         <div class="container">
             <!-- footer-widget-area -->

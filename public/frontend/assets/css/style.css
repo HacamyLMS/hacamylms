@@ -776,22 +776,22 @@ button:focus {
 }
 .btn-orange,
 .orange-theme-btn {
-    background-color: var(--orange-color);
-    border: 2px solid var(--orange-color);
+    background-color: #090BB4;
+    border: 2px solid #090BB4;
     color: var(--white-color);
 }
 .btn-orange:hover,
 .orange-theme-btn:hover {
-    background-color: var(--white-color);
-    border: 2px solid var(--orange-color);
-    color: var(--orange-color) !important;
+    background-color: #090BB4;
+    border: 2px solid #090BB4;
+    color: #fff !important;
 }
 .orange-theme-btn {
-    border: 1px solid var(--orange-color) !important;
+    border: 1px solid #090BB4 !important;
 }
 .green-theme-btn {
-    background-color: var(--color-green);
-    border-color: var(--color-green) !important;
+    background-color: #090BB4;
+    border-color: #090BB4 !important;
     color: var(--white-color) !important;
 }
 .green-theme-btn .iconify,
@@ -800,8 +800,8 @@ button:focus {
     margin-left: 0;
 }
 .green-theme-btn:hover {
-    border-color: var(--color-green) !important;
-    color: var(--color-green) !important;
+    border-color: #090BB4 !important;
+    color: #090BB4 !important;
 }
 .quiz-back-btn,
 .default-back-btn {
@@ -928,7 +928,7 @@ button:focus {
     animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
     -webkit-transition: 0.6s;
     transition: 0.6s;
-    background-color: var(--navbar-bg-color);
+    background-color: #000000;
 }
 #mainNav .navbar-brand {
     position: relative;
@@ -2456,7 +2456,7 @@ button:focus {
     font-size: 23px;
     position: relative;
     top: 2px;
-    color: var(--theme-color);
+    color: #fff;
 }
 .copyright-wrapper {
     padding: 27px 0;
@@ -2569,8 +2569,8 @@ button:focus {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: var(--color-light-green);
-    color: var(--color-green);
+    background-color: #090BB4;
+    color: #fff;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -4146,7 +4146,7 @@ input[type="number"] {
 .become-an-instructor-procedure-item-right .section-heading {
     width: 100%;
     text-align: left;
-    padding-right: 50%;
+    /* padding-right: 50%; */
 }
 .become-an-instructor-procedure-item-right {
     margin-left: 25px;
@@ -4165,15 +4165,15 @@ input[type="number"] {
     .row:nth-child(even)
     .become-an-instructor-procedure-item-right
     .section-heading {
-    text-align: right;
+    text-align: left;
     padding-right: 0;
-    padding-left: 50%;
+    /* padding-left: 50%; */
 }
 .become-an-instructor-procedures-area
     .row:nth-child(even)
     .become-an-instructor-procedure-item-right
     p {
-    text-align: right;
+    text-align: left;
 }
 .become-an-instructor-procedures-area .row:last-child {
     padding-bottom: 0;
@@ -4876,12 +4876,9 @@ input[type="number"] {
 -------------------------------------------*/
 .student-profile-left-part {
     padding: 60px 0;
-    border: 1px solid #f7f5ff;
-    border-right: none;
     height: 100%;
 }
 .student-profile-right-part {
-    border: 1px solid #f7f5ff;
     padding: 60px;
 }
 .student-profile-left-part h6,
@@ -4900,10 +4897,12 @@ input[type="number"] {
 }
 .student-profile-left-part ul li a:hover,
 .student-profile-left-part ul li a.active {
-    background-color: #f8f7fd;
-    /* color: var(--heading-color); */
+    background-color: #000000;
+    color: #fff !important;
 }
-
+.student-profile-left-part ul li a.active {
+    border-radius: 0 1.5rem 1.5rem 0;
+}
 /* Student Profile Right css */
 .student-profile-right-part textarea {
     height: 149px;
@@ -8632,7 +8631,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .check-icon-wrap {
     height: 18px;
     width: 18px;
-    background-color: var(--color-green);
+    background-color: #090BB4;
     color: var(--white-color);
 }
 
@@ -8716,7 +8715,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* Saas Subscription Plan */
 .saas-plan-instructor-organization-nav {
-    background-color: #290055;
+    background-color: #090BB4;
     width: 332px;
     margin-left: auto;
     margin-right: auto;

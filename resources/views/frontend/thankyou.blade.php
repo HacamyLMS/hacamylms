@@ -111,14 +111,14 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <a href="{{ route('student.my-learning') }}" class="theme-btn theme-button1 theme-button3 w-100 mt-15">{{ __('My Learning') }}</a>
+                            <a href="{{ route('student.my-learning') }}" class="theme-btn theme-button1 theme-button3 w-100 mt-15">{{ __('My Dashboard') }}</a>
                         </div>
                         <div class="col">
-                            <a href="{{ route('student.my-consultation') }}" class="theme-btn theme-button1 theme-button3 w-100 mt-15">{{ __('My Consultation') }}</a>
+                            <a href="{{ route('student.my-consultation') }}" class="theme-btn theme-button1 theme-button3 w-100 mt-15">{{ __('My Consultations') }}</a>
                         </div>
                         @if(isAddonInstalled('LMSZAIPRODUCT'))
                         <div class="col">
-                            <a href="{{ route('lms_product.student.purchase_list') }}" class="theme-btn theme-button1 theme-button3 w-100 mt-15">{{ __('My Purchase Product') }}</a>
+                            <a href="{{ route('lms_product.student.purchase_list') }}" class="theme-btn theme-button1 theme-button3 w-100 mt-15">{{ __('My Purchased Product') }}</a>
                         </div>
                         @endif
                     </div>

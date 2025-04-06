@@ -7,18 +7,18 @@
 <!-- Page Header Start -->
 <header class="page-banner-header blank-page-banner-header gradient-bg position-relative">
     <div class="section-overlay">
-        <div class="blank-page-banner-wrap">
+        <div class="blank-page-banner-wrap bg-black">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12">
                         <div class="page-banner-content text-center">
-                            <h3 class="page-banner-heading color-heading pb-15">{{ __('Affiliate Dashboard') }}</h3>
+                            <h3 class="page-banner-heading color-heading pb-15" style="color: #fff">{{ __('Affiliate Dashboard') }}</h3>
 
                             <!-- Breadcrumb Start-->
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item font-14"><a href="{{ url('/') }}">{{ __('Home') }}</a></li>
-                                    <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('Affiliate Dashboard') }}</li>
+                                    <li class="breadcrumb-item font-14" style="color: #fff"><a href="{{ url('/') }}">{{ __('Home') }}</a></li>
+                                    <li class="breadcrumb-item font-14 active" aria-current="page" style="color: #fff">{{ __('Affiliate Dashboard') }}</li>
                                 </ol>
                             </nav>
                             <!-- Breadcrumb End-->
@@ -32,11 +32,11 @@
 <!-- Page Header End -->
 
 <!-- Wishlist Page Area Start -->
-<section class="wishlist-page-area">
+<section class="wishlist-page-area bg-black"> 
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-10">
-                <div class="affiliator-dashboard-wrap bg-white">
+                <div class="affiliator-dashboard-wrap bg-white" style="border-radius: 1.5rem;">
 
                     <div class="row affiliator-dashboard-title align-items-center border-bottom mb-30 pb-20 mx-0">
                         <div class="col-md-12 col-lg-5 col-xl-5 px-0">
@@ -45,27 +45,27 @@
                         <div class="col-md-12 col-lg-7 col-xl-7 px-0">
                             <div class="affiliate-top-title-btns text-end">
                                 <!-- Withdrawal modal trigger Button -->
-                                <a href=" {{ route('wallet./') }}" class="theme-btn theme-button1 default-hover-btn">{{ __('My Wallet') }}</a>
+                                <a href=" {{ route('wallet./') }}" class="theme-btn theme-button1 default-hover-btn" style="background-color: #090BB4 !important; color:#fff !important;">{{ __('My Wallet') }}</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="affiliate-dashboard-top-box row">
-                        <div class="col-md-6 col-lg-4">
+                        <div class="col-md-6 col-lg-6">
                             <div class="affiliate-dashboard-item radius-4 p-30 mb-30">
-                                <p class="font-18">{{ __('Total Number of Affiliate') }}<span class="iconify ms-1" data-icon="fluent:arrow-trending-20-filled"></span></p>
+                                <p class="font-18">{{ __('Total Referred') }}<span class="iconify ms-1" data-icon="fluent:arrow-trending-20-filled"></span></p>
                                 <h4 class="affiliate-dashboard-item-title mt-3">{{$totalAffiliateCount}}</h4>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-4">
+                        <div class="col-md-6 col-lg-4 d-none">
                             <div class="affiliate-dashboard-item radius-4 p-30 mb-30">
                                 <p class="font-18">{{ __('Total Affiliate') }}<span class="iconify ms-1" data-icon="fluent:arrow-trending-20-filled"></span></p>
                                 <h4 class="affiliate-dashboard-item-title mt-3">{{get_currency_symbol().$totalAffiliate}}</h4>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-4">
+                        <div class="col-md-6 col-lg-6">
                             <div class="affiliate-dashboard-item radius-4 p-30 mb-30">
-                                <p class="font-18">{{ __('Total Commission Earnings') }}<span class="iconify ms-1" data-icon="fluent:arrow-trending-20-filled"></span></p>
+                                <p class="font-18">{{ __('Total Earnings') }}<span class="iconify ms-1" data-icon="fluent:arrow-trending-20-filled"></span></p>
                                 <h4 class="affiliate-dashboard-item-title mt-3">{{get_currency_symbol().$totalCommission}}</h4>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
     </div>
 
     <!--Withdrawal Modal Start-->
-    <div class="modal fade" id="withdrawalModal" tabindex="-1" aria-hidden="true">
+    <div class="d-none modal fade" id="withdrawalModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header border-0">

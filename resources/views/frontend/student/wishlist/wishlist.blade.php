@@ -5,20 +5,20 @@
 <div class="bg-page">
 
 <!-- Page Header Start -->
-<header class="page-banner-header blank-page-banner-header gradient-bg position-relative">
+<header class="page-banner-header blank-page-banner-header gradient-bg position-relative"> 
     <div class="section-overlay">
-        <div class="blank-page-banner-wrap">
+        <div class="blank-page-banner-wrap bg-black">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12">
                         <div class="page-banner-content text-center">
-                            <h3 class="page-banner-heading color-heading pb-15">{{ __(@$pageTitle) }}</h3>
+                            <h3 class="page-banner-heading color-heading pb-15" style="color: #fff">{{ __(@$pageTitle) }}</h3>
 
                             <!-- Breadcrumb Start-->
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item font-14"><a href="{{ url('/') }}">{{ __('Home') }}</a></li>
-                                    <li class="breadcrumb-item font-14 active" aria-current="page">{{ __(@$pageTitle) }}</li>
+                                    <li class="breadcrumb-item font-14" style="color: #fff"><a href="{{ url('/') }}">{{ __('Home') }}</a></li>
+                                    <li class="breadcrumb-item font-14 active" aria-current="page" style="color: #fff">{{ __(@$pageTitle) }}</li>
                                 </ol>
                             </nav>
                             <!-- Breadcrumb End-->
@@ -32,11 +32,11 @@
 <!-- Page Header End -->
 
 <!-- Wishlist Page Area Start -->
-<section class="wishlist-page-area">
+<section class="wishlist-page-area bg-black">
     <div class="container">
         <div class="row">
             <div class="table-responsive">
-                <table class="table bg-white wishlist-table">
+                <table class="table bg-white wishlist-table" style="border-radius: 1.5rem; border-color: none;">
                     <thead>
                     <tr>
                         <th scope="col" class="color-gray font-15 font-medium">{{ __('Item') }}</th>

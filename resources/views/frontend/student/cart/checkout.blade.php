@@ -48,10 +48,7 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="checkout-page-left-part">
-                                <div class="billing-address-box bg-white">
-
-                                    <h6 class="font-16 font-medium color-heading mb-30">{{ __('Billing Address') }}
-                                    </h6>
+                                <div class="billing-address-box bg-white">                    
 
                                     <div class="row">
                                         <div class="col-md-6 mb-30">
@@ -89,12 +86,12 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row d-none">
                                         <div class="col-md-12 mb-30">
                                             <label
                                                 class="label-text-title color-heading font-medium font-16 mb-3">{{ __('Address') }} <span class="text-danger">*</span></label>
                                             <input type="text" name="address" id="address" value="{{ $student->address }}"
-                                                class="form-control" required placeholder="{{ __('Address') }}">
+                                                class="form-control" placeholder="{{ __('Address') }}">
                                             @if ($errors->has('street_address'))
                                                 <span class="text-danger"><i class="fas fa-exclamation-triangle"></i>
                                                     {{ $errors->first('street_address') }}</span>
@@ -131,7 +128,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="row">
+                                    <div class="row d-none">
                                         <div class="col-md-6 mb-30">
                                             <label
                                                 class="label-text-title color-heading font-medium font-16 mb-3">{{ __('State') }}</label>
@@ -200,7 +197,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="row">
+                                    <div class="row d-none">
                                         <div class="col-md-6 mb-30">
                                             <label
                                                 class="label-text-title color-heading font-medium font-16 mb-3">{{ __('Zip Code') }}</label>
@@ -647,7 +644,7 @@
                                                             </tr>
 
                                                             @endif
-                                                            <tr>
+                                                            <tr class="d-none">
                                                                 <td>{{ __('Platform Charge') }} </td>
                                                                 <td>
                                                                     @if (get_currency_placement() == 'after')

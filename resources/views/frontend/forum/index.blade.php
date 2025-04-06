@@ -29,10 +29,10 @@
             <div class="section-overlay">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 col-md-7">
-                            <div class="page-banner-content forum-banner-content">
-                                <h3 class="page-banner-heading text-white pb-15">{{ __('Forum') }}</h3>
-                                <div class="forum-banner-search-ask-wrap d-flex align-items-center">
+                        <div class="col-12 col-md-12">
+                            <div class="page-banner-content forum-banner-content text-center">
+                                <h3 class="page-banner-heading text-white" style="padding-bottom: 80px;">{{ __('Hacamy Forum') }}</h3>
+                                <div class="forum-banner-search-ask-wrap d-flex align-items-center justify-content-center">
                                     <div class="input-group position-relative">
                                         <input class="form-control border-0 bg-transparent searchForumBar" type="search"
                                             placeholder="{{ __('Type to search for solutions...') }}">
@@ -54,12 +54,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-5">
-                            <div class="forum-banner-right-img">
-                                <img src="{{ asset('frontend/assets/img/forum-banner-right-img.png') }}" alt="lmszai forum"
-                                    class="img-fluid">
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -72,7 +66,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title ">
-                            <h3 class="section-heading">{{ __('Forum Categories') }}</h3>
+                            <h3 class="section-heading">{{ __('Categories') }}</h3>
                         </div>
                     </div>
                 </div>

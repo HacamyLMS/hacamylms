@@ -10,7 +10,7 @@
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12">
                                 <div class="page-banner-content text-center">
-                                    <h3 class="page-banner-heading color-heading pb-15">{{ __('Recharge') }}</h3>
+                                    <h3 class="page-banner-heading color-heading pb-15">{{ __('Deposit') }}</h3>
 
                                     <!-- Breadcrumb Start-->
                                     <nav aria-label="breadcrumb">
@@ -18,7 +18,7 @@
                                             <li class="breadcrumb-item font-14"><a href="{{ url('/') }}">{{ __('Home') }}</a></li>
                                             <li class="breadcrumb-item font-14"><a href="{{ route('wallet./') }}">{{ __('Wallet') }}</a></li>
                                             <li class="breadcrumb-item font-14 active" aria-current="page">
-                                                {{ __('Recharge') }}</li>
+                                                {{ __('Deposit') }}</li>
                                         </ol>
                                     </nav>
                                     <!-- Breadcrumb End-->
@@ -30,7 +30,7 @@
             </div>
         </header>
         <!-- Page Header End -->
-
+ 
         <!-- Cart Page Area Start -->
         <section class="checkout-page">
             <div class="container">
@@ -51,7 +51,7 @@
                         <div class="col-md-8">
                             <div class="checkout-page-left-part">
                                 <div class="payment-method-box bg-white">
-                                    <h6 class="font-16 font-medium color-heading mb-30">{{ __('Payment Method') }}
+                                    <h6 class="font-16 font-medium color-heading mb-30">{{ __('Deposit Method') }}
                                     </h6>
 
                                     @if (get_option('paypal_status') == 1)
@@ -139,41 +139,6 @@
                                         </div>
                                     @endif
 
-                                    @if (get_option('mollie_status') == 1)
-                                        <div class="form-check payment-method-card-box other-payment-box pb-0 mt-30">
-                                            <input class="form-check-input" type="radio" name="payment_method"
-                                                value="mollie" {{ old('payment_method') == 'mollie' ? 'checked' : '' }}
-                                                id="molliePayment">
-                                            <label class="form-check-label mb-0" for="molliePayment">
-                                                <span class="font-16 color-heading font-medium">Mollie</span>
-                                            </label>
-                                        </div>
-                                    @endif
-
-                                    @if (get_option('im_status') == 1)
-                                        <div class="form-check payment-method-card-box other-payment-box pb-0 mt-30">
-                                            <input class="form-check-input" type="radio" name="payment_method"
-                                                value="instamojo"
-                                                {{ old('payment_method') == 'instamojo' ? 'checked' : '' }}
-                                                id="instamojoPayment">
-                                            <label class="form-check-label mb-0" for="instamojoPayment">
-                                                <span class="font-16 color-heading font-medium">Instamojo</span>
-                                            </label>
-                                        </div>
-                                    @endif
-
-                                    @if (get_option('razorpay_status') == 1)
-                                        <div class="form-check payment-method-card-box other-payment-box pb-0 mt-30">
-                                            <input class="form-check-input" type="radio" name="payment_method"
-                                                value="razorpay"
-                                                {{ old('payment_method') == 'razorpay' ? 'checked' : '' }}
-                                                id="razorpayPayment">
-                                            <label class="form-check-label mb-0" for="razorpayPayment">
-                                                <span class="font-16 color-heading font-medium">Razorpay</span>
-                                            </label>
-                                        </div>
-                                    @endif
-
                                     @if (get_option('paystack_status') == 1)
                                     <div class="form-check payment-method-card-box other-payment-box pb-0 mt-30">
                                         <input class="form-check-input" type="radio" name="payment_method"
@@ -186,28 +151,6 @@
                                     </div>
                                     @endif
 
-                                    @if (get_option('sslcommerz_status') == 1)
-                                        <div class="form-check payment-method-card-box other-payment-box pb-0 mt-30">
-                                            <input class="form-check-input" type="radio" name="payment_method"
-                                                value="sslcommerz"
-                                                {{ old('payment_method') == 'sslcommerz' ? 'checked' : '' }}
-                                                id="sslcommerzPayment">
-                                            <label class="form-check-label mb-0" for="sslcommerzPayment">
-                                                <span class="font-16 color-heading font-medium">SSLCOMMERZ</span>
-                                            </label>
-                                        </div>
-                                    @endif
-                                    @if (get_option('mercado_status') == 1)
-                                        <div class="form-check payment-method-card-box other-payment-box pb-0 mt-30">
-                                            <input class="form-check-input" type="radio" name="payment_method"
-                                                value="mercadopago"
-                                                {{ old('payment_method') == 'mercadopago' ? 'checked' : '' }}
-                                                id="mercadopagoPayment">
-                                            <label class="form-check-label mb-0" for="merPayment">
-                                                <span class="font-16 color-heading font-medium">MERCADO PAGO</span>
-                                            </label>
-                                        </div>
-                                    @endif
                                     @if (get_option('flutterwave_status') == 1)
                                         <div class="form-check payment-method-card-box other-payment-box pb-0 mt-30">
                                             <input class="form-check-input" type="radio" name="payment_method"
@@ -267,18 +210,6 @@
                                     </div>
                                     @endif
 
-                                    @if (get_option('braintree_status') == 1)
-                                    <div class="form-check payment-method-card-box other-payment-box pb-0 mt-30">
-                                        <input class="form-check-input" type="radio" name="payment_method"
-                                               value="braintree"
-                                               {{ old('payment_method') == 'braintree' ? 'checked' : '' }}
-                                               id="braintreePayment">
-                                        <label class="form-check-label mb-0" for="braintreePayment">
-                                            <span class="font-16 color-heading font-medium">Braintree</span>
-                                        </label>
-                                    </div>
-                                    @endif
-
                                     @foreach(newGateway() as $index => $gateway)
                                         @if (get_option("{$gateway}_status") == 1)
                                             <div class="form-check payment-method-card-box other-payment-box pb-0 mt-30">
@@ -294,10 +225,6 @@
                                     @endforeach
 
                                     <div class="checkout-we-protect-content d-flex align-items-center mt-30">
-                                        <div class="flex-shrink-0">
-                                            <span class="iconify color-hover font-24"
-                                                data-icon="ant-design:lock-filled"></span>
-                                        </div>
                                         <div class="flex-grow-1 ms-2 font-13">
                                             {{ __('We protect your payment information using encryption to provide bank-level security') }}
                                         </div>
@@ -336,7 +263,7 @@
 
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="d-none">
                                                                 <td>{{ __('Platform Charge') }} </td>
                                                                 <td>
                                                                     @if (get_currency_placement() == 'after')

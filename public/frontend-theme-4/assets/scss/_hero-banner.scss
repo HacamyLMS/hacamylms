@@ -29,10 +29,10 @@
           align-items: center;
           gap: toRem(24);
           padding-bottom: toRem(6);
-          border-bottom: toRem(1) solid rgba(6, 6, 103, 0.17);
+          border-bottom: toRem(1) solid rgba(9, 11, 180, 0.50);
           p {
             position: relative;
-            @include fontFamilyAlt(12, $fw_semiBold, 1.584, rgba(6, 6, 103, 0.55));
+            @include fontFamilyAlt(12, $fw_semiBold, 1.584, rgba(0, 0, 0, 0.80));
             letter-spacing: 0.89em;
             &:last-child {
               &::before {

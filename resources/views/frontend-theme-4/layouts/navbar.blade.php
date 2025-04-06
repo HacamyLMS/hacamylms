@@ -90,7 +90,7 @@
                                     @else
                                         <li class="nav-item">
                                             <a class="nav-link"
-                                               href="{{ route('student.become-an-instructor') }}">{{ __('Become a Tutor') }}</a>
+                                               href="{{ route('student.become-an-instructor') }}">{{ __('Switch Account Type') }}</a>
                                         </li>
                                     @endif
                                 @elseif(@$authUser->role == USER_ROLE_INSTRUCTOR || @$authUser->role == USER_ROLE_ORGANIZATION)
@@ -470,7 +470,7 @@
                                                             <a class="dropdown-item"
                                                                href="{{ route('affiliate.become-an-affiliate') }}"><span
                                                                     class="iconify"
-                                                                    data-icon="tabler:affiliate"></span>{{ __('Become an Affiliate') }}
+                                                                    data-icon="tabler:affiliate"></span>{{ __('Refer and Earn') }}
                                                             </a>
                                                         </li>
                                                     </ul>

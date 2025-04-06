@@ -122,37 +122,6 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            <div class="row mb-30 d-none">
-                                                <div class="col-md-6">
-                                                    <label class="font-medium font-15 color-heading">{{ __('Lat') }}</label>
-                                                    <input type="number" step="any" name="lat" value="{{ $user->lat }}"
-                                                        class="form-control" id="lat" placeholder="Type your lat">
-                                                    @if ($errors->has('lat'))
-                                                        <span class="text-danger"><i class="fas fa-exclamation-triangle"></i>
-                                                            {{ $errors->first('lat') }}</span>
-                                                    @endif
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label class="font-medium font-15 color-heading">{{ __('Long') }}</label>
-                                                    <input type="number" step="any" name="long" value="{{ $user->long }}"
-                                                        class="form-control" id="long" placeholder="Type your long">
-                                                    @if ($errors->has('long'))
-                                                        <span class="text-danger"><i class="fas fa-exclamation-triangle"></i>
-                                                            {{ $errors->first('long') }}</span>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12 mb-30">
-                                                    <label class="font-medium font-15 color-heading">{{ __('Select Location') }}</label>
-                                                    <div id="map"></div>
-                                                    <div class="position-relative">
-                                                        <div class="position-absolute bottom-0 start-0">
-                                                            <pre id="coordinates" class="coordinates"></pre>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <div class="col-12">
                                                 <button type="submit"
                                                     class="theme-btn theme-button1 theme-button3 font-15 fw-bold">{{ __('Update') }}</button>

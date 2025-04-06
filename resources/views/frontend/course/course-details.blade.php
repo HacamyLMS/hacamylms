@@ -94,7 +94,7 @@
                                     <li class="nav-item" role="presentation">
                                         <a class="nav-link" id="Instructor-tab" data-bs-toggle="tab" href="#Instructor"
                                            role="tab" aria-controls="Review"
-                                           aria-selected="false">{{ (count($course->course_instructors->where('status', STATUS_APPROVED)) > 1) ? __('Instructors') : __('Instructor') }}</a>
+                                           aria-selected="false">{{ (count($course->course_instructors->where('status', STATUS_APPROVED)) > 1) ? __('Tutors') : __('Tutor') }}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -143,14 +143,14 @@
 
                                         @if(now()->gt($startDate) && now()->lt($endDate))
                                             <div>
-                                                <h4 class="d-flex align-items-center mb-1">
+                                                <h4 class="d-flex align-items-center mb-1" style="font-size: 24px;">
                                                     @if(get_currency_placement() == 'after')
                                                         {{ $discount_price }} {{ get_currency_symbol() }}
                                                     @else
                                                         {{ get_currency_symbol() }} {{ $discount_price }}
                                                     @endif
 
-                                                    <span class="text-decoration-line-through fw-normal font-16 color-gray ps-3">
+                                                    <span class="text-decoration-line-through fw-normal font-14 color-gray ps-3">
                                                         @if(get_currency_placement() == 'after')
                                                             {{ $course->price }} {{ get_currency_symbol() }}
                                                         @else

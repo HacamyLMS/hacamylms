@@ -5,26 +5,19 @@
 <section class="sign-up-page p-0">
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-md-5">
-                <div class="sign-up-left-content">
-                    <div class="sign-up-top-logo">
-                        <a href="{{ route('main.index') }}"><img src="{{getImageFile(get_option('app_logo'))}}"
-                                alt="logo"></a>
+            <div class="col-md-12">
+            <div class="sign-up-right-content" style="position: relative; overflow: hidden; opacity: 4.8;">
+                    <video autoplay loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+                        <source src="{{ asset('uploads/video/hacamy-bg-video.mp4') }}" type="video/mp4">
+                    </video>
+                    <form method="POST" action="{{route('store.sign-up')}}" style="background-color: #fff; padding: 30px; border-radius: 10px;">
+                    <div class="sign-up-top-logo text-center">
+                                <a href="{{ route('main.index') }}"><img src="{{getImageFile(get_option('app_black_logo'))}}" alt="logo"></a>
                     </div>
-                    <p>{{ __(get_option('sign_up_left_text')) }}</p>
-                    @if(get_option('sign_up_left_image'))
-                    <div class="sign-up-bottom-img">
-                        <img src="{{getImageFile(get_option('sign_up_left_image'))}}" alt="hero" class="img-fluid">
-                    </div>
-                    @endif
-                </div>
-            </div>
-            <div class="col-md-7">
-                <div class="sign-up-right-content bg-white">
-                    <form method="POST" action="{{route('store.sign-up')}}">
+
                         @csrf
-                        <h5 class="mb-1">{{__('Create an Account')}}</h5>
-                        <p class="font-14 mb-30">{{__('Already have an account?')}} <a href="{{route('login')}}"
+                        
+                        <p class="font-14 mb-30 text-center">{{__('Already have an account?')}} <a href="{{route('login')}}"
                                 class="color-hover text-decoration-underline font-medium">{{__('Sign In')}}</a></p>
 
                         <div class="row mb-20">

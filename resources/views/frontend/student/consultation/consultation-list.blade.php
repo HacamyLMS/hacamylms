@@ -12,13 +12,13 @@
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12">
                                 <div class="page-banner-content text-center">
-                                    <h3 class="page-banner-heading color-heading pb-15">{{ __('My Consultation') }}</h3>
+                                    <h3 class="page-banner-heading color-heading pb-15">{{ __('Consultations') }}</h3>
 
                                     <!-- Breadcrumb Start-->
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb justify-content-center">
                                             <li class="breadcrumb-item font-14"><a href="{{url('/')}}">{{__('Home')}}</a></li>
-                                            <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('My Consultation') }}</li>
+                                            <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('Consultations') }}</li>
                                         </ol>
                                     </nav>
                                     <!-- Breadcrumb End-->
@@ -39,7 +39,7 @@
                     <div class="col-12">
                         <div class="courses-filter-bar d-flex align-items-start justify-content-between">
                             <div class="filter-bar-left">
-                                <a href="{{ route('consultationInstructorList') }}" class="theme-btn theme-button1 theme-button3">{{__('Browse More Consultation')}}</a>
+                                <a href="{{ route('consultationInstructorList') }}" class="theme-btn theme-button1 theme-button3">{{__('Schedule a consultation')}}</a>
                             </div>
 
                             <div class="filter-bar-right">
@@ -48,8 +48,8 @@
                                     <select class="form-select form-select-sm filterBy" >
                                         <option value="">{{__('Select')}}</option>
                                         <option value="-1">{{__('Pending')}}</option>
-                                        <option value="1">{{__('Approve')}}</option>
-                                        <option value="2">{{__('Cancel')}}</option>
+                                        <option value="1">{{__('Approved')}}</option>
+                                        <option value="2">{{__('Cancelled')}}</option>
                                         <option value="3">{{__('Completed')}}</option>
                                     </select>
                                 </div>

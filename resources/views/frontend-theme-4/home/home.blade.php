@@ -125,7 +125,7 @@
     </section>
 
     <!-- Core Features -->
-    <section class="core-features core-features-lan {{ @$home->special_feature_area == 1 ? '' : 'd-none' }}" style="background: #411472;">
+    <section class="core-features core-features-lan {{ @$home->special_feature_area == 1 ? '' : 'd-none' }}" style="background: #000000;">
         <div class="container">
             <div class="core-features-content" style="gap: 0 !important">
                 <!--  -->
@@ -144,7 +144,7 @@
                 <!--  -->
                 <div class="row rg-20">
                     <div class="col-lg-4 col-sm-6">
-                        <div class="core-features-item core-features-item-lan" style="background: #5c3995;">
+                        <div class="core-features-item core-features-item-lan" style="background: #333333;">
                             <div class="icon">
                                 <img src="{{ getImageFile(get_option('home_special_feature_first_logo')) }}" alt=""/>
                             </div>
@@ -155,7 +155,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <div class="core-features-item core-features-item-lan" style="background: #5c3995;">
+                        <div class="core-features-item core-features-item-lan" style="background: #333333;">
                             <div class="icon">
                                 <img src="{{ getImageFile(get_option('home_special_feature_second_logo')) }}" alt=""/>
                             </div>
@@ -166,7 +166,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <div class="core-features-item core-features-item-lan" style="background: #5c3995;">
+                        <div class="core-features-item core-features-item-lan" style="background: #333333;">
                             <div class="icon">
                                 <img src="{{ getImageFile(get_option('home_special_feature_third_logo')) }}" alt=""/>
                             </div>
@@ -180,24 +180,6 @@
             </div>
         </div>
     </section>
-    
-    @if($home->faq_area == 1)
-        <!-- FAQ -->
-        <section class="bg-lan-bg faq-section faq-section-lan" style="padding: 0 !important;">
-            <div class="container">
-                <div class="faq-section-content">
-                    <!--  -->
-                    <div class="client-logo-wrap">
-                        <ul class="client-logo">
-                            @foreach($clients as $client)
-                                <li><img src="{{ getImageFile($client->image_path) }}" alt="{{ $client->name }}"/></li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    @endif
 
     @if(!get_option('private_mode') || !auth()->guest())
         @if($home->courses_area == 1)
@@ -719,7 +701,7 @@
 
     @if($home->customer_says_area == 1)
         <!-- Testimonials Section -->
-        <section class="testimonial-section testimonial-section-lan overflow-hidden" style="background: #411472;">
+        <section class="testimonial-section testimonial-section-lan overflow-hidden" style="background: #000000;">
             <div class="container">
                 <div class="testimonial-section-content">
                     <!--  -->
@@ -739,7 +721,7 @@
                         <div class="lan-testimonial-slider owl-carousel">
                         @foreach($customerSayItems as $customerSayItem)
 {{--                            <div class="col-lg-6">--}}
-{{--                                <div class="testimonial-item-one" style="background: #5c3995;">--}}
+{{--                                <div class="testimonial-item-one" style="background: #333333;">--}}
 {{--                                    <div class="author">--}}
 {{--                                        <div class="img">--}}
 {{--                                            <img--}}
@@ -777,23 +759,25 @@
 {{--                                </div>--}}
 {{--                            </div>--}}
 
-                                <div class="testimonial-item-one" style="background: #5c3995;">
+                                <div class="testimonial-item-one" style="background: #333333;">
                                     <div class="author">
                                         <div class="img">
                                             <img
                                                 src="{{ getImageFile(get_option('customer_say_'.$customerSayItem.'_image')) }}"
                                                 alt="quote"/>
                                         </div>
-                                        <div class="info">
-                                            <h4 class="name">{{ __(get_option('customer_say_'.$customerSayItem.'_name')) }}</h4>
-                                            <p class="degi">{{ __(get_option('customer_say_'.$customerSayItem.'_position')) }}</p>
-                                        </div>
                                     </div>
 
                                     <div class="content">
-                                        <div class="icon">
-                                            <img src="{{asset('frontend-theme-4/assets/images/quote-icon.svg')}}"
-                                                 alt="quote icon"/>
+                                        <div style="display: flex; flex-direction: row; gap: 20px;">
+                                            <div class="icon" style="flex: 1;">
+                                                <img src="{{asset('frontend-theme-4/assets/images/quote-icon.svg')}}"
+                                                     alt="quote icon"/>
+                                            </div>
+                                            <div class="info" style="flex: 1; color: #fff">
+                                                <h4 class="name">{{ __(get_option('customer_say_'.$customerSayItem.'_name')) }}</h4>
+                                                <p class="degi">{{ __(get_option('customer_say_'.$customerSayItem.'_position')) }}</p>
+                                            </div>
                                         </div>
                                         <div class="text-content">
                                             <h4 class="title">{{ __(get_option('customer_say_'.$customerSayItem.'_comment_title')) }}</h4>
@@ -815,6 +799,24 @@
                                 </div>
                         @endforeach
                             </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+
+    @if($home->faq_area == 1)
+        <!-- FAQ -->
+        <section class="bg-lan-bg faq-section faq-section-lan d-none" style="padding: 0 !important;">
+            <div class="container">
+                <div class="faq-section-content">
+                    <!--  -->
+                    <div class="client-logo-wrap">
+                        <ul class="client-logo">
+                            @foreach($clients as $client)
+                                <li><img src="{{ getImageFile($client->image_path) }}" alt="{{ $client->name }}"/></li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1137,7 +1139,7 @@
 
     @if($home->faq_area == 1)
         <!-- FAQ -->
-        <section class="bg-lan-bg faq-section faq-section-lan">
+        <section class="bg-lan-bg faq-section faq-section-lan d-none">
             <div class="container">
                 <div class="faq-section-content">
                     <!--  -->

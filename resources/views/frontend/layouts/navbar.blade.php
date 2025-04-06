@@ -83,7 +83,7 @@
                         </li>
                         @if(@$authUser->role == USER_ROLE_INSTRUCTOR || @$authUser->role == USER_ROLE_STUDENT || @$authUser->role == USER_ROLE_ORGANIZATION)
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('forum.index') }}">{{__('Forum')}}</a>
+                            <a class="nav-link" href="{{ route('forum.index') }}">{{__('Enter Forum')}}</a>
                         </li>
                         @if(@$authUser->role == USER_ROLE_STUDENT )
                         @if(@$authUser->instructor || @$authUser->organization)
@@ -92,8 +92,7 @@
                         </li>
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('student.become-an-instructor')}}">{{__('Become an
-                                Instructor')}}</a>
+                            <a class="nav-link" href="{{route('student.become-an-instructor')}}">{{__('Switch Account Role')}}</a>
                         </li>
                         @endif
                         @elseif(@$authUser->role == USER_ROLE_INSTRUCTOR || @$authUser->role == USER_ROLE_ORGANIZATION)
@@ -105,7 +104,7 @@
                         </li>
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('instructor.dashboard')}}">{{__('Instructor Panel')}}</a>
+                            <a class="nav-link" href="{{route('instructor.dashboard')}}">{{__('Tutor Panel')}}</a>
                         </li>
                         @endif
                         @elseif(@$authUser->organization->status == STATUS_APPROVED)
@@ -120,7 +119,7 @@
                         @endif
                         @elseif(@$authUser->instructor->status == STATUS_REJECTED)
                         <li class="nav-item">
-                            <span class="nav-link">{{__('Blocked From Instructor Panel')}}</span>
+                            <span class="nav-link">{{__('Blocked From Tutor Panel')}}</span>
                         </li>
                         @elseif(@$authUser->organization->status == STATUS_REJECTED)
                         <li class="nav-item">

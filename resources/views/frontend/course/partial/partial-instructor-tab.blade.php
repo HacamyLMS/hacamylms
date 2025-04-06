@@ -1,6 +1,6 @@
 <div class="tab-pane fade" id="Instructor" role="tabpanel" aria-labelledby="Instructor-tab">
     <div class="row">
-        <h6 class="mb-4 col-12">{{ __('Meet Your Instructor') }}</h6>
+        <h6 class="mb-4 col-12">{{ __('Meet Your Tutor') }}</h6>
 
         <div class="meet-instructor-item-wrap">
             @foreach ($course->course_instructors->where('status', STATUS_APPROVED) as $course_instructor)
@@ -31,7 +31,7 @@
                                     {{-- <p class="font-medium color-heading mb-1">{{ @$course_instructor->user->name }}</p> --}}
                                     <p class="font-12 mb-2"><a href="{{ route('userProfile',$course_instructor->user->id) }}">{{ @$course_instructor->user->professional_title }}</a></p>
                                     <div class="teacher-tag color-hover bg-light-purple font-medium font-14 radius-4">{{
-                                        __('Instructor') }}</div>
+                                        __('Tutor') }}</div>
                                 </div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                     </div>
 
                     <div class="meet-your-instructor-content-part px-20">
-                        <h6 class="font-16">{{ __('About Instructor') }}</h6>
+                        <h6 class="font-16">{{ __('About Tutor') }}</h6>
                         <p>{{ @$course_instructor->user->$userType->about_me }}</p>
 
                     </div>

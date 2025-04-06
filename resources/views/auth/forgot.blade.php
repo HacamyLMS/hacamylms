@@ -5,25 +5,18 @@
     <section class="sign-up-page p-0">
         <div class="container-fluid p-0">
             <div class="row">
-                <div class="col-md-5">
-                    <div class="sign-up-left-content">
-                        <div class="sign-up-top-logo">
-                            <a href="{{ route('main.index') }}"><img src="{{getImageFile(get_option('app_logo'))}}" alt="logo"></a>
-                        </div>
-                        <p>{{ __(get_option('sign_up_left_text')) }}</p>
-                        @if(get_option('sign_up_left_image'))
-                            <div class="sign-up-bottom-img">
-                                <img src="{{getImageFile(get_option('sign_up_left_image'))}}" alt="hero" class="img-fluid">
+            <div class="col-md-12">
+                    <div class="sign-up-right-content" style="position: relative; overflow: hidden; opacity: 4.8;">
+                        <video autoplay loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+                            <source src="{{ asset('uploads/video/hacamy-bg-video.mp4') }}" type="video/mp4">
+                        </video>
+                        <form method="POST" action="{{ route('forget-password.email') }}" style="background-color: #fff; padding: 30px; border-radius: 10px;">
+                            <div class="sign-up-top-logo text-center">
+                                <a href="{{ route('main.index') }}"><img src="{{getImageFile(get_option('app_black_logo'))}}" alt="logo"></a>
                             </div>
-                        @endif
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="sign-up-right-content bg-white">
-                        <form action="{{ route('forget-password.email') }}" method="post">
                             @csrf
 
-                            <h5 class="mb-1">{{ __(get_option('forgot_title')) }}</h5>
+                            
                             <div class="forgot-pass-text mb-25 mt-3">
                                 <p class="mb-2">{{ __(get_option('forgot_subtitle')) }}</p>
                             </div>

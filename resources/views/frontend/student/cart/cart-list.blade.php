@@ -47,7 +47,7 @@
                         <div class="cart-page-title d-flex justify-content-between align-items-center mb-3">
                             <h3 class="font-18">{{ @$carts->count() }} {{__('Items In Card')}}</h3>
                             <a href="{{ route('courses') }}"
-                                class="text-decoration-underline font-14 font-medium">{{__('Continue Buying')}}</a>
+                                class="text-decoration-underline font-14 font-medium">{{__('Buy More Courses')}}</a>
                         </div>
                         <div class="table-responsive">
                             <table class="table bg-white wishlist-table">
@@ -250,7 +250,7 @@
                     <div class="order-summary-box bg-white">
                         <form method="POST" action="{{route('student.goToCheckout')}}">
                             @csrf
-                            <h3 class="font-18 mb-2">{{__('Order Summery')}}</h3>
+                            <h3 class="font-18 mb-2">{{__('Order Summary')}}</h3>
                             <div class="cart-order-summary-item-box d-flex justify-content-between align-items-center">
                                 <span>items ({{ $carts->count() }}) :</span>
                                 <span>
@@ -265,7 +265,7 @@
 
                                 </span>
                             </div>
-                            <div class="cart-order-summary-item-box d-flex justify-content-between align-items-center">
+                            <div class="cart-order-summary-item-box d-flex justify-content-between align-items-center d-none">
                                 <span>{{__('Platform Charge')}} ({{get_option('platform_charge')}}%):</span>
                                 <span>
                                     @if(get_currency_placement() == 'after')
@@ -278,7 +278,7 @@
                                 </span>
                             </div>
 
-                            <div class="order-summary-box-note d-flex my-4">
+                            <div class="order-summary-box-note d-flex my-4 d-none">
                                 <div class="flex-shrink-0">
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -337,7 +337,7 @@
                             </div>
                             @if(count($carts) > 0)
                             <div class="order-summary-btns">
-                                <input type="submit" class="theme-btn theme-button1 w-100 justify-content-center mt-3"
+                                <input type="submit" class="theme-btn theme-button w-100 justify-content-center mt-3"
                                     value="{{ __("Proceed to Checkout") }}" name="proceed_to_checkout">
                                 @if(get_option('wallet_checkout_system', 0))
                                 <input type="submit" class="theme-btn btn-orange w-100 justify-content-center mt-3"

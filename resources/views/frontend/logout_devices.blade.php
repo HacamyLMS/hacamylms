@@ -12,13 +12,13 @@
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12">
                         <div class="page-banner-content text-center">
-                            <h3 class="page-banner-heading color-heading pb-15">{{__('List of all device from which you have logged in')}}</h3>
+                            <h3 class="page-banner-heading color-heading pb-15">{{__('Logged-in Devices')}}</h3>
 
                             <!-- Breadcrumb Start-->
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb justify-content-center">
                                     <li class="breadcrumb-item font-14"><a href="{{url('/')}}">{{__('Home')}}</a></li>
-                                    <li class="breadcrumb-item font-14 active" aria-current="page">{{__('My login devices')}}</li>
+                                    <li class="breadcrumb-item font-14 active" aria-current="page">{{__('Logged devices')}}</li>
                                 </ol>
                             </nav>
                             <!-- Breadcrumb End-->

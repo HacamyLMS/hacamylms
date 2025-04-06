@@ -4,7 +4,7 @@
             <thead>
             <tr>
                 <th scope="col" class="color-gray font-15 font-medium">{{__('Course')}}</th>
-                <th scope="col" class="color-gray font-15 font-medium">{{__('Author')}}</th>
+                <th scope="col" class="color-gray font-15 font-medium">{{__('Tutor')}}</th>
                 <th scope="col" class="color-gray font-15 font-medium">{{__('Price')}}</th>
                 <th scope="col" class="color-gray font-15 font-medium">{{__('Order ID')}}</th>
                 <th scope="col" class="color-gray font-15 font-medium">{{__('Validity')}}</th>
@@ -97,7 +97,7 @@
     <!-- If there is no data Show Empty Design Start -->
     <div class="empty-data">
         <img src="{{ asset('frontend/assets/img/empty-data-img.png') }}" alt="img" class="img-fluid">
-        <h4 class="my-3">{{ __('Empty Course') }}</h4>
+        <h4 class="my-3">{{ __('No Course Yet!') }}</h4>
     </div>
     <!-- If there is no data Show Empty Design End -->
 @endif

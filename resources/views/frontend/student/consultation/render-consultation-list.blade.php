@@ -3,7 +3,7 @@
         <table class="table bg-white my-courses-page-table stu-consult-tbl">
             <thead>
             <tr>
-                <th scope="col" class="color-gray font-15 font-medium">{{__('Author')}}</th>
+                <th scope="col" class="color-gray font-15 font-medium">{{__('Tutor')}}</th>
                 <th scope="col" class="color-gray font-15 font-medium">{{__('Details')}}</th>
                 <th scope="col" class="color-gray font-15 font-medium">{{__('Price')}}</th>
                 <th scope="col" class="color-gray font-15 font-medium">{{__('Order Id')}}</th>
@@ -98,7 +98,7 @@
                             @if(@$orderItem->bookingHistory->type == 1)
                                 <div class="booking-history-details-wrap align-items-center p-20">
                                     <div class="booking-history-left">
-                                        <h6 class="font-15">{{ __('Instructor Details') }}</h6>
+                                        <h6 class="font-15">{{ __('Tutor Details') }}</h6>
                                         <hr>
                                         <p><h6 class="font-15 d-inline">{{ __('Name') }}</h6>: {{ @$orderItem->bookingHistory->instructorUser->instructor->full_name }}</p>
                                         <p><h6 class="font-15 d-inline">{{ __('Email') }}</h6>: {{ @$orderItem->bookingHistory->instructorUser->email }}</p>
@@ -147,7 +147,7 @@
                                                     <option value="jitsi" {{ @$orderItem->bookingHistory->meeting_host_name == 'jitsi' ? 'selected' : null }}>Jitsi</option>
                                                 @endif
                                                 @if(@$orderItem->bookingHistory->meeting_host_name == 'gmeet')
-                                                    <option value="gmeet" {{ @$orderItem->bookingHistory->meeting_host_name == 'gmeet' ? 'selected' : null }}>Gmeet</option>
+                                                    <option value="gmeet" {{ @$orderItem->bookingHistory->meeting_host_name == 'gmeet' ? 'selected' : null }}>Google Meet</option>
                                                 @endif
                                                 @if(@$orderItem->bookingHistory->meeting_host_name == 'agora')
                                                     <option value="agora" {{ @$orderItem->bookingHistory->meeting_host_name == 'agora' ? 'selected' : null }}>Agora In App Video</option>
@@ -240,7 +240,7 @@
     <!-- If there is no data Show Empty Design Start -->
     <div class="empty-data">
         <img src="{{ asset('frontend/assets/img/empty-data-img.png') }}" alt="img" class="img-fluid">
-        <h4 class="my-3">{{ __('Empty Consultation') }}</h4>
+        <h4 class="my-3">{{ __('No Consultation') }}</h4>
     </div>
     <!-- If there is no data Show Empty Design End -->
 @endif

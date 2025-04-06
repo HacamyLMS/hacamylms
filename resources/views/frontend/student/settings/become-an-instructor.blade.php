@@ -9,13 +9,13 @@
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-12">
                             <div class="page-banner-content text-center">
-                                <h3 class="page-banner-heading text-white pb-15">{{__('Become an Instructor')}}</h3>
+                                <h3 class="page-banner-heading text-white pb-15">{{__('Switch Account Role')}}</h3>
 
                                 <!-- Breadcrumb Start-->
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb justify-content-center">
                                         <li class="breadcrumb-item font-14"><a href="{{ url('/') }}">{{__('Home')}}</a></li>
-                                        <li class="breadcrumb-item font-14 active" aria-current="page">{{__('Become an Instructor')}}</li>
+                                        <li class="breadcrumb-item font-14 active" aria-current="page">{{__('Switch Role')}}</li>
                                     </ol>
                                 </nav>
                                 <!-- Breadcrumb End-->
@@ -49,8 +49,8 @@
                 </div>
                 <div class="row">
                     <div class="d-flex justify-content-sm-center become-instructor-call-to-action align-items-center mt-50">
-                        <button class="theme-btn theme-button1 theme-button3 mr-30" data-bs-toggle="modal" data-bs-target="#becomeAnInstructor"> {{__('Become an Instructor')}} <i data-feather="arrow-right"></i></button>
-                        <a href="{{route('contact')}}" class="text-decoration-underline font-15 font-medium"> {{__('Contact With Us')}}</a>
+                        <button class="theme-btn theme-button1 theme-button3 mr-30" data-bs-toggle="modal" data-bs-target="#becomeAnInstructor"> {{__('Get Tutor Role')}} <i data-feather="arrow-right"></i></button>
+                        <a href="{{route('contact')}}" class="text-decoration-underline font-15 font-medium"> {{__('Contact Us')}}</a>
                     </div>
                 </div>
             </div>
@@ -85,11 +85,27 @@
         </section>
         <!-- Become an instructor Procedures Area End -->
 
-        <!-- Counter Area Start -->
-        <section class="counter-area bg-light section-t-space">
+        <!-- Become Organization Call to action Area Start -->
+        <section class="become-instructor-call-to-action section-t-space text-center" style="padding-top: 0px !important;">
             <div class="container">
                 <div class="row">
+                    <div class="col-12">
+                        <h3 class="section-heading">{{ __(get_option('app_instructor_footer_title')) }}</h3>
+                        <div class="col-lg-6 mx-auto">
+                            <p class="font-20 mb-4">{{ __(get_option('app_instructor_footer_subtitle')) }}</p>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="{{route('contact')}}" target="_blank" class="theme-btn theme-button1 theme-button3 mr-30"> {{__('Get Organization Role')}} <i data-feather="arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Counter Area Start -->
+        <section class="counter-area bg-black section-t-space">
+            <div class="container">
+                <div class="row">
                     <!-- Counter Item start-->
                     <div class="col-md-6 col-lg-3">
                         <div class="counter-item d-flex align-items-center">
@@ -97,8 +113,8 @@
                                 <img src="{{asset('frontend/assets/img/icons-svg/counter-1.png')}}" alt="img">
                             </div>
                             <div class="flex-grow-1 ms-3 counter-content">
-                                <h4 class="count-content"><span class="counter">{{ @$total_students }}</span>+</h4>
-                                <p class="font-14 font-medium color-gray mt-2">{{ __('Students') }}</p>
+                                <h4 class="count-content" style="color: #fff !important;"><span class="counter">{{ @$total_students }}</span>+</h4>
+                                <p class="font-14 font-medium color-gray mt-2" style="color: #fff !important;">{{ __('Students') }}</p>
                             </div>
                         </div>
                     </div>
@@ -111,8 +127,8 @@
                                 <img src="{{asset('frontend/assets/img/icons-svg/counter-2.png')}}" alt="img">
                             </div>
                             <div class="flex-grow-1 ms-3 counter-content">
-                                <h4 class="count-content"><span class="counter">{{ @$total_enrollments }}</span></h4>
-                                <p class="font-14 font-medium color-gray mt-2">{{ __('Enrollments') }}</p>
+                                <h4 class="count-content" style="color: #fff !important;"><span class="counter">{{ @$total_enrollments }}</span></h4>
+                                <p class="font-14 font-medium color-gray mt-2" style="color: #fff !important;">{{ __('Enrollments') }}</p>
                             </div>
                         </div>
                     </div>
@@ -125,8 +141,8 @@
                                 <img src="{{asset('frontend/assets/img/icons-svg/counter-3.png')}}" alt="img">
                             </div>
                             <div class="flex-grow-1 ms-3 counter-content">
-                                <h4 class="count-content"><span class="counter">{{ @$total_instructors }}</span>+</h4>
-                                <p class="font-14 font-medium color-gray mt-2">{{ __('Instructor') }}</p>
+                                <h4 class="count-content" style="color: #fff !important;"><span class="counter">{{ @$total_instructors }}</span>+</h4>
+                                <p class="font-14 font-medium color-gray mt-2" style="color: #fff !important;">{{ __('Instructor') }}</p>
                             </div>
                         </div>
                     </div>
@@ -138,9 +154,9 @@
                             <div class="flex-shrink-0 counter-img-wrap">
                                 <img src="{{asset('frontend/assets/img/icons-svg/counter-4.png')}}" alt="img">
                             </div>
-                            <div class="flex-grow-1 ms-3 counter-content">
-                                <h4 class="count-content"><span class="counter">100</span>%</h4>
-                                <p class="font-14 font-medium color-gray mt-2">{{ __('Satisfaction') }}</p>
+                            <div class="flex-grow-1 ms-3 counter-content" style="color: #fff;">
+                                <h4 class="count-content" style="color: #fff !important;"><span class="counter">100</span>%</h4>
+                                <p class="font-14 font-medium color-gray mt-2" style="color: #fff !important;">{{ __('Satisfaction') }}</p>
                             </div>
                         </div>
                     </div>
@@ -156,12 +172,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="section-heading">{{ __(get_option('app_instructor_footer_title')) }}</h3>
+                        <h3 class="section-heading">Have Questions About Switching Roles?</h3>
                         <div class="col-lg-6 mx-auto">
-                            <p class="font-20 mb-4">{{ __(get_option('app_instructor_footer_subtitle')) }}</p>
+                            <p class="font-20 mb-4">Our support team is here to guide you through the process.</p>
                             <div class="d-flex justify-content-center align-items-center">
-                                <button class="theme-btn theme-button1 theme-button3 mr-30" data-bs-toggle="modal" data-bs-target="#becomeAnInstructor"> {{__('Become an Instructor')}} <i data-feather="arrow-right"></i></button>
-                                <a href="{{route('contact')}}" target="_blank" class="text-decoration-underline font-15 font-medium">{{__('Contact With Us')}}</a>
+                                <a href="{{route('contact')}}" target="_blank" class="theme-btn theme-button1 theme-button3 mr-30">Contact Support<i data-feather="arrow-right"></i></a>
+                                <a href="{{route('support-ticket-faq')}}" target="_blank" class="text-decoration-underline font-15 font-medium">Visit Help Center</a>
                             </div>
                         </div>
                     </div>
@@ -170,7 +186,7 @@
         </section>
     </div>
 
-    <!-- Become an Instructor Modal Start -->
+    <!-- Become a tutor Modal Start -->
     <div class="modal fade becomeAnInstructorModal" id="becomeAnInstructor" tabindex="-1" aria-labelledby="becomeAnInstructorLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -195,24 +211,23 @@
                         
                         <div class="row mb-30">
                             <div class="col-md-12">
-                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('Account Type')}}</label>
-                                <select class="form-control"  name="account_type">
-                                    <option value="{{ USER_ROLE_INSTRUCTOR }}">{{ __('Instructor') }}</option>
-                                    <option value="{{ USER_ROLE_ORGANIZATION }}">{{ __('Organization') }}</option>
-                                </select>
-                            </div>
-                            @if ($errors->has('account_type'))
-                                <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('account_type') }}</span>
-                            @endif
-                        </div>
-
-                        <div class="row mb-30">
-                            <div class="col-md-12">
                                 <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('Last Name')}}</label>
                                 <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Write your last name" value="{{ @Auth::user()->student->last_name }}" required>
                             </div>
                             @if ($errors->has('last_name'))
                                 <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('last_name') }}</span>
+                            @endif
+                        </div>
+
+                        <div class="row mb-30">
+                            <div class="col-md-12">
+                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('Account Type')}}</label>
+                                <select class="form-control"  name="account_type">
+                                    <option value="{{ USER_ROLE_INSTRUCTOR }}">{{ __('Tutor') }}</option>
+                                </select>
+                            </div>
+                            @if ($errors->has('account_type'))
+                                <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('account_type') }}</span>
                             @endif
                         </div>
 
@@ -251,7 +266,7 @@
                                 <label class="label-text-title color-heading font-medium font-16 mb-2">CV</label>
                                 <div class="create-assignment-upload-files">
                                     <input type="file" name="cv_file" accept="application/pdf"  class="form-control" />
-                                    <p class="font-14 color-heading text-center mt-2 color-gray">No file selected (PDF) <span class="d-block">Maximum Image Upload Size is <span class="color-heading">5mb</span></span> </p>
+                                    <p class="font-14 color-heading text-center mt-2 color-gray">No file selected (PDF) <span class="d-block">Maximum File Upload Size is <span class="color-heading">5mb</span></span> </p>
                                 </div>
                                 @if ($errors->has('cv_file'))
                                     <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('cv_file') }}</span>
@@ -271,7 +286,7 @@
 
                     </div>
                     <div class="modal-footer d-flex justify-content-center align-items-center">
-                        <button type="submit" class="theme-btn theme-button1 default-hover-btn">{{__('Submit')}}</button>
+                        <button type="submit" class="theme-btn theme-button1 default-hover-btn" style="border: 2px black solid;">{{__('Submit')}}</button>
                     </div>
                 </form>
             </div>

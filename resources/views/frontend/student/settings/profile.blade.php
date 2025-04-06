@@ -7,12 +7,12 @@
         <!-- Page Header End -->
 
         <!-- Student Profile Page Area Start -->
-        <section class="student-profile-page">
+        <section class="student-profile-page bg-black">
             <div class="container">
                 <div class="student-profile-page-content">
                     <div class="row">
                         <div class="col-12">
-                            <div class="row bg-white">
+                            <div class="row bg-white" style="border-radius: 1.5rem;">
                                 <!-- Student Profile Left part -->
                                 @include('frontend.student.settings.sidebar')
 

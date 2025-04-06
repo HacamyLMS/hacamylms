@@ -12,13 +12,13 @@
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12">
                         <div class="page-banner-content text-center">
-                            <h3 class="page-banner-heading color-heading pb-15">{{__('My Learning')}}</h3>
+                            <h3 class="page-banner-heading color-heading pb-15">{{__('Student Dashboard')}}</h3>
 
                             <!-- Breadcrumb Start-->
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb justify-content-center">
                                     <li class="breadcrumb-item font-14"><a href="{{url('/')}}">{{__('Home')}}</a></li>
-                                    <li class="breadcrumb-item font-14 active" aria-current="page">{{__('My Learning')}}</li>
+                                    <li class="breadcrumb-item font-14 active" aria-current="page">{{__('Student Dashboard')}}</li>
                                 </ol>
                             </nav>
                             <!-- Breadcrumb End-->
@@ -39,7 +39,7 @@
             <div class="col-12">
                 <div class="courses-filter-bar d-flex align-items-start justify-content-between">
                     <div class="filter-bar-left">
-                        <a href="{{ route('courses') }}" class="theme-btn theme-button1 theme-button3">{{__('Browse More Course')}}</a>
+                        <a href="{{ route('courses') }}" class="theme-btn theme-button1 theme-button3">{{__('Explore Courses')}}</a>
                     </div>
 
                     <div class="filter-bar-right">

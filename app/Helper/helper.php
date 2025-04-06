@@ -858,10 +858,14 @@ if (!function_exists('setEnrollment')) {
     }
 }
 
-
 if (!function_exists('getUserRoleRelation')) {
     function getUserRoleRelation($user)
     {
+        // Check if user is null or not an object
+        if ($user === null || !is_object($user)) {
+            return 'student'; // or whatever default you prefer
+        }
+
         if ($user->role == USER_ROLE_INSTRUCTOR) {
             $return = 'instructor';
         } elseif ($user->role == USER_ROLE_ORGANIZATION) {
