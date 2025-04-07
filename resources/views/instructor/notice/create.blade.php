@@ -2,7 +2,7 @@
 
 @section('breadcrumb')
     <div class="page-banner-content text-center">
-        <h3 class="page-banner-heading text-white pb-15"> {{__('Add_notice')}} </h3>
+        <h3 class="page-banner-heading text-white pb-15"> {{__('Add Notice')}} </h3>
 
         <!-- Breadcrumb Start-->
         <nav aria-label="breadcrumb">
@@ -30,7 +30,7 @@
                 @csrf
               <div class="row mb-30">
                 <div class="col-md-12">
-                    <label class="label-text-title color-heading font-medium font-16 mb-3">{{__('Notice Topic')}}</label>
+                    <label class="label-text-title color-heading font-medium font-16 mb-3">{{__('Notice Title')}}</label>
                     <input type="text" name="topic" class="form-control" placeholder="{{__('Notice Topic')}}" required value="{{ old('topic') }}">
                     @if ($errors->has('topic'))
                         <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('topic') }}</span>
@@ -48,8 +48,8 @@
               </div>
 
               <div>
-                <a href="{{ route('notice-board.index', $course->uuid) }}" class="theme-btn theme-button3 quiz-back-btn default-hover-btn">{{__('Back')}}</a>
-                <button type="submit" class="theme-btn theme-button1 default-hover-btn">{{__('Create')}}</button>
+                <a href="{{ route('notice-board.index', $course->uuid) }}" class="theme-btn theme-button3 quiz-back-btn">{{__('Back')}}</a>
+                <button type="submit" class="theme-btn theme-button1">{{__('Create')}}</button>
               </div>
             </form>
 

@@ -31,12 +31,12 @@
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-12">
                             <div class="page-banner-content text-center">
-                                <h3 class="page-banner-heading text-white pb-15">{{ __('Instructor Consultation') }}</h3>
+                                <h3 class="page-banner-heading text-white pb-15">{{ __('Tutor Consultation') }}</h3>
                                 <!-- Breadcrumb Start-->
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb justify-content-center">
                                         <li class="breadcrumb-item font-14"><a href="{{ url('/') }}">{{ __('Home') }}</a></li>
-                                        <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('Instructor Consultation') }}</li>
+                                        <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('Tutor Consultation') }}</li>
                                     </ol>
                                 </nav>
                                 <!-- Breadcrumb End-->
@@ -70,8 +70,8 @@
                                         <div class="filter-box-short-icon color-gray font-15"><p>{{ __('Sort By') }}:</p></div>
                                         <select class="form-select form-select-sm filterSortBy">
                                             <option value="1" selected>{{ __('Default') }}</option>
-                                            <option value="2">{{ __('Newest Instructor') }}</option>
-                                            <option value="3">{{ __('Oldest Instructor') }}</option>
+                                            <option value="2">{{ __('Newest Tutor') }}</option>
+                                            <option value="3">{{ __('Oldest Tutor') }}</option>
                                         </select>
                                     </div>
                                 </div>

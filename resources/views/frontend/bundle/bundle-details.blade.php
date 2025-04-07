@@ -67,7 +67,7 @@ $relation = getUserRoleRelation($bundle->user);
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <a class="nav-link" id="Instructor-tab" data-bs-toggle="tab" href="#Instructor" role="tab" aria-controls="Instructor"
-                                           aria-selected="false">{{ __('Instructor') }}</a>
+                                           aria-selected="false">{{ __('Tutor') }}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -119,9 +119,9 @@ $relation = getUserRoleRelation($bundle->user);
                                     </ul>
                                 </div>
 
-                                <button class="theme-btn theme-button1 theme-button3 w-100 mb-30 addToCart" data-bundle_id="{{ $bundle->id }}"
+                                <button class="theme-button1 w-100 mb-30 addToCart" data-bundle_id="{{ $bundle->id }}"
                                         data-route="{{ route('student.addToCart') }}">
-                                    {{ __('Enroll the bundle') }}<i data-feather="arrow-right"></i>
+                                    {{ __('Buy bundle Course') }}<i data-feather="arrow-right"></i>
                                 </button>
 
                                 <div class="course-info-box-wishlist-btns d-flex mb-30">

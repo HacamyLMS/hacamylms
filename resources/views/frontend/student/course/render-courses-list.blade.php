@@ -6,7 +6,6 @@
                 <th scope="col" class="color-gray font-15 font-medium">{{__('Course')}}</th>
                 <th scope="col" class="color-gray font-15 font-medium">{{__('Tutor')}}</th>
                 <th scope="col" class="color-gray font-15 font-medium">{{__('Price')}}</th>
-                <th scope="col" class="color-gray font-15 font-medium">{{__('Order ID')}}</th>
                 <th scope="col" class="color-gray font-15 font-medium">{{__('Validity')}}</th>
                 <th scope="col" class="color-gray font-15 font-medium">{{__('Progress')}}</th>
                 <th scope="col" class="color-gray font-15 font-medium">{{__('Action')}}</th>
@@ -63,7 +62,6 @@
                             {{ __('Free') }}
                         @endif
                     </td>
-                    <td class="wishlist-price font-15 color-heading">{{@$enrollment->order->order_number}}</td>
                     <td class="font-15 color-heading">{{ (checkIfExpired($enrollment)) ? (checkIfLifetime($enrollment->end_date) ? __('Lifetime') : \Carbon\Carbon::now()->diffInDays($enrollment->end_date, false).' '.__('days left') ) : __('Expired') }}</td>
 
                     <td class="wishlist-price font-15 color-heading">

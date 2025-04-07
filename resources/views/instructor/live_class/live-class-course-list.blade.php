@@ -31,7 +31,6 @@
                                 <tr>
                                     <th scope="col">{{ __('Course Name') }}</th>
                                     <th scope="col">{{ __('Upcoming Live Class') }}</th>
-                                    <th scope="col">{{ __('Past Live Class') }}</th>
                                     <th scope="col">{{ __('Action') }}</th>
                                 </tr>
                                 </thead>
@@ -47,12 +46,10 @@
                                             </div>
                                         </td>
                                         <td>{{ $course->total_upcoming }}</td>
-                                        <td>{{ $course->total_past }}</td>
                                         <td>
                                             <div class="notice-board-action-btns">
                                                 <a href="{{ route('live-class.create', [$course->uuid]) }}" class="theme-btn theme-button1 default-hover-btn">{{ __('Create Live Class') }}</a>
-                                                <a href="{{ route('live-class.index', [$course->uuid]) }}" class="theme-btn theme-button1 green-theme-btn default-hover-btn">{{ __('View') }}
-                                                    List</a>
+                                                <a href="{{ route('live-class.index', [$course->uuid]) }}" class="theme-btn theme-button1 green-theme-btn default-hover-btn">{{ __('View List') }}</a>
                                             </div>
                                         </td>
                                     </tr>

@@ -46,7 +46,7 @@
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" class="theme-btn default-hover-btn theme-button1">{{__('Search')}}</button>
+                        <button type="submit" class="theme-button1">{{__('Search')}}</button>
                       </form>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                                         <div class="red-blue-action-btns">
                                             <button type="button" data-country="{{@$enrollment->user->student->country->country_name}}" data-image="{{ getImageFile($enrollment->user->image) }}" data-item="{{ $enrollment }}"
                                                     data-purchase_date="{{ @$enrollment->start_date }}" data-bs-toggle="modal" data-bs-target="#allStudentViewModal"
-                                                    class="theme-btn theme-button1 green-theme-btn default-hover-btn viewStudent">{{ __('View') }}</button>
+                                                    class="theme-button1 viewStudent">{{ __('View') }}</button>
                                         </div>
                                     </td>
                                 </tr>
@@ -100,7 +100,7 @@
                     <!-- If there is no data Show Empty Design Start -->
                     <div class="empty-data">
                         <img src="{{ asset('frontend/assets/img/empty-data-img.png') }}" alt="img" class="img-fluid">
-                        <h5 class="my-3">{{__('Empty Student')}}</h5>
+                        <h5 class="my-3">{{__('No Enrollment')}}</h5>
                     </div>
                     <!-- If there is no data Show Empty Design End -->
                 @endif

@@ -5,20 +5,19 @@
     <!-- Page Header Start -->
     <header class="page-banner-header blank-page-banner-header gradient-bg position-relative">
         <div class="section-overlay">
-            <div class="blank-page-banner-wrap">
+            <div class="blank-page-banner-wrap bg-black">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-12">
                             <div class="page-banner-content text-center">
-                                <h3 class="page-banner-heading color-heading pb-15"> {{__('My Beneficiary')}} </h3>
+                                <h3 class="page-banner-heading color-heading pb-15" style="color: #fff;"> {{__('Payment Details')}} </h3>
 
                                 <!-- Breadcrumb Start-->
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb justify-content-center">
-                                        <li class="breadcrumb-item font-14"><a
+                                        <li class="breadcrumb-item font-14" style="color: #fff;"><a
                                                 href="{{route('affiliate.dashboard')}}">{{__('Dashboard')}}</a></li>
-                                        <li class="breadcrumb-item font-14 active" aria-current="page">{{__('My
-                                            Beneficiary')}}</li>
+                                        <li class="breadcrumb-item font-14 active" aria-current="page" style="color: #fff;">{{__('Payment Details')}}</li>
                                     </ol>
                                 </nav>
                                 <!-- Breadcrumb End-->
@@ -30,24 +29,23 @@
         </div>
     </header>
     <!-- Page Header End -->
-    <section class="wishlist-page-area">
+    <section class="wishlist-page-area bg-black">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-10">
-                    <div class="affiliator-dashboard-wrap bg-white">
+                    <div class="affiliator-dashboard-wrap bg-white" style="border-radius: 1.5rem;">
                         <div class="row affiliator-dashboard-title align-items-center border-bottom mb-30 pb-20 mx-0">
                             <div class="col-md-12 col-lg-5 col-xl-5 px-0">
-                                <h5>{{ __('Beneficiary For Withdraw') }}</h5>
+                                <h5>{{ __('Only Accounts with your Legal Names will be Honoured.') }}</h5>
                             </div>
                             <div class="col-md-12 col-lg-7 col-xl-7 px-0">
                                 <div class="affiliate-top-title-btns text-end">
                                     <button type="button" class="theme-btn theme-button1 default-hover-btn"
                                         data-bs-toggle="modal" data-bs-target="#beneficiaryModal">
-                                        {{ __('Add Beneficiary') }}
+                                        {{ __('Add Details') }}
                                     </button>
                                     <a href=" {{ route('wallet./') }}"
-                                        class="theme-btn theme-button1 green-theme-btn default-hover-btn">GoTo
-                                        Wallet</a>
+                                        class="theme-btn theme-button1 green-theme-btn default-hover-btn">Open Wallet</a>
                                 </div>
                             </div>
                         </div>
@@ -111,7 +109,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header border-0">
-                <h6 class="font-medium">{{ __('Add Beneficiary') }}</h6>
+                <h6 class="font-medium">{{ __('Add Details') }}</h6>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -119,10 +117,10 @@
                     @csrf
                     <div class="row">
                         <div class="col-md-12 mb-30">
-                            <label class="font-medium font-15 color-heading">{{ __('Beneficiary Name') }}<span
+                            <label class="font-medium font-15 color-heading">{{ __('Legal Names') }}<span
                                     class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="beneficiary_name"
-                                placeholder="{{ __('Beneficiary Name') }}">
+                                placeholder="{{ __('Full Legal Names') }}">
                         </div>
                     </div>
                     <div class="row">
@@ -130,8 +128,6 @@
                             <label class="font-medium font-15 color-heading">{{ __('Type') }}<span
                                     class="text-danger">*</span></label>
                             <select name="type" class="form-select">
-                                <option value="{{ BENEFICIARY_CARD }}">{{ getBeneficiaryName(BENEFICIARY_CARD) }}
-                                </option>
                                 <option value="{{ BENEFICIARY_BANK }}">{{ getBeneficiaryName(BENEFICIARY_BANK) }}
                                 </option>
                                 <option value="{{ BENEFICIARY_PAYPAL }}">{{ getBeneficiaryName(BENEFICIARY_PAYPAL) }}
@@ -139,76 +135,13 @@
                             </select>
                         </div>
                     </div>
-                    <div class="benificary-type-block" id="beneficiary-{{ BENEFICIARY_CARD }}">
-                        <div class="row">
-                            <div class="col-md-12 mb-30">
-                                <label class="font-medium font-15 color-heading">{{ __('Card
-                                    number') }}<span class="text-danger">*</span></label>
-                                <input type="text" name="card_number" class="form-control"
-                                    placeholder="{{ __('1245 2154 2154 215') }}">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 mb-30">
-                                <label class="font-medium font-15 color-heading">{{ __('Card
-                                    Holder Name') }}<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="card_holder_name"
-                                    placeholder="{{ __('Your name') }}">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-30">
-                                <label class="font-medium font-15 color-heading">{{ __('Month')
-                                    }}<span class="text-danger">*</span></label>
-                                <select name="expire_month" class="form-select">
-                                    <option value="">{{ __('Select Month') }}</option>
-                                    <option value="1">{{
-                                        __('January') }}</option>
-                                    <option value="2">{{
-                                        __('February') }}</option>
-                                    <option value="3">{{
-                                        __('March') }}</option>
-                                    <option value="4">{{
-                                        __('April') }}</option>
-                                    <option value="5">{{
-                                        __('May') }}</option>
-                                    <option value="6">{{
-                                        __('June') }}</option>
-                                    <option value="7">{{
-                                        __('July') }}</option>
-                                    <option value="8">{{
-                                        __('August') }}</option>
-                                    <option value="9">{{
-                                        __('September') }}</option>
-                                    <option value="10">{{
-                                        __('October') }}</option>
-                                    <option value="11">{{
-                                        __('November') }}</option>
-                                    <option value="12">{{
-                                        __('December') }}</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 mb-30">
-                                <label class="font-medium font-15 color-heading">{{ __('Year')
-                                    }}<span class="text-danger">*</span></label>
-                                <select name="expire_year" class="form-select">
-                                    <option value="">{{ __('Select Year') }}</option>
-                                    @for($year = \Carbon\Carbon::now()->format('Y'); $year < \Carbon\Carbon::now()->
-                                        addYear(20)->format('Y');
-                                        $year++)
-                                        <option value="{{$year}}">{{$year}}</option>
-                                        @endfor
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="benificary-type-block d-none" id="beneficiary-{{ BENEFICIARY_BANK }}">
+                    
+                    <div class="benificary-type-block" id="beneficiary-{{ BENEFICIARY_BANK }}">
                         <div class="row">
                             <div class="col-md-12 mb-30">
                                 <label class="font-medium font-15 color-heading">{{ __('Bank Name') }}<span
                                         class="text-danger">*</span></label>
-                                <input type="text" name="bank_name" class="form-control"
+                                <input type="text" name="bank_name" class="form-control" required
                                     placeholder="{{ __('EX. Switch Bank') }}">
                             </div>
                         </div>
@@ -216,7 +149,7 @@
                             <div class="col-md-12 mb-30">
                                 <label class="font-medium font-15 color-heading">{{ __('Account Name') }}<span
                                         class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="bank_account_name"
+                                <input type="text" class="form-control" name="bank_account_name" required
                                     placeholder="{{ __('Mr. XYZ') }}">
                             </div>
                         </div>
@@ -224,14 +157,13 @@
                             <div class="col-md-12 mb-30">
                                 <label class="font-medium font-15 color-heading">{{ __('Account Number') }}<span
                                         class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="bank_account_number"
+                                <input type="text" class="form-control" name="bank_account_number" required
                                     placeholder="{{ __('0000000000') }}">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12 mb-30">
-                                <label class="font-medium font-15 color-heading">{{ __('Routing Number') }}<span
-                                        class="text-danger">*</span></label>
+                                <label class="font-medium font-15 color-heading">{{ __('Routing Number') }}</label>
                                 <input type="text" class="form-control" name="bank_routing_number"
                                     placeholder="{{ __('Ex. 546484') }}">
                             </div>

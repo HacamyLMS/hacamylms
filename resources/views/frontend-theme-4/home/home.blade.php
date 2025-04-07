@@ -192,6 +192,9 @@
                             <div class="row justify-content-between align-items-center rg-20">
                                 <div class="col-lg-8">
                                     <div class="d-flex align-items-lg-center align-items-start g-26">
+                                        <div class="icon d-flex max-w-60 flex-shrink-0">
+                                            <img src="{{ getImageFile(get_option('course_logo')) }}" alt=""/>
+                                        </div>
                                         <div class="content">
                                             <h4 class="title">{{ __(get_option('course_title')) }}</h4>
                                             <p class="text">{{ __(get_option('course_subtitle')) }}</p>
@@ -393,7 +396,7 @@
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="d-flex justify-content-lg-end">
-                                        <a href="{{ route('bundles') }}" class="btn-outline-lan">{{ __('View All') }} <i
+                                        <a href="{{ route('bundles') }}" class="btn-outline-lan">{{ __('View All Bundles') }} <i
                                                 class="fa fa-arrow-right"></i>
                                         </a>
                                     </div>

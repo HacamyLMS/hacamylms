@@ -72,8 +72,8 @@
                         <!-- If there is no data Show Empty Design End -->
                     @endif
                     <!-- Add Notice Button Start -->
-                    <a href="{{ route('notice-board.course-notice.index') }}" class="theme-btn theme-button3 quiz-back-btn default-hover-btn">{{__('Back')}}</a>
-                    <a href="{{ route('notice-board.create', $course->uuid) }}" class="add-resources-btn theme-btn theme-button1 default-hover-btn">{{__('Add Notice')}}</a>
+                    <a href="{{ route('notice-board.course-notice.index') }}" class="theme-btn theme-button3 quiz-back-btn">{{__('Back')}}</a>
+                    <a href="{{ route('notice-board.create', $course->uuid) }}" class="add-resources-btn theme-btn theme-button1">{{__('Add Notice')}}</a>
                     <!-- Add Notice Button End -->
 
                 </div>

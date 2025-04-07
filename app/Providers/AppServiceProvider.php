@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Beneficiary;
 use App\Models\CartManagement;
 use App\Models\Category;
 use App\Models\Language;
@@ -127,6 +128,16 @@ class AppServiceProvider extends ServiceProvider
                     }
                     $data['totalAdminNotifications'] = $count;
                     $view->with($data);
+                });
+
+                View::composer([
+                    'instructor.finance.withdraw-history-index',
+                    'instructor.finance.analysis-index' // Add any other views that need beneficiaries
+                ], function ($view) {
+                    $view->with('beneficiaries', Beneficiary::where([
+                        'user_id' => auth()->id(),
+                        'status' => 1 // Assuming 1 = approved status
+                    ])->get());
                 });
             }
 

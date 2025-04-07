@@ -6,7 +6,7 @@
             <div class="accordion-item course-sidebar-accordion-item">
                 <h2 class="accordion-header course-sidebar-title" id="panelsStayOpen-headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
-                        {{ __('Search Instructor Name') }}
+                        {{ __('Search Tutor\'s Name') }}
                     </button>
                 </h2>
                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">

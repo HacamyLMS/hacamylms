@@ -8,8 +8,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb justify-content-center">
             <li class="breadcrumb-item font-14"><a href="{{route('instructor.dashboard')}}">{{__('Dashboard')}}</a></li>
-            <li class="breadcrumb-item font-14"><a href="{{ route('live-class.course-live-class.index') }}">{{ __('Live
-                    Class Course List') }}</a></li>
+            <li class="breadcrumb-item font-14"><a href="{{ route('live-class.course-live-class.index') }}">{{ __('Live Class Course List') }}</a></li>
             <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('Live Class List') }}</li>
         </ol>
     </nav>

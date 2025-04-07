@@ -6,7 +6,7 @@
                     <span class="course-tag badge radius-3 font-12 font-medium position-absolute bg-orange">{{ __('Best Seller') }}</span>
                 @endif
             @else
-                <span class="course-tag badge radius-3 font-12 font-medium position-absolute bg-green">{{ __('New course') }}</span>
+                <span class="course-tag badge radius-3 font-12 font-medium position-absolute bg-black">{{ __('New course') }}</span>
             @endif
             <?php
             $special = @$course->specialPromotionTagCourse->specialPromotionTag->name;

@@ -8,7 +8,7 @@
 @endphp
 <div class="tab-pane fade" id="Instructor" role="tabpanel" aria-labelledby="Instructor-tab">
     <div class="row">
-        <h6 class="mb-4 col-12">{{ __('Meet Your Instructor') }}</h6>
+        <h6 class="mb-4 col-12">{{ __('Meet Your Tutor') }}</h6>
         <div class="col-md-6 col-lg-12 col-xl-6 col-xxl-7 p-0">
             <div class="meet-your-instructor-left d-flex">
                 <div class="meet-instructor-img-wrap flex-shrink-0">
@@ -17,7 +17,7 @@
                 <div class="flex-grow-1">
                     <p class="font-medium color-heading mb-1">{{ __(@$bundle->user->$userType->name) }}</p>
                     <p class="font-12 mb-2">{{ __(@$bundle->user->$userType->professional_title) }}</p>
-                    <div class="teacher-tag color-hover bg-light-purple font-medium font-14 radius-4">{{ __('Instructor') }}</div>
+                    <div class="teacher-tag color-hover bg-light-purple font-medium font-14 radius-4">{{ __('Tutor') }}</div>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="col-12 meet-your-instructor-content-part">
-            <h6 class="font-16">{{ __('About Instructor') }}</h6>
+            <h6 class="font-16">{{ __('About Tutor') }}</h6>
             <p>{{ __(@$bundle->user->$userType->about_me) }}</p>
         </div>
     </div>

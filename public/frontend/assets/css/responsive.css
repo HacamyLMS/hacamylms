@@ -280,7 +280,7 @@
     }
     .instructor-live-class-page table td,
     .instructor-notice-board-page table td {
-        min-width: 260px;
+        min-width: 200px;
     }
     /* Live Class CSS */
 
@@ -292,7 +292,7 @@
 
     /* All Student Page */
     .instructor-all-student-page table td {
-        min-width: 271px;
+        min-width: 100px;
     }
     /* All Student Page */
 
@@ -518,7 +518,7 @@
     }
     .ui-datepicker-calendar tbody tr td,
     .ui-datepicker-next.ui-corner-all {
-        width: 32px !important;
+        /* width: 32px !important; */
         font-size: 13px;
     }
     /* Consultation booking */

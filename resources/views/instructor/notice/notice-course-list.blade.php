@@ -49,8 +49,8 @@
                                 <td>{{ @$course->notices->count() }}</td>
                                 <td>
                                     <div class="notice-board-action-btns">
-                                        <a href="{{ route('notice-board.create', $course->uuid) }}" class="theme-btn theme-button1 default-hover-btn">{{__('Add Notice')}}</a>
-                                        <a href="{{ route('notice-board.index', $course->uuid) }}" class="theme-btn theme-button1 green-theme-btn default-hover-btn">{{ __('View List') }}</a>
+                                        <a href="{{ route('notice-board.create', $course->uuid) }}" class="theme-button1">{{__('Add Notice')}}</a>
+                                        <a href="{{ route('notice-board.index', $course->uuid) }}" class="theme-button1 green-theme-btn">{{ __('View List') }}</a>
                                     </div>
                                 </td>
                             </tr>

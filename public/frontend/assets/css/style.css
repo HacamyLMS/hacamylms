@@ -763,7 +763,7 @@ button:focus {
     border: 2px solid var(--theme-color);
 }
 .theme-button3:hover {
-    border: 2px solid var(--theme-color);
+    border: 2px solid #090BB4;
 }
 .btn-violet-transparent {
     background-color: rgba(117, 79, 254, 0.27);
@@ -801,7 +801,7 @@ button:focus {
 }
 .green-theme-btn:hover {
     border-color: #090BB4 !important;
-    color: #090BB4 !important;
+    color: #fff !important;
 }
 .quiz-back-btn,
 .default-back-btn {
@@ -6376,10 +6376,7 @@ span.tooltip-show-btn {
     38. Instructor Analysis Page Start
 -------------------------------------------*/
 .instructor-withdrawal-money-box {
-    background-image: url("../img/instructor-img/upload-your-course-today-bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-color: #000;
     padding: 37px 20px;
     box-shadow: none;
 }

@@ -256,10 +256,10 @@
                                     </button>
                                 @else
                                     @if($course->status == STATUS_APPROVED)
-                                        <button class="theme-btn theme-button1 theme-button3 w-100 mb-30 addToCart "
+                                        <button class="theme-button1 w-100 mb-30 addToCart "
                                                 data-course_id="{{ $course->id }}"
                                                 data-route="{{ route('student.addToCart') }}">
-                                            <span class="msgInfoChange">{{ __('Enroll the Course') }} <i
+                                            <span class="msgInfoChange">{{ __('Get Course') }} <i
                                                     data-feather="arrow-right"></i></span>
                                         </button>
 

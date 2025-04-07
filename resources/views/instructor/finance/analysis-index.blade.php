@@ -2,13 +2,13 @@
 
 @section('breadcrumb')
     <div class="page-banner-content text-center">
-        <h3 class="page-banner-heading text-white pb-15">{{__('Analysis')}}</h3>
+        <h3 class="page-banner-heading text-white pb-15">{{__('Manage Payouts')}}</h3>
 
         <!-- Breadcrumb Start-->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center">
                 <li class="breadcrumb-item font-14"><a href="{{route('instructor.dashboard')}}">{{__('Dashboard')}}</a></li>
-                <li class="breadcrumb-item font-14 active" aria-current="page">{{__('Analysis')}}</li>
+                <li class="breadcrumb-item font-14 active" aria-current="page">{{__('Payouts')}}</li>
             </ol>
         </nav>
         <!-- Breadcrumb End-->
@@ -27,7 +27,7 @@
                             <span class="iconify" data-icon="akar-icons:book"></span>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h6 class="para-color font-11 font-semi-bold">{{ __('Number of Courses') }}</h6>
+                            <h6 class="para-color font-14 font-semi-bold">{{ __('Number of Courses') }}</h6>
                             <h5>{{ $total_courses }}</h5>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                             <span class="iconify" data-icon="carbon:user-multiple"></span>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h6 class="para-color font-11 font-semi-bold">{{ __('Total Enroll') }}</h6>
+                            <h6 class="para-color font-14 font-semi-bold">{{ __('Total Enrollments') }}</h6>
                             <h5>{{ $total_enroll }}</h5>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                             <span class="iconify" data-icon="clarity:dollar-line"></span>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h6 class="para-color font-11 font-semi-bold">{{ __('Total Earning') }}</h6>
+                            <h6 class="para-color font-14 font-semi-bold">{{ __('Total Earnings') }}</h6>
                             <h5>
                                 @if(get_currency_placement() == 'after')
                                     {{ number_format($total_earning, 2) }} {{ get_currency_symbol() }}
@@ -69,7 +69,7 @@
                             <span class="iconify" data-icon="bx:bx-wallet"></span>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h6 class="para-color font-11 font-semi-bold">{{ __('Available balance') }}</h6>
+                            <h6 class="para-color font-14 font-semi-bold">{{ __('Available balance') }}</h6>
                             <h5>
                                 @if(get_currency_placement() == 'after')
                                     {{userBalance()}} {{ get_currency_symbol() }}
@@ -87,7 +87,7 @@
                             <span class="iconify" data-icon="akar-icons:calendar"></span>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h6 class="para-color font-11 font-semi-bold">{{ __('Total Withdraw Amount') }}</h6>
+                            <h6 class="para-color font-14 font-semi-bold">{{ __('Total Payouts') }}</h6>
                             <h5>
                                 @if(get_currency_placement() == 'after')
                                     {{ $total_withdraw_amount }} {{ get_currency_symbol() }}
@@ -105,7 +105,7 @@
                             <span class="iconify" data-icon="akar-icons:calendar"></span>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h6 class="para-color font-11 font-semi-bold">{{ __('Pending Withdraw Amount') }}</h6>
+                            <h6 class="para-color font-14 font-semi-bold">{{ __('Pending Payout') }}</h6>
                             <h5>
                                 @if(get_currency_placement() == 'after')
                                     {{ $total_pending_withdraw_amount }} {{ get_currency_symbol() }}
@@ -121,11 +121,13 @@
                 <div class="col-md-12">
                     <div class="instructor-withdrawal-money-box instructor-dashboard-top-part-item d-flex align-items-center radius-8 mb-30">
                         <div class="flex-grow-1 ms-3">
-                            <h6 class="text-white font-11 font-semi-bold mb-2">{{ __('Withdrawal Money') }}</h6>
+                            <h6 class="text-white font-14 font-semi-bold mb-2">{{ __('Request Payouts') }}</h6>
                             <!-- Button trigger modal -->
-                            <a href="{{ route('wallet./') }}" class="upload-your-course-today-btn bg-hover text-white font-12 font-medium">
-                                {{ __('Withdrawal') }}
-                            </a>
+                            <button type="button" class="theme-btn theme-button1 default-hover-btn" data-bs-toggle="modal" data-bs-target="#withdrawalModal">
+                                {{ __('Withdraw') }}
+                            </button>
+                            <a href="{{ route('wallet.my-beneficiary') }}" class="theme-btn theme-button1 green-theme-btn default-hover-btn">{{ __('Manage Payment Details') }}</a>
+                            <a href=" {{ route('wallet./') }}" class="theme-btn theme-button1 green-theme-btn default-hover-btn">Open Wallet</a>
                         </div>
                     </div>
                 </div>
@@ -172,55 +174,37 @@
                             @endif
                         </h4>
                     </div>
-                    <form method="POST" action="{{route('finance.store-withdraw')}}">
+                    <form method="POST" action="{{route('wallet.process-withdraw')}}">
                         @csrf
                         <div class="row">
 
                             <div class="col-md-12 mb-30">
                                 <div class="label-text-title color-heading font-medium font-16 mb-3">{{ __('Amount' ) }}
-                                    <span class="cursor tooltip-show-btn share-referral-big-btn primary-btn get-referral-btn border-0" data-toggle="popover"
-                                          data-bs-placement="bottom" data-bs-content="Meridian sun strikes upper urface of the impenetrable foliage of my trees">
-                                   !
-                                </span>
+                                <span
+                                        class="text-danger">*</span>
                                 </div>
                                 <input type="number" name="amount" min="1" class="form-control" placeholder="{{ __('Type amount') }}" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12 mb-30">
-                                <div class="label-text-title color-heading font-medium font-16 mb-3">{{ __('Method') }}
-                                    <span class="cursor tooltip-show-btn share-referral-big-btn primary-btn get-referral-btn border-0" data-toggle="popover"
-                                          data-bs-placement="bottom" data-bs-content="Meridian sun strikes upper urface of the impenetrable foliage of my trees">
-                                       !
-                                </span>
-                                </div>
-
-                                <div class="withdrawal-radio-item-wrap form-control">
-                                    <div class="form-check">
-                                        <div class="withdrawal-radio-item">
-                                            <input class="form-check-input" type="radio" name="payment_method" value="paypal" required id="flexRadioDefault3">
-                                            <label class="form-check-label" for="flexRadioDefault3">
-                                                {{ __('Withdraw with Paypal') }}
-                                            </label>
-                                        </div>
-                                        <div class="withdrawal-radio-img">
-                                            <img src="{{ asset('frontend/assets/img/instructor-img/paypal-icon.png') }}" alt="visa">
-                                        </div>
+                                <label class="font-medium font-15 color-heading">{{ __('Beneficiary') }}<span class="text-danger">*</span></label>
+                                <select name="uuid" class="form-select" required>
+                                    @forelse($beneficiaries as $beneficiary)
+                                        <option value="{{ $beneficiary->uuid }}">
+                                            {{ $beneficiary->beneficiary_name }} - ({{ getBeneficiaryAccountDetails($beneficiary) }})
+                                        </option>
+                                    @empty
+                                        <option value="" disabled>{{ __('No payment methods available') }}</option>
+                                    @endforelse
+                                </select>
+                                @if($beneficiaries->isEmpty())
+                                    <div class="text-muted mt-2">
+                                        <a href="{{ route('wallet.my-beneficiary') }}" class="text-primary">
+                                            {{ __('Add a payment method') }}
+                                        </a>
                                     </div>
-                                </div>
-                                <div class="withdrawal-radio-item-wrap form-control">
-                                    <div class="form-check">
-                                        <div class="withdrawal-radio-item">
-                                            <input class="form-check-input" type="radio" name="payment_method" value="card" required id="flexRadioDefault4">
-                                            <label class="form-check-label" for="flexRadioDefault4">
-                                                {{ __('Withdraw with Card') }}
-                                            </label>
-                                        </div>
-                                        <div class="withdrawal-radio-img">
-                                            <img src="{{ asset('frontend/assets/img/instructor-img/mastercard-icon.png') }}" alt="visa">
-                                        </div>
-                                    </div>
-                                </div>
+                                @endif
                             </div>
                         </div>
                         <div class="row">
@@ -234,6 +218,7 @@
         </div>
     </div>
     <!--Withdrawal Modal End-->
+
 @endsection
 
 @push('script')
@@ -366,4 +351,3 @@
     </script>
 
 @endpush
-

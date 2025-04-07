@@ -178,7 +178,7 @@ class WalletController extends Controller
                 'bank_name' => 'bail|required',
                 'bank_account_name' => 'bail|required|string',
                 'bank_account_number' => 'bail|required|numeric',
-                'bank_routing_number' => 'bail|required',
+                'bank_routing_number' => 'bail|nullable',
             ];
         } else if ($request->type == BENEFICIARY_PAYPAL) {
             $rules = [
@@ -199,13 +199,12 @@ class WalletController extends Controller
             'bank_name.required' => __('Bank Name is Required'),
             'bank_account_name.required' => __('Bank Account Name is Required'),
             'bank_account_number.required' => __('Bank Account Number is Required'),
-            'bank_routing_number.required' => __('Routing Number is Required'),
             'paypal_email.required' => __('Paypal Email is Required'),
         ]);
 
         Beneficiary::create($data);
 
-        return ['message' => __('Successfully Save'), 'success' => true];
+        return ['message' => __('Details Added'), 'success' => true];
     }
 
     public function statusChangeBeneficiary(Beneficiary $beneficiary)

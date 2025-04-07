@@ -33,14 +33,14 @@ $userRelation = getUserRoleRelation($user);
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12">
                         <div class="page-banner-content text-center">
-                            <h3 class="page-banner-heading text-white pb-15">{{ $pageTitle }}</h3>
+                            <h3 class="page-banner-heading text-white pb-15">{{ @$user->name }} Profile</h3>
 
                             <!-- Breadcrumb Start-->
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb justify-content-center">
                                     <li class="breadcrumb-item font-14"><a href="{{ url('/') }}">{{ __('Home') }}</a>
                                     </li>
-                                    <li class="breadcrumb-item font-14 active" aria-current="page">{{ $pageTitle }}</li>
+                                    <li class="breadcrumb-item font-14 active" aria-current="page">Profile</li>
                                 </ol>
                             </nav>
                             <!-- Breadcrumb End-->
@@ -63,7 +63,7 @@ $userRelation = getUserRoleRelation($user);
                             class="instructor-details-left-inner-box instructor-temporary-unavailable px-4 py-3 radius-4">
                             <div class="d-flex align-items-center">
                                 <div class="flex-grow-1 me-3">
-                                    <h6 class="text-white font-17">{{ __('Instructor is temporarily unavailable') }}.
+                                    <h6 class="text-white font-17">{{ __('Tutor is temporarily unavailable') }}.
                                     </h6>
                                     <p class="text-white font-15 mt-1">{{ __(@$user->$userRelation->offline_message) }}
                                     </p>
@@ -290,21 +290,8 @@ $userRelation = getUserRoleRelation($user);
                                         <span>{{ @$user->courses->count() }} {{ __('Courses') }}</span>
                                     </li>
                                     <li>
-                                        <span class="iconify" data-icon="bi:camera-video"></span>
-                                        <span>{{ @$total_lectures }} {{ __('Video Lectures') }}</span>
-                                    </li>
-                                    <li>
                                         <span class="iconify" data-icon="la:book-reader"></span>
                                         <span>{{ @$totalStudent }} {{ __('Students') }}</span>
-                                    </li>
-                                    <li>
-                                        <span class="iconify"
-                                            data-icon="healthicons:i-exam-multiple-choice-outline"></span>
-                                        <span>{{ @$total_quizzes }} {{ __('Quizzes') }}</span>
-                                    </li>
-                                    <li>
-                                        <span class="iconify" data-icon="bi:book"></span>
-                                        <span>{{ @$total_assignments }} {{ __('Assignments') }}</span>
                                     </li>
                                     <li>
                                         <span class="iconify"
@@ -316,10 +303,6 @@ $userRelation = getUserRoleRelation($user);
                                         <span>{{ $total_rating }} Reviews ({{ number_format(@$average_rating, 1) }}
                                             average)</span>
                                     </li>
-                                    <li>
-                                        <span class="iconify" data-icon="codicon:globe"></span>
-                                        <span>{{ @$user->$userRelation->address }}</span>
-                                    </li>
                                 </ul>
                             </div>
                             @php
@@ -329,11 +312,6 @@ $userRelation = getUserRoleRelation($user);
                             <div class="instructor-social mt-20">
                                 <ul class="d-flex align-items-center">
                                     <li>
-                                        <a href="{{@$user->$userRelation->social_link ? $social_link->facebook : ''}}">
-                                            <span class="iconify" data-icon="ant-design:facebook-filled"></span>
-                                        </a>
-                                    </li>
-                                    <li>
                                         <a href="{{@$user->$userRelation->social_link ? $social_link->twitter : ''}}">
                                             <span class="iconify" data-icon="ant-design:twitter-square-filled"></span>
                                         </a>
@@ -341,12 +319,6 @@ $userRelation = getUserRoleRelation($user);
                                     <li>
                                         <a href="{{@$user->$userRelation->social_link ? $social_link->linkedin : ''}}">
                                             <span class="iconify" data-icon="ant-design:linkedin-filled"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{@$user->$userRelation->social_link ? $social_link->pinterest : ''}}">
-                                            <span class="iconify" data-icon="fa-brands:pinterest-square"
-                                                data-width="1em" data-height="1em"></span>
                                         </a>
                                     </li>
                                 </ul>
@@ -368,8 +340,7 @@ $userRelation = getUserRoleRelation($user);
                                     data-hourly_rate="{{ @$user->$userRelation->hourly_rate }}"
                                     data-get_off_days_route="{{ route('getOffDays', @$user->$userRelation->user_id) }}"
                                     class="theme-btn theme-button1 theme-button3 w-100 bookSchedule"
-                                    data-bs-toggle="modal" data-bs-target="#consultationBookingModal">{{ __('Book
-                                    Schedule') }}
+                                    data-bs-toggle="modal" data-bs-target="#consultationBookingModal">{{ __('Book Schedule') }}
                                 </button>
                             </div>
                             @endif
