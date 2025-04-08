@@ -34,7 +34,7 @@ a > * {
             6. Preloader Area Start
 -------------------------------------------*/
 #preloader {
-    background-color: #fff;
+    background-color: #000 !important;
     position: fixed;
     top: 0;
     bottom: 0;

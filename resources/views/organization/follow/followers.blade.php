@@ -24,7 +24,7 @@
             </div>
 
             <div class="row">
-                <div class="col-12">
+                <div class="col-12"> 
                     @if (count($followers) > 0)
                         <div class="table-responsive table-responsive-xl">
                             <table class="table">
@@ -63,7 +63,7 @@
                         <div class="empty-data">
                             <img src="{{ asset('frontend/assets/img/empty-data-img.png') }}" alt="img"
                                 class="img-fluid">
-                            <h5 class="my-3">{{ __('Empty Followers') }}</h5>
+                            <h5 class="my-3">{{ __('No Follower') }}</h5>
                         </div>
                         <!-- If there is no data Show Empty Design End -->
                     @endif

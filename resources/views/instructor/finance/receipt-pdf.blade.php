@@ -67,8 +67,8 @@
                     <p style="color: #666666; margin: 0; font-size: 14px">{!! $withdraw->note !!}.</p>
                 </div>
 
-                <p style="margin-bottom: 12px; margin-top: 0; text-align: center; color: #666666">{{ __('We thank you for your business and continued use of') }} {{get_option('app_name')}}</p>
-                <h2 style="text-align: center; color: #666666; font-weight: 600; margin-top: 0; margin-bottom: 0">{{ __('Thank you from') }} {{get_option('app_name')}} {{ __('family') }}</h2>
+                <p style="margin-bottom: 12px; margin-top: 0; text-align: center; color: #666666">{{ __('Thank You') }}</p>
+                <h2 style="text-align: center; color: #666666; font-weight: 600; margin-top: 0; margin-bottom: 0">{{get_option('app_name')}}</h2>
                 <button style="" type="button" onclick="" class="btn btn-warning btn-icon icon-left float-end print-button"><i class="fas fa-print"></i> Print</button>
             </td>
 

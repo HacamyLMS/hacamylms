@@ -29,7 +29,6 @@
                     <input type="hidden" id="chatSend" value="{{ route('organization.chat.send') }}">
                     {{-- Student list --}}
                     <div class="my-3">
-                        <p class="mb-4 fw-bold">{{ __('Students with enrolled courses') }}</p>
                         <div class="chat-users scroll-bar">
                             <ul class="course-list">
                                 @if (!empty($data))

@@ -132,7 +132,9 @@ class AppServiceProvider extends ServiceProvider
 
                 View::composer([
                     'instructor.finance.withdraw-history-index',
-                    'instructor.finance.analysis-index' // Add any other views that need beneficiaries
+                    'instructor.finance.analysis-index',
+                    'organization.finance.withdraw-history-index',
+                    'organization.finance.analysis-index' // Add any other views that need beneficiaries
                 ], function ($view) {
                     $view->with('beneficiaries', Beneficiary::where([
                         'user_id' => auth()->id(),

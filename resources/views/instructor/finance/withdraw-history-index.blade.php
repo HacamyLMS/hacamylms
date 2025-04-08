@@ -2,13 +2,13 @@
 
 @section('breadcrumb')
     <div class="page-banner-content text-center">
-        <h3 class="page-banner-heading text-white pb-15">{{ __('Withdraw History') }}</h3>
+        <h3 class="page-banner-heading text-white pb-15">{{ __('Debit History') }}</h3>
 
         <!-- Breadcrumb Start-->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center">
                 <li class="breadcrumb-item font-14"><a href="{{route('instructor.dashboard')}}">{{__('Dashboard')}}</a></li>
-                <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('Withdraw History') }}</li>
+                <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('Debit History') }}</li>
             </ol>
         </nav>
         <!-- Breadcrumb End-->

@@ -63,7 +63,7 @@
                         <div class="empty-data">
                             <img src="{{ asset('frontend/assets/img/empty-data-img.png') }}" alt="img"
                                 class="img-fluid">
-                            <h5 class="my-3">{{ __('Empty Followings') }}</h5>
+                            <h5 class="my-3">{{ __('No Follows') }}</h5>
                         </div>
                         <!-- If there is no data Show Empty Design End -->
                     @endif

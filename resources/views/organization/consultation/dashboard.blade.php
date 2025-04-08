@@ -7,13 +7,12 @@
         <!-- Breadcrumb Start-->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center">
-                <li class="breadcrumb-item font-14"><a href="{{ route('organization.dashboard') }}">{{ __('Dashboard') }}</a>
-                </li>
+                <li class="breadcrumb-item font-14"><a href="{{ route('organization.dashboard') }}">{{ __('Dashboard') }}</a></li>
                 <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('Consultation') }}</li>
             </ol>
         </nav>
     </div>
-@endsection
+@endsection 
 
 @section('content')
     <div class="instructor-profile-right-part">
@@ -23,7 +22,7 @@
                 <form action="{{ route('organization.consultation.availabilityUpdate') }}" method="post">
                     @csrf
                     <h6 class="are-you-available-title mb-3 d-inline-flex align-items-center"><span class="iconify me-2"
-                            data-icon="heroicons-outline:thumb-up"></span>{{ __('Are you available for 1 to 1 consultation?') }}
+                            data-icon="heroicons-outline:thumb-up"></span>{{ __('Available for 1 to 1 consultation?') }}
                     </h6>
                     <div class="mb-3">
                         <div class="form-check form-check-inline">
@@ -40,7 +39,7 @@
                         </div>
                     </div>
                     <h6 class="are-you-available-title mb-3 d-inline-flex align-items-center"><span class="iconify me-2"
-                            data-icon="heroicons-outline:thumb-up"></span>{{ __('Available type for 1 to 1 consultation?') }}
+                            data-icon="heroicons-outline:thumb-up"></span>{{ __('Chose your availability') }}
                     </h6>
                     <div class="mb-3">
                         <div class="form-check form-check-inline">
@@ -63,25 +62,9 @@
                         </div>
                     </div>
 
-                    <div id="consultancyArea" class="@if ($organization->available_type == 2) d-none @endif">
-                        <h6 class="are-you-available-title mb-3 d-inline-flex align-items-center"><span class="iconify me-2"
-                                data-icon="heroicons-outline:thumb-up"></span>{{ __('Consultancy Area') }}</h6>
-                        <div class="mb-3">
-                            @foreach (CONSULTANCY_AREA_ARRAY as $key => $consultancyArea)
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" @if ($organization->consultancy_area == $key) checked @endif
-                                        type="radio" id="consultancyArea{{ $key }}" value="{{ $key }}"
-                                        name="consultancy_area">
-                                    <label class="form-check-label color-heading mb-0"
-                                        for="consultancyArea{{ $key }}">{{ __($consultancyArea) }}</label>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-
                     <div class="mb-3 row instructor-panel-hourly-rate-box align-items-center">
                         <label for="hourlyRate"
-                            class="col-sm-2 col-form-label font-medium color-heading">{{ __('Hourly Rate') }}
+                            class="col-sm-2 col-form-label font-medium color-heading">{{ __('Discount Hourly Rate') }}
                             {{ get_currency_symbol() }}</label>
                         <div class="col-sm-6 col-md-3">
                             <input type="number" step="any" min="0" name="hourly_rate" class="form-control"
@@ -94,7 +77,7 @@
                     </div>
                     <div class="mb-3 row instructor-panel-hourly-rate-box align-items-center">
                         <label for="hourlyOldRate"
-                            class="col-sm-2 col-form-label font-medium color-heading">{{ __('Hourly Old Rate') }}
+                            class="col-sm-2 col-form-label font-medium color-heading">{{ __('Standard Hourly Rate') }}
                             {{ get_currency_symbol() }}</label>
                         <div class="col-sm-6 col-md-3">
                             <input type="number" step="any" min="0" name="hourly_old_rate" class="form-control"
@@ -111,24 +94,17 @@
                             <input class="form-check-input" type="checkbox" id="offlineStatus" name="is_offline"
                                 value="1" {{ $organization->is_offline == INSTRUCTOR_IS_OFFLINE ? 'checked' : '' }}>
                             <label class="form-check-label color-heading mb-0"
-                                for="offlineStatus">{{ __('Offline Status') }}</label>
+                                for="offlineStatus">{{ __('Set Offline Status') }}</label>
                         </div>
                         <div class="mb-3 {{ $organization->is_offline == INSTRUCTOR_IS_OFFLINE ? '' : 'd-none' }}"
                             id="offlineMessage">
                             <label for="offlineMessageText" class="form-label">{{ __('Offline Message') }}</label>
                             <textarea class="form-control" id="offlineMessageText" name="offline_message" placeholder="{{ __('Message') }}">{{ $organization->offline_message }}</textarea>
                             <small class="text-muted mt-1">
-                                {{ __('If you put your account offline, a message will be displayed in your profile and it will be noticed to users. You can type a personalized message in the following input.') }}
+                                {{ __('Your offline status message will be displayed in your profile. You can type a personalized message in the following input.') }}
                             </small>
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <div class="form-check form-switch mb-3">
-                            <input class="form-check-input" type="checkbox" id="isSubscriptionEnable" name="is_subscription_enable" value="1" {{ $organization->is_subscription_enable == STATUS_ACCEPTED ? 'checked' : '' }}>
-                            <label class="form-check-label color-heading mb-0" for="isSubscriptionEnable">{{ __('Is Subscription Enable') }}</label>
-                        </div>
-                    </div>
-
                     <button type="submit" class="theme-btn theme-button1 default-hover-btn">{{ __('Save') }}</button>
                 </form>
 
@@ -143,154 +119,178 @@
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                                <tr>
-                                    <th scope="col">{{ __('Days') }}</th>
-                                    <th scope="col">{{ __('Action') }}</th>
-                                </tr>
+                            <tr>
+                                <th scope="col">{{ __('Days') }}</th>
+                                <th scope="col">{{ __('Set Time') }}</th>
+                                <th scope="col">{{ __('Set Off Day') }}</th>
+                                <th scope="col">{{ __('Action') }}</th>
+                            </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="font-18 font-medium">{{ __('Saturday') }}</td>
-                                    <td>
-                                        <div class="notice-board-action-btns">
-                                            <button type="button"
-                                                class="theme-btn theme-button1 default-hover-btn saturdayAddSlot"
-                                                data-bs-toggle="modal"
+                            <tr>
+                                <td class="font-18 font-medium">{{ __('Monday') }}</td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <button type="button" class="theme-btn theme-button1 default-hover-btn mondayAddSlot" data-bs-toggle="modal" data-bs-target="#addSlotModal">
+                                            {{ __('Add Slot') }}
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <a href="{{ route('instructor.consultation.dayAvailableStatusChange', 1) }}"
+                                           class="theme-btn theme-button1 orange-theme-btn default-hover-btn offDayDeactive {{ getDayAvailableStatus(1) == 1 ? '' : 'disabled-btn' }}">{{ getDayAvailableStatus(1) == 1 ? __('On day') : __('Off day') }}
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <button type="button" class="theme-btn theme-button1 green-theme-btn default-hover-btn mondayViewSlot viewSlot"
+                                                data-route="{{ route('instructor.consultation.slotView', 1) }}" data-bs-toggle="modal" data-bs-target="#viewSlotModal">{{ __('View') }}
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-18 font-medium">{{ __('Tuesday') }}</td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <button type="button" class="theme-btn theme-button1 default-hover-btn tuesdayAddSlot" data-bs-toggle="modal"
                                                 data-bs-target="#addSlotModal">{{ __('Add Slot') }}
-                                            </button>
-                                            <a href="{{ route('organization.consultation.dayAvailableStatusChange', 6) }}"
-                                                class="theme-btn theme-button1 orange-theme-btn default-hover-btn offDayDeactive {{ getDayAvailableStatus(6) == 1 ? '' : 'disabled-btn' }}">
-                                                {{ getDayAvailableStatus(6) == 1 ? __('On day') : __('Off day') }}</a>
-                                            <button type="button"
-                                                class="theme-btn theme-button1 green-theme-btn default-hover-btn saturdayViewSlot viewSlot"
-                                                data-route="{{ route('organization.consultation.slotView', 6) }}"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#viewSlotModal">{{ __('View') }}
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <a href="{{ route('instructor.consultation.dayAvailableStatusChange', 2) }}"
+                                           class="theme-btn theme-button1 orange-theme-btn default-hover-btn offDayDeactive {{ getDayAvailableStatus(2) == 1 ? '' : 'disabled-btn' }}">{{ getDayAvailableStatus(2) == 1 ? __('On day') : __('Off day') }}</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <button type="button" class="theme-btn theme-button1 green-theme-btn default-hover-btn tuesdayViewSlot viewSlot"
+                                                data-route="{{ route('instructor.consultation.slotView', 2) }}" data-bs-toggle="modal" data-bs-target="#viewSlotModal">{{ __('View') }}
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-18 font-medium">{{ __('Wednesday') }}</td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <button type="button" class="theme-btn theme-button1 default-hover-btn wednesdayAddSlot" data-bs-toggle="modal"
+                                                data-bs-target="#addSlotModal">{{ __('Add Slot') }}
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <a href="{{ route('instructor.consultation.dayAvailableStatusChange', 3) }}"
+                                           class="theme-btn theme-button1 orange-theme-btn default-hover-btn offDayDeactive {{ getDayAvailableStatus(3) == 1 ? '' : 'disabled-btn' }}">{{ getDayAvailableStatus(3) == 1 ? __('On day') : __('Off day') }}</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <button type="button" class="theme-btn theme-button1 green-theme-btn default-hover-btn wednesdayViewSlot viewSlot"
+                                                data-route="{{ route('instructor.consultation.slotView', 3) }}" data-bs-toggle="modal" data-bs-target="#viewSlotModal">{{ __('View') }}
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-18 font-medium">{{ __('Thursday') }}</td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <button type="button" class="theme-btn theme-button1 default-hover-btn thursdayAddSlot" data-bs-toggle="modal"
+                                                data-bs-target="#addSlotModal">{{ __('Add Slot') }}
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <a href="{{ route('instructor.consultation.dayAvailableStatusChange', 4) }}"
+                                           class="theme-btn theme-button1 orange-theme-btn default-hover-btn offDayDeactive {{ getDayAvailableStatus(4) == 1 ? '' : 'disabled-btn' }}">{{ getDayAvailableStatus(4) == 1 ? __('On day') : __('Off day') }}</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <button type="button" class="theme-btn theme-button1 green-theme-btn default-hover-btn thursdayViewSlot viewSlot"
+                                                data-route="{{ route('instructor.consultation.slotView', 4) }}" data-bs-toggle="modal" data-bs-target="#viewSlotModal">{{ __('View') }}
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-18 font-medium">{{ __('Friday') }}</td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <button type="button" class="theme-btn theme-button1 default-hover-btn fridayAddSlot" data-bs-toggle="modal" data-bs-target="#addSlotModal">
+                                            {{ __('Add Slot') }}
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <a href="{{ route('instructor.consultation.dayAvailableStatusChange', 5) }}"
+                                           class="theme-btn theme-button1 orange-theme-btn default-hover-btn offDayDeactive {{ getDayAvailableStatus(5) == 1 ? '' : 'disabled-btn' }}">{{ getDayAvailableStatus(5) == 1 ? __('On day') : __('Off day') }}</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <button type="button" class="theme-btn theme-button1 green-theme-btn default-hover-btn fridayViewSlot viewSlot"
+                                                data-route="{{ route('instructor.consultation.slotView', 5) }}" data-bs-toggle="modal" data-bs-target="#viewSlotModal">{{ __('View') }}
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-18 font-medium">{{ __('Saturday') }}</td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <button type="button" class="theme-btn theme-button1 default-hover-btn saturdayAddSlot" data-bs-toggle="modal"
+                                                data-bs-target="#addSlotModal">{{ __('Add Slot') }}
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <a href="{{ route('instructor.consultation.dayAvailableStatusChange', 6) }}"
+                                           class="theme-btn theme-button1 orange-theme-btn default-hover-btn offDayDeactive {{ getDayAvailableStatus(6) == 1 ? '' : 'disabled-btn' }}">
+                                            {{ getDayAvailableStatus(6) == 1 ? __('On day') : __('Off day') }}</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <button type="button" class="theme-btn theme-button1 green-theme-btn default-hover-btn saturdayViewSlot viewSlot"
+                                                data-route="{{ route('instructor.consultation.slotView', 6) }}" data-bs-toggle="modal" data-bs-target="#viewSlotModal">{{ __('View') }}
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
 
-                                <tr>
-                                    <td class="font-18 font-medium">{{ __('Sunday') }}</td>
-                                    <td>
-                                        <div class="notice-board-action-btns">
-                                            <button type="button"
-                                                class="theme-btn theme-button1 default-hover-btn sundayAddSlot"
-                                                data-bs-toggle="modal" data-bs-target="#addSlotModal">
-                                                {{ __('Add Slot') }}
-                                            </button>
-                                            <a href="{{ route('organization.consultation.dayAvailableStatusChange', 0) }}"
-                                                class="theme-btn theme-button1 orange-theme-btn default-hover-btn offDayDeactive {{ getDayAvailableStatus(0) == 1 ? '' : 'disabled-btn' }}">{{ getDayAvailableStatus(0) == 1 ? __('On day') : __('Off day') }}</a>
-                                            <button type="button"
-                                                class="theme-btn theme-button1 green-theme-btn default-hover-btn sundayViewSlot viewSlot"
-                                                data-route="{{ route('organization.consultation.slotView', 0) }}"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#viewSlotModal">{{ __('View') }}
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="font-18 font-medium">{{ __('Monday') }}</td>
-                                    <td>
-                                        <div class="notice-board-action-btns">
-                                            <button type="button"
-                                                class="theme-btn theme-button1 default-hover-btn mondayAddSlot"
-                                                data-bs-toggle="modal" data-bs-target="#addSlotModal">
-                                                {{ __('Add Slot') }}
-                                            </button>
-                                            <a href="{{ route('organization.consultation.dayAvailableStatusChange', 1) }}"
-                                                class="theme-btn theme-button1 orange-theme-btn default-hover-btn offDayDeactive {{ getDayAvailableStatus(1) == 1 ? '' : 'disabled-btn' }}">{{ getDayAvailableStatus(1) == 1 ? __('On day') : __('Off day') }}</a>
-                                            <button type="button"
-                                                class="theme-btn theme-button1 green-theme-btn default-hover-btn mondayViewSlot viewSlot"
-                                                data-route="{{ route('organization.consultation.slotView', 1) }}"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#viewSlotModal">{{ __('View') }}
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="font-18 font-medium">{{ __('Tuesday') }}</td>
-                                    <td>
-                                        <div class="notice-board-action-btns">
-                                            <button type="button"
-                                                class="theme-btn theme-button1 default-hover-btn tuesdayAddSlot"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#addSlotModal">{{ __('Add Slot') }}
-                                            </button>
-                                            <a href="{{ route('organization.consultation.dayAvailableStatusChange', 2) }}"
-                                                class="theme-btn theme-button1 orange-theme-btn default-hover-btn offDayDeactive {{ getDayAvailableStatus(2) == 1 ? '' : 'disabled-btn' }}">{{ getDayAvailableStatus(2) == 1 ? __('On day') : __('Off day') }}</a>
-                                            <button type="button"
-                                                class="theme-btn theme-button1 green-theme-btn default-hover-btn tuesdayViewSlot viewSlot"
-                                                data-route="{{ route('organization.consultation.slotView', 2) }}"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#viewSlotModal">{{ __('View') }}
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="font-18 font-medium">{{ __('Wednesday') }}</td>
-                                    <td>
-                                        <div class="notice-board-action-btns">
-                                            <button type="button"
-                                                class="theme-btn theme-button1 default-hover-btn wednesdayAddSlot"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#addSlotModal">{{ __('Add Slot') }}
-                                            </button>
-                                            <a href="{{ route('organization.consultation.dayAvailableStatusChange', 3) }}"
-                                                class="theme-btn theme-button1 orange-theme-btn default-hover-btn offDayDeactive {{ getDayAvailableStatus(3) == 1 ? '' : 'disabled-btn' }}">{{ getDayAvailableStatus(3) == 1 ? __('On day') : __('Off day') }}</a>
-                                            <button type="button"
-                                                class="theme-btn theme-button1 green-theme-btn default-hover-btn wednesdayViewSlot viewSlot"
-                                                data-route="{{ route('organization.consultation.slotView', 3) }}"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#viewSlotModal">{{ __('View') }}
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="font-18 font-medium">{{ __('Thursday') }}</td>
-                                    <td>
-                                        <div class="notice-board-action-btns">
-                                            <button type="button"
-                                                class="theme-btn theme-button1 default-hover-btn thursdayAddSlot"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#addSlotModal">{{ __('Add Slot') }}
-                                            </button>
-                                            <a href="{{ route('organization.consultation.dayAvailableStatusChange', 4) }}"
-                                                class="theme-btn theme-button1 orange-theme-btn default-hover-btn offDayDeactive {{ getDayAvailableStatus(4) == 1 ? '' : 'disabled-btn' }}">{{ getDayAvailableStatus(4) == 1 ? __('On day') : __('Off day') }}</a>
-                                            <button type="button"
-                                                class="theme-btn theme-button1 green-theme-btn default-hover-btn thursdayViewSlot viewSlot"
-                                                data-route="{{ route('organization.consultation.slotView', 4) }}"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#viewSlotModal">{{ __('View') }}
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="font-18 font-medium">{{ __('Friday') }}</td>
-                                    <td>
-                                        <div class="notice-board-action-btns">
-                                            <button type="button"
-                                                class="theme-btn theme-button1 default-hover-btn fridayAddSlot"
-                                                data-bs-toggle="modal" data-bs-target="#addSlotModal">
-                                                {{ __('Add Slot') }}
-                                            </button>
-                                            <a href="{{ route('organization.consultation.dayAvailableStatusChange', 5) }}"
-                                                class="theme-btn theme-button1 orange-theme-btn default-hover-btn offDayDeactive {{ getDayAvailableStatus(5) == 1 ? '' : 'disabled-btn' }}">{{ getDayAvailableStatus(5) == 1 ? __('On day') : __('Off day') }}</a>
-                                            <button type="button"
-                                                class="theme-btn theme-button1 green-theme-btn default-hover-btn fridayViewSlot viewSlot"
-                                                data-route="{{ route('organization.consultation.slotView', 5) }}"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#viewSlotModal">{{ __('View') }}
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td class="font-18 font-medium">{{ __('Sunday') }}</td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <button type="button" class="theme-btn theme-button1 default-hover-btn sundayAddSlot" data-bs-toggle="modal" data-bs-target="#addSlotModal">
+                                            {{ __('Add Slot') }}
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <a href="{{ route('instructor.consultation.dayAvailableStatusChange', 0) }}"
+                                           class="theme-btn theme-button1 orange-theme-btn default-hover-btn offDayDeactive {{ getDayAvailableStatus(0) == 1 ? '' : 'disabled-btn' }}">{{ getDayAvailableStatus(0) == 1 ? __('On day') : __('Off day') }}</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="notice-board-action-btns">
+                                        <button type="button" class="theme-btn theme-button1 green-theme-btn default-hover-btn sundayViewSlot viewSlot"
+                                                data-route="{{ route('instructor.consultation.slotView', 0) }}" data-bs-toggle="modal" data-bs-target="#viewSlotModal">{{ __('View') }}
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>

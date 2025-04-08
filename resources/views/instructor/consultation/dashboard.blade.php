@@ -21,7 +21,7 @@
             <div class="are-you-available-box mb-30">
                 <form action="{{ route('instructor.consultation.instructorAvailabilityStoreUpdate') }}" method="post">
                     @csrf
-                    <h6 class="are-you-available-title mb-3 d-inline-flex align-items-center"><span class="iconify me-2" data-icon="heroicons-outline:thumb-up"></span>{{ __('available for 1 to 1 consultation?') }}</h6>
+                    <h6 class="are-you-available-title mb-3 d-inline-flex align-items-center"><span class="iconify me-2" data-icon="heroicons-outline:thumb-up"></span>{{ __('Available for 1 to 1 consultation?') }}</h6>
                     <div class="mb-3">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" @if($instructor->consultation_available == 1) checked @endif type="radio" id="inlineCheckbox1" value="1"
@@ -50,19 +50,6 @@
                             <input class="form-check-input" @if($instructor->available_type == 3) checked @endif type="radio" id="inlineCheckbox5" value="3"
                                    name="available_type">
                             <label class="form-check-label color-heading mb-0" for="inlineCheckbox5">{{ __('Both') }}</label>
-                        </div>
-                    </div>
-
-                    <div id="consultancyArea" class="@if($instructor->available_type == 2) d-none @endif">
-                        <h6 class="d-none are-you-available-title mb-3 d-inline-flex align-items-center"><span class="iconify me-2" data-icon="heroicons-outline:thumb-up"></span>{{ __('Consultancy Area') }}</h6>
-                        <div class="mb-3 d-none">
-                            @foreach (CONSULTANCY_AREA_ARRAY as $key => $consultancyArea)
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" @if($instructor->consultancy_area == $key) checked @endif type="radio" id="consultancyArea{{ $key }}" value="{{ $key }}"
-                                        name="consultancy_area">
-                                    <label class="form-check-label color-heading mb-0" for="consultancyArea{{ $key }}">{{ __($consultancyArea) }}</label>
-                                </div>
-                            @endforeach
                         </div>
                     </div>
 

@@ -36,7 +36,7 @@
                 </ul>
             </li>
             @endif
-            <li class="d-none"><a href="{{route('instructor.refund.index')}}" class="{{ @$navRefundActiveClass }}" ><span class="iconify mr-15" data-icon="gridicons:refund"></span>{{__('Refund List')}}</a></li>
+            <li><a href="{{route('instructor.refund.index')}}" class="{{ @$navRefundActiveClass }}" ><span class="iconify mr-15" data-icon="gridicons:refund"></span>{{__('Manage Refund')}}</a></li>
             <li><a href="{{route('instructor.certificate.index')}}" class="{{ @$navCertificateActiveClass }}" ><span class="iconify mr-15" data-icon="fluent:certificate-20-regular"></span>{{__('Certificate')}}</a></li>
             
             <li><a href="{{route('discussion.index')}}" class="{{ @$navDiscussionActiveClass }}" ><span class="iconify mr-15" data-icon="octicon:comment-discussion-24"></span>{{__('Discussions')}}</a></li>

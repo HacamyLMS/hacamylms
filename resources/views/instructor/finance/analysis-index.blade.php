@@ -79,7 +79,7 @@
                             </h5>
                         </div>
                     </div>
-                </div>
+                </div> 
 
                 <div class="col-md-4">
                     <div class="instructor-dashboard-top-part-item d-flex align-items-center radius-8 mb-30">
@@ -209,7 +209,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <button type="submit" class="theme-btn theme-button1 theme-button3 font-15 fw-bold w-100">{{ __('Make Withdraw') }}</button>
+                                <button type="submit" class="theme-btn theme-button1 theme-button3 font-15 fw-bold w-100">{{ __('Request Withdrawal') }}</button>
                             </div>
                         </div>
                     </form>

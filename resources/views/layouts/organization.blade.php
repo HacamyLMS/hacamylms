@@ -181,8 +181,8 @@
 
 <!-- Page Header End -->
 
-<!-- Instructor Dashboard Page Area Start -->
-<section class="instructor-profile-page section-t-space">
+<!-- Organization Dashboard Page Area Start -->
+<section class="instructor-profile-page bg-black">
     <div class="container">
         <div class="instructor-dashboard-page-content">
             <div class="row">

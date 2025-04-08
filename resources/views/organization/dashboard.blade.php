@@ -14,7 +14,7 @@
         </nav>
     </div>
 @endsection
-
+ 
 @section('content')
     <div class="instructor-profile-right-part">
         <div class="instructor-dashboard-box">
@@ -149,18 +149,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-xl-12 mb-30">
-                    <div class="recently-added-courses-box organization-top-seller-box radius-8">
-                        <div class="your-rank-title d-flex justify-content-between align-items-center mb-2">
-                            <h6 class="font-18">{{ __('Top Tutor (This Month)') }}</h6>
-                        </div>
-
-                        <div class="ranking-items-wrap position-relative py-0 pb-3">
-                            <div id="donut"></div>
-                        </div>
-
-                    </div>
-                </div>
             </div>
 
             <div class="row upload-your-course-today mb-lg-0">
@@ -175,6 +163,21 @@
                             </div>
                         </div>
                         <!-- Chart -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row recently-added-courses">
+                <div class="col-lg-12 col-xl-12 mb-30">
+                    <div class="recently-added-courses-box organization-top-seller-box radius-8">
+                        <div class="your-rank-title d-flex justify-content-between align-items-center mb-2">
+                            <h6 class="font-18">{{ __('Top Tutor (This Month)') }}</h6>
+                        </div>
+
+                        <div class="ranking-items-wrap position-relative py-0 pb-3">
+                            <div id="donut"></div>
+                        </div>
+
                     </div>
                 </div>
             </div>
