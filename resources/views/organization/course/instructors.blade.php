@@ -9,7 +9,7 @@
         <ol class="breadcrumb justify-content-center">
             <li class="breadcrumb-item font-14"><a href="{{route('organization.dashboard')}}">{{__('Dashboard')}}</a></li>
             <li class="breadcrumb-item font-14"><a href="{{ route('organization.course.index') }}">{{__('My Courses')}}</a></li>
-            <li class="breadcrumb-item font-14"><strong>{{ __('Instructor') }}</strong></li>
+            <li class="breadcrumb-item font-14"><strong>{{ __('Tutors') }}</strong></li>
             <li class="breadcrumb-item font-14 active" aria-current="page">{{__('Upload Course')}}</li>
         </ol>
     </nav>
@@ -27,9 +27,9 @@
                         <ul id="progressbar"
                             class="upload-course-item-block d-flex align-items-center justify-content-center">
                             <li class="active" id="account"><strong>{{ __('Course Overview') }}</strong></li>
-                            <li class="active" id="personal"><strong>{{ __('Upload Video') }}</strong></li>
-                            <li class="active" id="personal"><strong>{{ __('Instructor') }}</strong></li>
-                            <li id="confirm"><strong>{{ __('Submit Process') }}</strong></li>
+                            <li class="active" id="personal"><strong>{{ __('Upload Contents') }}</strong></li>
+                            <li class="active" id="personal"><strong>{{ __('Tutors') }}</strong></li>
+                            <li id="confirm"><strong>{{ __('Submit Course') }}</strong></li>
                         </ul>
 
                         <form method="POST" action="{{route('organization.course.store.instructor', [$course->uuid])}}"

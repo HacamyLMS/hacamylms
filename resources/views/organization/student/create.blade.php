@@ -194,7 +194,7 @@
             </div>
             <div class="col-12">
                 <button type="submit"
-                    class="theme-btn theme-button1 theme-button3 font-15 fw-bold">{{ __('Save') }}</button>
+                    class="theme-btn theme-button1 theme-button3 font-15 fw-bold">{{ __('Add Student') }}</button>
             </div>
         </form>
     </div>

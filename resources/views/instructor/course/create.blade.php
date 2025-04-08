@@ -70,9 +70,6 @@
                                                     <option value="{{ COURSE_TYPE_GENERAL }}"
                                                         {{old('course_type')==COURSE_TYPE_GENERAL ? 'selected' : '' }}>
                                                         General</option>
-                                                    <option class="d-none" value="{{ COURSE_TYPE_SCORM }}"
-                                                        {{old('course_type')==COURSE_TYPE_SCORM ? 'selected' : '' }}>
-                                                        SCORM</option>
                                                 </select>
 
                                                 @if ($errors->has('course_type'))
@@ -115,7 +112,7 @@
                                         <div class="row mb-30">
                                             <div class="col-md-12">
                                                 <div class="label-text-title color-heading font-medium font-16 mb-3">{{
-                                                    __('Enable for subscription') }}
+                                                    __('Enable Subscription') }}
                                                     <span class="text-danger">*</span>
                                                 </div>
 

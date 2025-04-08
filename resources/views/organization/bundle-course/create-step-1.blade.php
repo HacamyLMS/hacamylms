@@ -30,9 +30,9 @@
                     <div class="row">
                         <div class="col-md-12 mb-30">
                             <label class="label-text-title color-heading font-medium font-16 mb-3">{{ __('Bundles
-                                Courses Name') }} <span class="text-danger">*</span></label>
+                                Course Name') }} <span class="text-danger">*</span></label>
                             <input type="text" value="{{ old('name') }}" required class="form-control" name="name"
-                                placeholder="Enter your bundles courses name">
+                                placeholder="Enter your bundles course name">
                         </div>
                     </div>
                     <div class="row">
@@ -90,7 +90,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-30">
-                            <label class="label-text-title color-heading font-medium font-16 mb-3">{{ __('Price') }} {{
+                            <label class="label-text-title color-heading font-medium font-16 mb-3">{{ __('Price -') }} {{
                                 get_currency_symbol() }} <span class="text-danger">*</span></label>
                             <input type="number" class="form-control" name="price" min="1" step="any"
                                 placeholder="Enter your price" value="{{ old('price') }}" required="">
@@ -138,7 +138,7 @@
                     <div>
                         <a href="{{ route('organization.bundle-course.index') }}"
                             class="theme-btn theme-button3 quiz-back-btn">{{ __('Back to List') }}</a>
-                        <button type="submit" class="theme-btn theme-button1">{{ __('Create & Next') }}</button>
+                        <button type="submit" class="theme-button1">{{ __('Create & Next') }}</button>
                     </div>
                 </form>
             </div>

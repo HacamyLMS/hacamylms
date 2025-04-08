@@ -118,7 +118,7 @@
 
                                         <div class="row">
                                             <div class="col-md-12 mb-30">
-                                                <label class="label-text-title color-heading font-medium font-16 mb-3">{{ __('Request course as') }}
+                                                <label class="label-text-title color-heading font-medium font-16 mb-3">{{ __('Request Course as') }}
                                                 </label>
                                                 <select name="status" class="form-select status" required>
                                                     @php
@@ -182,8 +182,7 @@
                                                 <input type="number" name="access_period"
                                                     value="{{old('access_period', $course->access_period)}}" min="0"
                                                     class="form-control"
-                                                    placeholder="{{  __('If the course can be accessed for life, leave the field blank.')}} "
-                                                    >
+                                                    placeholder="{{  __('If the course can be accessed for life, leave the field blank.')}} ">
 
                                                 @if ($errors->has('access_period'))
                                                 <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{

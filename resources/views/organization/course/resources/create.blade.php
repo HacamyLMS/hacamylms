@@ -31,7 +31,7 @@
                             <div class="col-md-12">
                                 <div class="create-assignment-upload-files">
                                     <div>
-                                        <input type="file" name="file" class="form-control" title="Upload Your Files" />
+                                        <input type="file" name="file" class="form-control" title="Upload Your Files" accept=".zip" />
                                     </div>
                                     <p class="font-14 color-heading text-center mt-2 color-gray">{{ __('Accepted files') }}: ZIP</p>
                                 </div>

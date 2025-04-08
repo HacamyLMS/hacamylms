@@ -420,16 +420,12 @@
                                                     @endif
                                                     @if (auth()->user()->role != USER_ROLE_STUDENT && get_option('saas_mode'))
                                                         <li>
-                                                            <a class="dropdown-item"
-                                                               href="{{ route('saas_panel') }}"><span class="iconify"
-                                                                                                      data-icon="ic:outline-view-list"></span>
-                                                                {{ __('SaaS Panel') }}</a>
+                                                            <a class="dropdown-item" href="{{ route('saas_panel') }}"><span class="iconify" data-icon="ic:outline-view-list"></span>
+                                                                {{ __('Buy A Plan') }}</a>
                                                         </li>
                                                         <li>
-                                                            <a class="dropdown-item"
-                                                               href="{{ route('saas_plan') }}"><span class="iconify"
-                                                                                                     data-icon="mdi:subscriptions"></span>
-                                                                {{ __('SaaS Plan') }}</a>
+                                                            <a class="dropdown-item" href="{{ route('saas_plan') }}"><span class="iconify" data-icon="mdi:subscriptions"></span>
+                                                                {{ __('Current Plan') }}</a>
                                                         </li>
                                                     @endif
                                                 </ul>
@@ -524,8 +520,7 @@
                                             <ul class="user-dropdown-item-box">
                                                 <li><a class="dropdown-item"
                                                        href="{{ route('support-ticket-faq') }}"><span class="iconify"
-                                                                                                      data-icon="bx:bx-help-circle"></span>{{ __('Help
-                                                                                                                                                                                                                            Support') }}
+                                                            data-icon="bx:bx-help-circle"></span>{{ __('Help and Support') }}
                                                     </a></li>
                                                 <li><a class="dropdown-item" href="{{ route('logout') }}"><span
                                                             class="iconify"

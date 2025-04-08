@@ -26,8 +26,8 @@
                             <ul id="progressbar" class="upload-course-item-block d-flex align-items-center justify-content-center">
                                 <li class="active" id="account"><strong>{{ __('Course Overview') }}</strong></li>
                                 <li class="active" id="personal"><strong>{{ __('Upload Video') }}</strong></li>
-                                <li id="instructor"><strong>{{ __('Instructor') }}</strong></li>
-                                <li id="confirm"><strong>{{ __('Submit Process') }}</strong></li>
+                                <li id="instructor"><strong>{{ __('Tutors') }}</strong></li>
+                                <li id="confirm"><strong>{{ __('Submit Course') }}</strong></li>
                             </ul>
 
                             <!-- Upload Course Step-1 Item Start -->
@@ -57,7 +57,7 @@
                                                                             <span class="font-16 ps-4">{{$lesson->name}}</span>
                                                                             <span class="d-flex upload-course-video-6-duration-count">
                                                                             <span class="upload-course-duration-text font-14 color-para font-medium"><span class="iconify"
-                                                                                                                                                           data-icon="octicon:device-desktop-24"></span>{{ __('Video') }} <span
+                                                                                                                                                           data-icon="octicon:device-desktop-24"></span>{{ __('Contents') }} <span
                                                                                     class="color-heading">({{$lesson->lectures->count()}})</span></span>
                                                                             <span class="upload-course-duration-text font-14 color-para font-medium"><span class="iconify"
                                                                                                                                                            data-icon="ant-design:clock-circle-outlined"></span>{{ __('Duration') }} <span
@@ -354,12 +354,12 @@
 
                                                 <div class="upload-course-item-block course-overview-step1 radius-8">
                                                     <div class="upload-course-item-block-title mb-3">
-                                                        <p class="color-para">{{ __('To Upload your course videos please create your section and lesson details first!') }}</p>
+                                                        <p class="color-para">{{ __('To Upload your Course Contents, please create your sections and lesson details first!') }}</p>
                                                     </div>
 
                                                     <div class="row mb-30">
                                                         <div class="col-md-12">
-                                                            <label class="label-text-title color-heading font-medium font-16 mb-3">{{ __('Section title of the coures') }} “ {{$course->title}}
+                                                            <label class="label-text-title color-heading font-medium font-16 mb-3">{{ __('Section title of the course') }} “ {{$course->title}}
                                                                 ”</label>
                                                             <input type="text" name="name" value="{{old('name')}}" class="form-control" placeholder="Introduction" required>
                                                             @if ($errors->has('name'))

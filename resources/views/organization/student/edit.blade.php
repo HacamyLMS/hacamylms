@@ -221,7 +221,7 @@
             </div>
             <div class="col-12">
                 <button type="submit"
-                    class="theme-btn theme-button1 theme-button3 font-15 fw-bold">{{ __('Upadate') }}</button>
+                    class="theme-btn theme-button1 theme-button3 font-15 fw-bold">{{ __('Update Profile') }}</button>
             </div>
         </form>
     </div>

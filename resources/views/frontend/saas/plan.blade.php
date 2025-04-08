@@ -33,13 +33,13 @@
                                 <table class="table bg-white my-courses-page-table">
                                     <thead>
                                         <tr>
-                                            <th scope="col" class="color-gray font-15 font-medium">{{ __('SL') }}</th>
+                                            <th scope="col" class="color-gray font-15 font-medium">{{ __('SN') }}</th>
                                             <th scope="col" class="color-gray font-15 font-medium">{{ __('Package Title') }}</th>
                                             <th scope="col" class="color-gray font-15 font-medium">{{ __('Enroll Date') }}</th>
                                             <th scope="col" class="color-gray font-15 font-medium">{{ __('Expired Date') }}</th>
                                             @if(auth()->user()->role == PACKAGE_TYPE_SAAS_ORGANIZATION)
-                                            <th scope="col" class="color-gray font-15 font-medium">{{ __('Student') }}</th>
-                                            <th scope="col" class="color-gray font-15 font-medium">{{ __('Instructor') }}</th>
+                                            <th scope="col" class="color-gray font-15 font-medium">{{ __('Students') }}</th>
+                                            <th scope="col" class="color-gray font-15 font-medium">{{ __('Tutors') }}</th>
                                             @endif
                                             <th scope="col" class="color-gray font-15 font-medium">{{ __('Course') }}</th>
                                             <th scope="col" class="color-gray font-15 font-medium">{{ __('Bundle Course') }}</th>
@@ -80,7 +80,7 @@
                         @else
                             <div class="empty-data">
                                 <img src="{{ asset('frontend/assets/img/empty-data-img.png') }}" alt="img" class="img-fluid">
-                                <h4 class="my-3">{{ __('Empty Saas Plan') }}</h4>
+                                <h4 class="my-3">{{ __('No Plan') }}</h4>
                             </div>
                         @endif
                     </div>

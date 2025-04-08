@@ -2,14 +2,14 @@
 
 @section('breadcrumb')
     <div class="page-banner-content text-center">
-        <h3 class="page-banner-heading text-white pb-15"> {{ __('Instructor Profile') }} </h3>
+        <h3 class="page-banner-heading text-white pb-15"> {{ __('Tutor Profile') }} </h3>
 
         <!-- Breadcrumb Start-->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center">
                 <li class="breadcrumb-item font-14"><a href="{{ route('organization.dashboard') }}">{{ __('Dashboard') }}</a>
                 </li>
-                <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('Instructor Profile') }}</li>
+                <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('Tutor Profile') }}</li>
             </ol>
         </nav>
     </div>
@@ -19,7 +19,7 @@
     <div class="instructor-profile-right-part">
         <div class="instructor-quiz-list-page instructor-all-student-page">
             <div class="instructor-my-courses-title d-flex justify-content-between align-items-center">
-                <h6>{{ __('Instructor Profile') }}</h6>
+                <h6>{{ __('Tutor Profile') }}</h6>
             </div>
             <div class="row instructor-dashboard-top-part">
                 <div class="col-md-12 col-xxl-5">

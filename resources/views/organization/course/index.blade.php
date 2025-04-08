@@ -2,13 +2,13 @@
 
 @section('breadcrumb')
     <div class="page-banner-content text-center">
-        <h3 class="page-banner-heading text-white pb-15"> {{__('My Courses')}} </h3>
+        <h3 class="page-banner-heading text-white pb-15"> {{__('Org. Courses')}} </h3>
 
         <!-- Breadcrumb Start-->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center">
                 <li class="breadcrumb-item font-14"><a href="{{route('organization.dashboard')}}">{{__('Dashboard')}}</a></li>
-                <li class="breadcrumb-item font-14 active" aria-current="page">{{__('My Courses')}}</li>
+                <li class="breadcrumb-item font-14 active" aria-current="page">{{__('Courses')}}</li>
             </ol>
         </nav>
     </div>
@@ -18,7 +18,7 @@
     <div class="instructor-profile-right-part">
         <div class="instructor-my-courses-box bg-white">
             <div class="instructor-my-courses-title d-flex justify-content-between align-items-center">
-                <h6>{{ __('My Courses') }}</h6>
+                <h6>{{ __('Org Courses') }}</h6>
                 <h6 class="font-16"><span class="font-medium">Total:</span> {{$number_of_course}}</h6>
             </div>
             <div class="row">
@@ -65,7 +65,7 @@
 
                                 <div class="instructor-courses-info-duration-wrap">
                                     <ul class="d-flex align-items-center justify-content-between">
-                                        <li class="font-medium font-12"><span class="iconify" data-icon="octicon:device-desktop-24"></span>Video<span class="instructor-courses-info-duration-wrap-text font-medium color-heading">({{ @$course->lectures->count() }})</span></li>
+                                        <li class="font-medium font-12"><span class="iconify" data-icon="octicon:device-desktop-24"></span>Contents<span class="instructor-courses-info-duration-wrap-text font-medium color-heading">({{ @$course->lectures->count() }})</span></li>
                                         <li class="font-medium font-12"><span class="iconify" data-icon="ant-design:clock-circle-outlined"></span>Duration<span class="instructor-courses-info-duration-wrap-text font-medium color-heading">({{ @$course->VideoDuration }})</span></li>
                                         <li class="font-medium font-12"><span class="iconify" data-icon="carbon:user-multiple"></span>Enrolled<span class="instructor-courses-info-duration-wrap-text font-medium color-heading">({{  courseStudents($course->id) }})</span></li>
                                     </ul>
@@ -75,7 +75,7 @@
                                     <h5 class="card-title course-title"><a href="{{ route('course-details', $course->slug) }}">{{ Str::limit($course->title, 40) }}</a></h5>
                                     <div class="course-item-bottom">
                                         <div class="course-rating d-flex align-items-center">
-                                            <span class="font-medium font-14">{{ number_format($course->average_rating, 1) }}</span>
+                                            <span class="font-medium font-14">Ratings : {{ number_format($course->average_rating, 1) }}</span>
                                             <ul class="rating-list d-flex align-items-center">
                                                 @include('frontend.course.render-course-rating')
                                             </ul>
@@ -111,7 +111,7 @@
                     <!-- If there is no data Show Empty Design Start -->
                     <div class="empty-data">
                         <img src="{{ asset('frontend/assets/img/empty-data-img.png') }}" alt="img" class="img-fluid">
-                        <h5 class="my-3">{{ __('Empty Course') }}</h5>
+                        <h5 class="my-3">{{ __('No Course') }}</h5>
                     </div>
                     <!-- If there is no data Show Empty Design End -->
                 @endforelse

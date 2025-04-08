@@ -1,30 +1,36 @@
 <!-- Saas Subscription Plan Section start -->
 <section class="subscription-plan-area saas-subscription-plan-area bg-light section-t-space">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-title text-center">
-                    <h3 class="section-heading">{{ __('SaaS Plan') }}</h3>
-                    <p class="section-sub-heading">{{ __('#Choose a saas plan and save money!') }}</p>
-                </div>
-            </div>
-        </div>
+        @php
+            $showInstructorTab = Auth::user()->role == USER_ROLE_INSTRUCTOR && @Auth::user()->instructor->status == STATUS_APPROVED;
+            $showOrganizationTab = Auth::user()->role == USER_ROLE_ORGANIZATION && @Auth::user()->organization->status == STATUS_APPROVED;
+        @endphp
 
+        @if($showInstructorTab || $showOrganizationTab)
         <ul class="nav nav-pills saas-plan-instructor-organization-nav radius-8 mb-4" id="pills-tab1" role="tablist">
+            @if($showInstructorTab)
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-Instructor-tab" data-bs-toggle="pill" data-bs-target="#pills-Instructor" type="button" role="tab" aria-controls="pills-Instructor" aria-selected="true">
-                    {{ __("Instructor") }}
+                <button class="nav-link {{ $showOrganizationTab ? '' : 'active' }}" id="pills-Instructor-tab" data-bs-toggle="pill" data-bs-target="#pills-Instructor" type="button" role="tab" aria-controls="pills-Instructor" aria-selected="{{ $showOrganizationTab ? 'false' : 'true' }}">
+                    {{ __("Tutor's Plan") }}
                 </button>
             </li>
+            @endif
+            
+            @if($showOrganizationTab)
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-Organization-tab" data-bs-toggle="pill" data-bs-target="#pills-Organization" type="button" role="tab" aria-controls="pills-Organization" aria-selected="false">
-                    {{ __("Organization") }}
+                <button class="nav-link {{ $showInstructorTab ? '' : 'active' }}" id="pills-Organization-tab" data-bs-toggle="pill" data-bs-target="#pills-Organization" type="button" role="tab" aria-controls="pills-Organization" aria-selected="{{ $showInstructorTab ? 'false' : 'true' }}">
+                    {{ __("Organization's Plan") }}
                 </button>
             </li>
+            @endif
         </ul>
+        @endif
+
         <div class="tab-content" id="pills-tab1Content">
-            <div class="tab-pane fade show active" id="pills-Instructor" role="tabpanel" aria-labelledby="pills-Instructor-tab" tabindex="0">
+            @if($showInstructorTab)
+            <div class="tab-pane fade {{ $showOrganizationTab ? '' : 'show active' }}" id="pills-Instructor" role="tabpanel" aria-labelledby="pills-Instructor-tab" tabindex="0">
                 <div class="row justify-content-center">
+                    <!-- Instructor plan content remains the same -->
                     <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
                         <div class="pricing-tab-nav tp-tab mb-50 mx-auto">
                             <nav class="pricing-tab-inner-nav d-inline-flex align-items-center">
@@ -36,7 +42,7 @@
                                         <span class="nav-link" id="nav-yearly-tab1" data-bs-toggle="tab" data-bs-target="#nav-yearly1" role="tab" aria-controls="nav-yearly1" aria-selected="true"></span>
                                     </label>
                                 </div>
-                                <div class="plan-switch-month-year-text mx-3">{{ __("Yearly") }}</div>
+                                <div class="plan-switch-month-year-text mx-3">{{ __("Annual") }}</div>
                             </nav>
                         </div>
                     </div>
@@ -81,9 +87,12 @@
                     </div>
                 </div>
             </div>
+            @endif
 
-            <div class="tab-pane fade" id="pills-Organization" role="tabpanel" aria-labelledby="pills-Organization-tab" tabindex="0">
+            @if($showOrganizationTab)
+            <div class="tab-pane fade {{ $showInstructorTab ? '' : 'show active' }}" id="pills-Organization" role="tabpanel" aria-labelledby="pills-Organization-tab" tabindex="0">
                 <div class="row justify-content-center">
+                    <!-- Organization plan content remains the same -->
                     <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
                         <div class="pricing-tab-nav tp-tab mb-50 mx-auto">
                             <nav class="pricing-tab-inner-nav d-inline-flex align-items-center">
@@ -140,7 +149,7 @@
                     </div>
                 </div>
             </div>
-
+            @endif
         </div>
     </div>
 </section>

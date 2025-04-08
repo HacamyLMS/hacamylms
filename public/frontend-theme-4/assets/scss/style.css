@@ -7388,7 +7388,7 @@ input[type=number] {
 .landing-header-learning .menu-sign-in-btn .theme-button1 {
   background-color: transparent;
   border-color: #000000;
-  color: #000000;
+  color: #000000 !important;
 }
 .landing-header-learning #mainNav.sticky .menu-sign-in-btn .theme-button1 {
   background-color: var(--white);

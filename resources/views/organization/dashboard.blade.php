@@ -29,7 +29,7 @@
                         <div class="flex-grow-1 ms-3">
 
                             <div class="d-flex justify-content-between align-items-center">
-                                <h6 class="para-color font-14 font-semi-bold">{{__('Earning')}}<span
+                                <h6 class="para-color font-14 font-semi-bold">{{__('Earnings')}}<span
                                         class="color-gray font-13 font-normal">({{__('This Month')}})</span></h6>
                             </div>
 
@@ -50,7 +50,7 @@
                             <span class="iconify" data-icon="carbon:user-multiple"></span>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h6 class="para-color font-14 font-semi-bold">{{__('Total Enroll')}} <span
+                            <h6 class="para-color font-14 font-semi-bold">{{__('Total Enrollments')}} <span
                                     class="color-gray font-13 font-normal">({{__('This Month')}})</span></h6>
                             <h5>{{ @$total_enroll_this_month ?? 0 }}</h5>
                         </div>
@@ -63,7 +63,7 @@
                             <span class="iconify" data-icon="material-symbols:menu-book-outline"></span>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h6 class="para-color font-14 font-semi-bold">{{__('Total Course')}}
+                            <h6 class="para-color font-14 font-semi-bold">{{__('All Courses')}}
                             </h6>
                             <h5>{{ $totalCourse ?? 0 }}</h5>
                         </div>
@@ -76,7 +76,7 @@
                             <span class="iconify" data-icon="mingcute:user-follow-line"></span>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h6 class="para-color font-14 font-semi-bold">{{__('Total Instructor')}}
+                            <h6 class="para-color font-14 font-semi-bold">{{__('Tutors')}}
                             </h6>
                             <h5>{{ $totalInstructor ?? 0 }}</h5>
                         </div>
@@ -89,7 +89,7 @@
                             <span class="iconify" data-icon="fa-solid:user-graduate"></span>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h6 class="para-color font-14 font-semi-bold">{{__('Total Student')}}
+                            <h6 class="para-color font-14 font-semi-bold">{{__('Students')}}
                             </h6>
                             <h5>{{ $totalStudent ?? 0 }}</h5>
                         </div>
@@ -119,7 +119,7 @@
 
             <div class="row recently-added-courses">
 
-                <div class="col-lg-12 col-xl-6 mb-30">
+                <div class="col-lg-12 col-xl-12 mb-30">
                     <div class="recently-added-courses-box radius-8">
                         <div class="recently-added-courses-title d-flex justify-content-between align-items-center mb-4">
                             <h6 class="font-18">{{__('Recently Added Courses')}}</h6>
@@ -137,7 +137,7 @@
                                             </div>
                                             <div class="flex-grow-1 ms-3">
                                                 <h6 class="font-15">{{ Str::limit($recentCourse->title, 25) }}</h6>
-                                                <p class="font-14">{{ courseStudents($recentCourse->id) }} {{__('Enroll')}} </p>
+                                                <p class="font-14">{{ courseStudents($recentCourse->id) }} {{__('Enrollments')}} </p>
                                             </div>
                                         </div>
                                     </div>
@@ -149,10 +149,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-xl-6 mb-30">
+                <div class="col-lg-12 col-xl-12 mb-30">
                     <div class="recently-added-courses-box organization-top-seller-box radius-8">
                         <div class="your-rank-title d-flex justify-content-between align-items-center mb-2">
-                            <h6 class="font-18">{{ __('Top Instructor (This Month)') }}</h6>
+                            <h6 class="font-18">{{ __('Top Tutor (This Month)') }}</h6>
                         </div>
 
                         <div class="ranking-items-wrap position-relative py-0 pb-3">
@@ -164,14 +164,7 @@
             </div>
 
             <div class="row upload-your-course-today mb-lg-0">
-                <div class="col-lg-12 col-xl-6 mb-30">
-                    <div class="upload-your-course-part radius-8">
-                        <h6 class="font-18 text-white">{{__('Upload Your Course Today')}}</h6>
-                        <a href="{{route('organization.course.create')}}" class="upload-your-course-today-btn bg-hover text-white font-12 font-medium">{{__('Upload Course')}}</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 mb-30">
+                <div class="col-lg-12 mb-30">
                     <div class="instructor-dashboard-chart-box radius-8">
                         <div class="chart-title d-flex justify-content-between align-items-center">
                             <h6 class="font-18">{{__('Sale Statistics')}}</h6>

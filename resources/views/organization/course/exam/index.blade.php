@@ -26,12 +26,6 @@
                         <a href="{{route('organization.exam.create', [$course->uuid])}}" class="create-new-quiz-btn font-medium">{{__('Create New Quiz')}}</a>
                     </div>
                 </div>
-
-                <div class="col-md-5">
-                    <div class="quiz-list-page-top-right">
-                        <img src="{{ asset('frontend/assets/img/quiz-img/quiz-text-img.png') }}" alt="img" class="img-fluid">
-                    </div>
-                </div>
             </div>
 
             <div class="row">
@@ -56,7 +50,7 @@
                                     <td>{{ucfirst(str_replace("_", " ", $exam->type))}}</td>
                                     <td>{{$exam->questions->count()}}</td>
 
-                                <td> @if($exam->status == 1) <div class="quiz-status">{{ __('Publish') }}</div> @else  <div class="quiz-status unpublish">{{ __('Unpublish') }}</div> @endif </td>
+                                <td> @if($exam->status == 1) <div class="quiz-status">{{ __('Publish') }}</div> @else  <div class="quiz-status unpublish">{{ __('Draft') }}</div> @endif </td>
                                 <td><a href="{{route('organization.exam.question', [$exam->uuid])}}" class="add-question-btn theme-btn theme-button1 default-hover-btn">{{ __('Add Question') }}</a></td>
                                 <td>
                                     <div class="dropdown">
@@ -86,7 +80,7 @@
                     <!-- If there is no data Show Empty Design Start -->
                     <div class="empty-data">
                         <img src="{{ asset('frontend/assets/img/empty-data-img.png') }}" alt="img" class="img-fluid">
-                        <h5 class="my-3">{{ __('Empty Quiz') }}</h5>
+                        <h5 class="my-3">{{ __('No Quiz') }}</h5>
                     </div>
                     <!-- If there is no data Show Empty Design End -->
 

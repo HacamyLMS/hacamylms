@@ -25,9 +25,9 @@
                         <ul id="progressbar"
                             class="upload-course-item-block d-flex align-items-center justify-content-center">
                             <li class="active" id="account"><strong>{{ __('Course Overview') }}</strong></li>
-                            <li id="personal"><strong>{{ __('Upload Video') }}</strong></li>
-                            <li id="organization"><strong>{{ __('Instructor') }}</strong></li>
-                            <li id="confirm"><strong>{{ __('Submit Process') }}</strong></li>
+                            <li id="personal"><strong>{{ __('Upload Contents') }}</strong></li>
+                            <li id="organization"><strong>{{ __('Tutor') }}</strong></li>
+                            <li id="confirm"><strong>{{ __('Submit Course') }}</strong></li>
                         </ul>
 
                         <!-- Upload Course Step-1 Item Start -->
@@ -67,14 +67,9 @@
 
                                                 <select name="course_type" id="course_type" class="form-select"
                                                     required>
-                                                    <option value="">{{ __('Select Course
-                                                        Type') }}</option>
                                                     <option value="{{ COURSE_TYPE_GENERAL }}"
                                                         {{old('course_type')==COURSE_TYPE_GENERAL ? 'selected' : '' }}>
                                                         General</option>
-                                                    <option value="{{ COURSE_TYPE_SCORM }}"
-                                                        {{old('course_type')==COURSE_TYPE_SCORM ? 'selected' : '' }}>
-                                                        SCORM</option>
                                                 </select>
 
                                                 @if ($errors->has('course_type'))
@@ -101,12 +96,12 @@
                                         <div class="row mb-30">
                                             <div class="col-md-12">
                                                 <div class="label-text-title color-heading font-medium font-16 mb-3">
-                                                    {{ __('Course Subtitle') }}
+                                                    {{ __('Course Summary') }}
                                                     <span class="text-danger">*</span>
                                                 </div>
                                                 <textarea class="form-control" name="subtitle" cols="30" rows="10"
                                                     required
-                                                    placeholder="Course subtitle in 1000 characters">{{old('subtitle')}}</textarea>
+                                                    placeholder="Course Summary in 1000 characters">{{old('subtitle')}}</textarea>
                                                 @if ($errors->has('subtitle'))
                                                 <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{
                                                     $errors->first('subtitle') }}</span>
@@ -116,7 +111,7 @@
                                         <div class="row mb-30">
                                             <div class="col-md-12">
                                                 <div class="label-text-title color-heading font-medium font-16 mb-3">{{
-                                                    __('Private for organization') }}
+                                                    __('Private Organization Course?') }}
                                                     <span class="text-danger">*</span>
                                                 </div>
 
@@ -124,10 +119,10 @@
                                                     required>
                                                     <option value="{{ COURSE_PRIVATE_ACTIVE }}"
                                                         {{old('private_mode')==COURSE_PRIVATE_ACTIVE ? 'selected' : '' }}>
-                                                        {{ __("Enable") }}</option>
+                                                        {{ __("Yes, Private") }}</option>
                                                     <option value="{{ COURSE_PRIVATE_DEACTIVATE }}"
                                                         {{old('private_mode')==COURSE_PRIVATE_DEACTIVATE ? 'selected' : '' }}>
-                                                        {{ __("Disabled") }}</option>
+                                                        {{ __("No, General") }}</option>
                                                 </select>
 
                                                 @if ($errors->has('is_subscription_enable'))
@@ -141,7 +136,7 @@
                                         <div class="row mb-30">
                                             <div class="col-md-12">
                                                 <div class="label-text-title color-heading font-medium font-16 mb-3">{{
-                                                    __('Enable for subscription') }}
+                                                    __('Enable Subscription') }}
                                                     <span class="text-danger">*</span>
                                                 </div>
 
@@ -152,7 +147,7 @@
                                                         {{ __("Enable") }}</option>
                                                     <option value="{{ PACKAGE_STATUS_DISABLED }}"
                                                         {{old('is_subscription_enable')==PACKAGE_STATUS_DISABLED ? 'selected' : '' }}>
-                                                        {{ __("Disabled") }}</option>
+                                                        {{ __("Disable") }}</option>
                                                 </select>
 
                                                 @if ($errors->has('is_subscription_enable'))
@@ -165,19 +160,19 @@
                                         <div class="row mb-30">
                                             <div class="col-md-12">
                                                 <div class="label-text-title color-heading font-medium font-16 mb-3">
-                                                    {{ __('Course Description Key Points') }}
+                                                    {{ __('What they will Learn') }}
                                                     <span class="text-danger">*</span>
                                                 </div>
                                                 <div id="add_repeater">
                                                     <div data-repeater-list="key_points" class="">
                                                         <label for="name" class="text-lg-right text-black"> {{
-                                                            __('Name') }} </label>
+                                                            __('Key Points') }} </label>
                                                         <div data-repeater-item=""
                                                             class="form-group row align-items-center">
                                                             <div class="custom-form-group mb-3 col-md-10">
                                                                 <input type="text" name="name" id="name" value=""
                                                                     class="form-control"
-                                                                    placeholder="Type key point name" required>
+                                                                    placeholder="Type key Points" required>
                                                             </div>
 
                                                             <div class="col mb-3">
@@ -194,7 +189,7 @@
                                                         <a id="add" href="javascript:;" data-repeater-create=""
                                                             class="theme-btn default-hover-btn theme-button1">
                                                             <span class="iconify" data-icon="akar-icons:plus"></span> {{
-                                                            __('Add') }}
+                                                            __('Add +') }}
                                                         </a>
                                                     </div>
 
@@ -205,7 +200,7 @@
                                         <div class="row mb-30">
                                             <div class="col-md-12">
                                                 <div class="label-text-title color-heading font-medium font-16 mb-3">
-                                                    {{ __('Course Description') }}
+                                                    {{ __('Course Long Description') }}
                                                     <span class="text-danger">*</span>
                                                 </div>
                                                 <textarea class="form-control" name="description" cols="30" rows="10"
@@ -219,7 +214,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12 mb-30">
-                                                <label class="font-medium font-15 color-heading">{{__('Meta Title')}}</label>
+                                                <label class="font-medium font-15 color-heading">{{__('SEO Meta Title')}}</label>
                                                 <input type="text" name="meta_title" class="form-control" placeholder="{{ __('Meta Title') }}">
                                                 @if ($errors->has('meta_title'))
                                                     <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('meta_title') }}</span>
@@ -230,7 +225,7 @@
 
                                         <div class="row">
                                             <div class="col-md-12 mb-30">
-                                                <label class="font-medium font-15 color-heading">{{__('Meta Description')}}</label>
+                                                <label class="font-medium font-15 color-heading">{{__('SEO Meta Description')}}</label>
                                                 <textarea class="form-control" name="meta_description" id="exampleFormControlTextarea1" rows="3" placeholder="{{ __('Type Meta Description') }}"></textarea>
                                                 @if ($errors->has('meta_description'))
                                                     <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('meta_description') }}</span>
@@ -239,7 +234,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12 mb-30">
-                                                <label class="font-medium font-15 color-heading">{{__('Meta Keywords')}}</label>
+                                                <label class="font-medium font-15 color-heading">{{__('SEO Meta Keywords')}}</label>
                                                 <input type="text" name="meta_keywords" class="form-control" placeholder="{{ __('Type meta keywords (comma separated)') }}">
                                                 @if ($errors->has('meta_keywords'))
                                                     <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('meta_keywords') }}</span>

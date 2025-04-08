@@ -25,9 +25,9 @@
                             <!-- progressbar -->
                             <ul id="progressbar" class="upload-course-item-block d-flex align-items-center justify-content-center">
                                 <li class="active" id="account"><strong>{{ __('Course Overview') }}</strong></li>
-                                <li class="active"  id="personal"><strong>{{ __('Upload Video') }}</strong></li>
-                                <li class="active"><strong>{{ __('Instructor') }}</strong></li>
-                                <li  class="active" id="confirm"><strong>{{ __('Submit Process') }}</strong></li>
+                                <li class="active"  id="personal"><strong>{{ __('Upload Contents') }}</strong></li>
+                                <li class="active"><strong>{{ __('Tutors') }}</strong></li>
+                                <li  class="active" id="confirm"><strong>{{ __('Submit Course') }}</strong></li>
                             </ul>
 
                             <!-- Upload Course Step-1 Item Start -->
@@ -43,7 +43,7 @@
                                                     @if($course->status == 1)
                                                     <a href="{{route('organization.course.upload-finished', [$course->uuid])}}" type="button" class="theme-btn theme-button1">{{ __('Done') }}</a>
                                                     @else
-                                                    <a href="{{route('organization.course.upload-finished', [$course->uuid])}}" type="button" class="theme-btn theme-button1">{{ __('Submit for review') }}</a>
+                                                    <a href="{{route('organization.course.upload-finished', [$course->uuid])}}" type="button" class="theme-btn theme-button1">{{ __('Submit for Review') }}</a>
                                                     @endif
                                                 </div>
                                             </div>

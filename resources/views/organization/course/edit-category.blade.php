@@ -26,9 +26,9 @@
                         <ul id="progressbar"
                             class="upload-course-item-block d-flex align-items-center justify-content-center">
                             <li class="active" id="account"><strong>{{ __('Course Overview') }}</strong></li>
-                            <li id="personal"><strong>{{ __('Upload Video') }}</strong></li>
-                            <li id="organization"><strong>{{ __('Instructor') }}</strong></li>
-                            <li id="confirm"><strong>{{ __('Submit process') }}</strong></li>
+                            <li id="personal"><strong>{{ __('Upload Contents') }}</strong></li>
+                            <li id="organization"><strong>{{ __('Tutor') }}</strong></li>
+                            <li id="confirm"><strong>{{ __('Submit Course') }}</strong></li>
                         </ul>
 
                         <div class="upload-course-step-item upload-course-overview-step-item">
@@ -131,12 +131,12 @@
                                     </div>
                                     <div class="upload-course-item-block course-overview-step1 radius-8">
                                         <div class="upload-course-item-block-title mb-3">
-                                            <h6 class="font-20">{{ __('Learners Accessibility & others') }}</h6>
+                                            <h6 class="font-20">{{ __('Course Publishing Settings') }}</h6>
                                         </div>
                                         
                                         <div class="row">
                                             <div class="col-md-12 mb-30">
-                                                <label class="label-text-title color-heading font-medium font-16 mb-3">{{ __('Request course as') }}
+                                                <label class="label-text-title color-heading font-medium font-16 mb-3">{{ __('Request Course as') }}
                                                 </label>
                                                 <select name="status" class="form-select status" required>
                                                     @php
@@ -145,9 +145,6 @@
                                                     <option value="{{ STATUS_UPCOMING_REQUEST }}" {{ (in_array($status, [STATUS_UPCOMING_REQUEST, STATUS_UPCOMING_APPROVED])) ? 'selected' : '' }}>{{ __('Upcoming') }}</option>
                                                     <option value="{{ STATUS_APPROVED }}" {{ (in_array($status, [STATUS_APPROVED,STATUS_REJECTED,STATUS_HOLD,STATUS_SUSPENDED,STATUS_DELETED])) ? 'selected' : '' }}>{{ __('Publish') }}</option>
                                                 </select>
-                                                <div class="form-text">
-                                                    {{ __('If you select as upcoming then it will be show as upcoming in frontend after approval.') }}
-                                                </div>
                                             </div>
                                         </div>
 
@@ -156,7 +153,7 @@
                                             <div class="col-md-12 mb-30">
                                                 <label
                                                     class="label-text-title color-heading font-medium font-16 mb-3">{{
-                                                    __('Drip Content') }}
+                                                    __('Manage Course Visibility') }}
                                                     <span
                                                         class="cursor tooltip-show-btn share-referral-big-btn primary-btn get-referral-btn border-0"
                                                         data-toggle="popover" data-bs-placement="bottom"
@@ -204,20 +201,19 @@
                                             <div class="col-md-12 mb-30">
                                                 <label
                                                     class="label-text-title color-heading font-medium font-16 mb-3">{{
-                                                    __('Course Access Period') }}
+                                                    __('Course Access Permission') }}
                                                 </label>
                                                 <input type="number" name="access_period"
                                                     value="{{old('access_period', $course->access_period)}}" min="0"
                                                     class="form-control"
-                                                    placeholder="{{  __('If there is no expiry duration, leave the field blank.')}} "
-                                                    >
+                                                    placeholder="{{  __('If the course can be accessed for life, leave the field blank.')}} ">
 
                                                 @if ($errors->has('access_period'))
                                                 <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{
                                                     $errors->first('access_period') }}</span>
                                                 @endif
                                                 <div class="form-text">
-                                                    {{ __('Enrollment will expire after this number of days. Set 0 for no expiration') }}
+                                                    {{ __('Students will lose access to course after this number of days. Set 0 for no expiration') }}
                                                 </div>
                                             </div>
                                         </div>
@@ -226,7 +222,7 @@
                                             <div class="col-md-12 mb-30">
                                                 <label
                                                     class="label-text-title color-heading font-medium font-16 mb-3">{{
-                                                    __('Learners Accessibility') }}
+                                                    __('Paid or Free') }}
                                                     <span
                                                         class="cursor tooltip-show-btn share-referral-big-btn primary-btn get-referral-btn border-0"
                                                         data-toggle="popover" data-bs-placement="bottom"
@@ -275,7 +271,7 @@
                                             <div class="col-md-12 mb-30">
                                                 <label
                                                     class="label-text-title color-heading font-medium font-16 mb-3">{{
-                                                    __('Old Price') }}
+                                                    __('Original Price - without Discount') }}
                                                     <span
                                                         class="cursor tooltip-show-btn share-referral-big-btn primary-btn get-referral-btn border-0"
                                                         data-toggle="popover" data-bs-placement="bottom"
@@ -285,7 +281,7 @@
                                                 </label>
                                                 <input type="number" name="old_price"
                                                     value="{{$course->old_price == '0' ? '' : $course->old_price}}" min="1"
-                                                    maxlength="11" class="form-control old_price" placeholder="Old Price"
+                                                    maxlength="11" class="form-control old_price" placeholder="Original Price - without Discount"
                                                     required="required">
 
                                                 @if ($errors->has('old_price'))
@@ -361,7 +357,7 @@
                                             <div class="col-12">
                                                 <label
                                                     class="label-text-title color-heading font-medium font-16 mb-3">{{
-                                                    __('Course Thumbnail') }}
+                                                    __('Course Thumbnail Image') }}
                                                     <span
                                                         class="cursor tooltip-show-btn share-referral-big-btn primary-btn get-referral-btn border-0"
                                                         data-toggle="popover" data-bs-placement="bottom"
@@ -403,13 +399,13 @@
                                             </div>
                                             <div class="col-md-12 mb-30">
                                                 <input type="radio" {{ $course->intro_video_check == 1 ? 'checked' : ''}} id="video_check" class="intro_video_check" name="intro_video_check" value="1">
-                                                <label for="video_check">{{ __('Video Upload') }}</label><br>
+                                                <label for="video_check">{{ __('Upload Video') }}</label><br>
                                                 <input type="radio" {{ $course->intro_video_check == 2 ? 'checked' : ''}} id="youtube_check" class="intro_video_check" name="intro_video_check" value="2">
-                                                <label for="youtube_check">{{ __('Youtube Video') }} ({{ __('write only video Id') }})</label><br>
+                                                <label for="youtube_check">{{ __('Embed Youtube Video') }} ({{ __('paste only the youtube ID') }})</label><br>
                                             </div>
                                             <div class="col-md-12 mb-30">
                                                 <input type="file" name="video" id="video" accept="video/mp4" class="form-control d-none">
-                                                <input type="text" name="youtube_video_id" id="youtube_video_id" placeholder="{{ __('Type your youtube video ID') }}" value="{{ $course->youtube_video_id }}" class="form-control d-none">
+                                                <input type="text" name="youtube_video_id" id="youtube_video_id" placeholder="{{ __('Your Video Youtube ID is everything AFTER the *https://www.youtube.com/embed/*') }}" value="{{ $course->youtube_video_id }}" class="form-control d-none">
                                             </div>
                                             @if($course->video)
                                             <div class="col-md-12 mb-30 d-none videoSource">

@@ -2,14 +2,14 @@
 
 @section('breadcrumb')
     <div class="page-banner-content text-center">
-        <h3 class="page-banner-heading text-white pb-15"> {{ __('All Student') }} </h3>
+        <h3 class="page-banner-heading text-white pb-15"> {{ __('All Students') }} </h3>
 
         <!-- Breadcrumb Start-->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center">
                 <li class="breadcrumb-item font-14"><a href="{{ route('organization.dashboard') }}">{{ __('Dashboard') }}</a>
                 </li>
-                <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('All Student') }}</li>
+                <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('All Students') }}</li>
             </ol>
         </nav>
     </div>
@@ -19,7 +19,7 @@
     <div class="instructor-profile-right-part">
         <div class="instructor-quiz-list-page instructor-all-student-page">
             <div class="instructor-my-courses-title d-flex justify-content-between align-items-center">
-                <h6>{{ __('All Student') }}</h6>
+                <h6>{{ __('All Students') }}</h6>
             </div>
             <div class="row">
                 @if (count($students) > 0)
@@ -79,7 +79,7 @@
                     <!-- If there is no data Show Empty Design Start -->
                     <div class="empty-data">
                         <img src="{{ asset('frontend/assets/img/empty-data-img.png') }}" alt="img" class="img-fluid">
-                        <h5 class="my-3">{{ __('Empty Student') }}</h5>
+                        <h5 class="my-3">{{ __('No Student') }}</h5>
                     </div>
                     <!-- If there is no data Show Empty Design End -->
                 @endif

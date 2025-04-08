@@ -31,14 +31,13 @@
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12">
                         <div class="page-banner-content text-center">
-                            <h3 class="page-banner-heading text-white pb-15">{{ __('SaaS Panel') }}</h3>
+                            <h3 class="page-banner-heading text-white pb-15">{{ __('Buy A Plan') }}</h3>
                             <!-- Breadcrumb Start-->
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb justify-content-center">
                                     <li class="breadcrumb-item font-14"><a href="{{ url('/') }}">{{ __('Home') }}</a>
                                     </li>
-                                    <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('SaaS
-                                        Panel') }}
+                                    <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('Plans') }}
                                     </li>
                                 </ol>
                             </nav>

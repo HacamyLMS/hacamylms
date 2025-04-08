@@ -26,9 +26,9 @@
                         <ul id="progressbar"
                             class="upload-course-item-block d-flex align-items-center justify-content-center">
                             <li class="active" id="account"><strong>{{ __('Course Overview') }}</strong></li>
-                            <li class="active" id="personal"><strong>{{ __('Upload Video') }}</strong></li>
-                            <li id="instructor"><strong>{{ __('Instructors') }}</strong></li>
-                            <li id="confirm"><strong>{{ __('Submit Process') }}</strong></li>
+                            <li class="active" id="personal"><strong>{{ __('Upload Contents') }}</strong></li>
+                            <li id="instructor"><strong>{{ __('Tutors') }}</strong></li>
+                            <li id="confirm"><strong>{{ __('Submit Course') }}</strong></li>
                         </ul>
 
                         <!-- Upload Course Step-1 Item Start -->

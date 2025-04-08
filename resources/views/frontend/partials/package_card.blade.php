@@ -18,12 +18,12 @@ $old_price = ($isMonthly) ? $package->monthly_price : $package->yearly_price;
         </div>
         <div class="pricing-time-duration d-flex theme-border text-center border-start-0 border-end-0 mb-30">
             @if($price < 1)
-            <h6 class="font-22 text-center font-bold">{{ __('Full Free') }}</h6>
+                <h6 class="font-22 text-center font-bold">{{ ($currencySymbol ?? get_currency_symbol()).__('0') }}/{{ ($isMonthly) ? __('Month') : __('Yearly') }}</h6>
             @else
-            <h6 class="font-22 font-bold">{{ $price.($currencySymbol ?? get_currency_symbol()) }}/{{ ($isMonthly) ? __('Month') : __('Yearly') }}</h6>
-            @if($price != $old_price)
-            <p class="font-semi-bold text-decoration-line-through">{{ $old_price.($currencySymbol ?? get_currency_symbol())}}</p>
-            @endif
+                <h6 class="font-22 font-bold">{{ ($currencySymbol ?? get_currency_symbol()).$price }}/{{ ($isMonthly) ? __('Month') : __('Yearly') }}</h6>
+                @if($price != $old_price)
+                <p class="font-semi-bold text-decoration-line-through">{{ ($currencySymbol ?? get_currency_symbol()).$old_price}}</p>
+                @endif
             @endif
 
         </div>
@@ -34,15 +34,15 @@ $old_price = ($isMonthly) ? $package->monthly_price : $package->yearly_price;
                         @if($package->package_type == PACKAGE_TYPE_SUBSCRIPTION)
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __('Unlimited access to').' '. $package->course. __(' course') }}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __('Access to').' '. $package->course. __('Courses') }}
                         </li>
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __('Access to').' '. $package->bundle_course.' '.__('bundle course') }}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __('Access to').' '. $package->bundle_course.' '.__('Bundle Courses') }}
                         </li>
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Buy") .' '. $package->consultancy.' '.__('Consultancy Hour') }}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Access to") .' '. $package->consultancy.' '.__('Consultancy Hours') }}
                         </li>
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
@@ -51,52 +51,52 @@ $old_price = ($isMonthly) ? $package->monthly_price : $package->yearly_price;
                         @elseif($package->package_type == PACKAGE_TYPE_SAAS_INSTRUCTOR)
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __('Unlimited Create ').' '. $package->course. ' '.__('Course') }}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __('Can Create upto').' '. $package->course. ' '.__('Courses') }}
                         </li>
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Create") .' '. $package->bundle_course.' '.__('Bundle Course') }}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Can Create upto") .' '. $package->bundle_course.' '.__('Bundle Courses') }}
                         </li>
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Enable") .' '. $package->subscription_course.' '.__('Subscription Course') }}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Can Enable") .' '. $package->subscription_course.' '.__('Subscription Courses') }}
                         </li>
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Give") .' '. $package->consultancy.' '.__('hour consultancy') }}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Max of") .' '. $package->consultancy.' '.__('Hours Consultancy') }}
                         </li>
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Minimum of") .' '. $package->admin_commission .'% '.__('sale commission')}}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ $package->admin_commission .'% '.__('Sales Commission')}}
                         </li>
                         @elseif($package->package_type == PACKAGE_TYPE_SAAS_ORGANIZATION)
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Unlimited create of").' '. $package->instructor.' '.__('instructor') }}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Maximum of").' '. $package->instructor.' '.__('Tutors') }}
                         </li>
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Create ").' '. $package->student.' '.__('student') }}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Maximum of").' '. $package->student.' '.__('Students') }}
                         </li>
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __('Unlimited Create ').' '. $package->course. ' '.__('Course') }}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __('Can Create upto').' '. $package->course. ' '.__('Courses') }}
                         </li>
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Create") .' '. $package->bundle_course.' '.__('Bundle Course') }}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Can Create upto") .' '. $package->bundle_course.' '.__('Bundle Course') }}
                         </li>
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Enable") .' '. $package->subscription_course.' '.__('Subscription Course') }}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Can Enable") .' '. $package->subscription_course.' '.__('Subscription Courses') }}
                         </li>
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Give") .' '. $package->consultancy.' '.__('hour consultancy') }}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Max of") .' '. $package->consultancy.' '.__('Hours Consultancy') }}
                         </li>
                         <li>
                             <span class="check-icon-wrap radius-50 font-13 d-inline-flex align-items-center justify-content-center me-2">
-                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ __("Minimum of") .' '. $package->admin_commission .'% '.__('sale commission')}}
+                            <span class="iconify" data-icon="bi:check-lg"></span></span>{{ $package->admin_commission .'% '.__('Sales Commission')}}
                         </li>
                         @endif
                     </ul>
@@ -108,7 +108,7 @@ $old_price = ($isMonthly) ? $package->monthly_price : $package->yearly_price;
         @csrf
         <input type="hidden" name="monthly" value={{ $isMonthly }}>
         <div class="pricing-btn text-center">
-            <button type="submit" {{ ($isDisabled) ? 'disabled' : '' }} class="{{ ($isDisabled) ? 'disabled-btn' : '' }} package-btn green-theme-btn theme-button1">{{ ($isDisabled && $isCurrent) ? __("Current Plan") : __("Get Started") }}</button>
+            <button type="submit" {{ ($isDisabled) ? 'disabled' : '' }} class="{{ ($isDisabled) ? 'disabled-btn' : '' }} package-btn green-theme-btn theme-button1">{{ ($isDisabled && $isCurrent) ? __("Current Plan") : __("Buy Plan") }}</button>
         </div>
     </form>
 </div>

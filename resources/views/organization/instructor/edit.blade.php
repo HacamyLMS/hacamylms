@@ -2,14 +2,14 @@
 
 @section('breadcrumb')
     <div class="page-banner-content text-center">
-        <h3 class="page-banner-heading text-white pb-15"> {{ __('Edit Instructor') }} </h3>
+        <h3 class="page-banner-heading text-white pb-15"> {{ __('Edit Tutor') }} </h3>
 
         <!-- Breadcrumb Start-->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center">
                 <li class="breadcrumb-item font-14"><a href="{{ route('organization.dashboard') }}">{{ __('Dashboard') }}</a>
                 </li>
-                <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('Edit Instructor') }}</li>
+                <li class="breadcrumb-item font-14 active" aria-current="page">{{ __('Edit Tutor') }}</li>
             </ol>
         </nav>
     </div>
@@ -246,7 +246,7 @@
                             placeholder="https://pinterest.com">
                     </div>
                     <div class="col-md-12">
-                        <label class="font-medium font-15 color-heading">{{ __('About Instructor') }} <span
+                        <label class="font-medium font-15 color-heading">{{ __('About Tutor') }} <span
                                 class="text-danger">*</span></label>
                         <textarea name="about_me" id="" cols="15" rows="5" class="form-control" required>{{ $instructor->about_me }}</textarea>
                         @if ($errors->has('about_me'))
@@ -258,7 +258,7 @@
             </div>
             <div class="col-12">
                 <button type="submit"
-                    class="theme-btn theme-button1 theme-button3 font-15 fw-bold">{{ __('Upadate') }}</button>
+                    class="theme-btn theme-button1 theme-button3 font-15 fw-bold">{{ __('Update Profile') }}</button>
             </div>
         </form>
     </div>

@@ -45,7 +45,7 @@
                                 <label class="label-text-title color-heading font-medium font-16 mb-3">{{__('Quiz Types')}}</label>
                                 <select name="type" id="type" class="form-select" required>
                                     <option value="multiple_choice">{{ __('Multiple Choice') }}</option>
-                                    <option value="true_false">{{ __('True False') }}</option>
+                                    <option value="true_false">{{ __('True or False') }}</option>
                                 </select>
                                 @if ($errors->has('type'))
                                     <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('type') }}</span>
@@ -68,8 +68,8 @@
                         </div>
 
                         <div>
-                            <a href="{{route('organization.course.index')}}" class="theme-btn theme-button3 quiz-back-btn">{{__('Back')}}</a>
-                            <button type="submit" class="theme-btn theme-button1">{{__('Create')}}</button>
+                            <a href="{{route('organization.course.index')}}" class="theme-btn theme-button1 quiz-back-btn">{{__('Back')}}</a>
+                            <button type="submit" class="theme-button1">{{__('Create')}}</button>
                         </div>
 
                     </form>

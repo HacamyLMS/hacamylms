@@ -61,7 +61,7 @@
                             <div class="col-md-12">
                                 <div class="create-assignment-upload-files">
                                     <div>
-                                        <input type="file" name="file" class="form-control" title="Upload Your Files" />
+                                        <input type="file" name="file" class="form-control" title="Upload Your Files" accept=".pdf,.zip" />
                                     </div>
                                     <p class="font-14 color-heading text-center mt-2 color-gray">{{ __('Accepted files') }} (PDF or ZIP) </p>
                                 </div>
@@ -72,7 +72,7 @@
                         @endif
                         <div>
                             <button class="theme-btn theme-button3 quiz-back-btn">{{ __('Back') }}</button>
-                            <button type="submit" class="theme-btn theme-button1">{{ __('Create') }}</button>
+                            <button type="submit" class="theme-button1">{{ __('Create') }}</button>
                         </div>
 
                     </form>
