@@ -11,7 +11,7 @@
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> 
             <div class="main-menu-collapse collapse navbar-collapse" id="navbarSupportedContent">
 
                 <div class="header-nav-left-side me-auto d-flex">
@@ -19,7 +19,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="librariesDropdown"
                                 data-bs-toggle="dropdown">
-                                {{ __('Courses') }}
+                                {{ __('Courses Categories') }} 
                             </a>
                             <ul class="dropdown-menu {{$selectedLanguage->rtl == 1 ? 'dropdown-menu-end' : ''}}">
                                 @foreach($categories as $category)
