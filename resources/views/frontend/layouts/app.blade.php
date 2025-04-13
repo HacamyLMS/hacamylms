@@ -280,6 +280,59 @@
         };
     }
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const sfnavbarToggler = document.querySelector('.sf-navbar-toggler');
+    const navbarCollapse = document.getElementById('navbarSupportedContent');
+    
+    // Initialize Bootstrap Collapse
+    const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+        toggle: false
+    });
+
+    // Toggle navbar on button click
+    function toggleNavbar(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        bsCollapse.toggle();
+    }
+
+    navbarToggler.addEventListener('click', toggleNavbar);
+    sfnavbarToggler.addEventListener('click', toggleNavbar);
+
+    // Close navbar when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInside = navbarToggler.contains(event.target) || 
+                            sfnavbarToggler.contains(event.target) || 
+                            navbarCollapse.contains(event.target);
+        
+        if (!isClickInside && navbarCollapse.classList.contains('show')) {
+            bsCollapse.hide();
+        }
+    });
+
+    // Close navbar when clicking links
+    navbarCollapse.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbarCollapse.classList.contains('show')) {
+                bsCollapse.hide();
+            }
+        });
+    });
+
+    // Close navbar on scroll
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (Math.abs(scrollTop - lastScrollTop) > 10 && navbarCollapse.classList.contains('show')) {
+            bsCollapse.hide();
+        }
+        lastScrollTop = scrollTop;
+    }, { passive: true });
+});
+</script>
 <!-- DataTables  & Plugins -->
 <script src="{{asset('frontend/assets/vendor/datatable/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('frontend/assets/vendor/datatable/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>

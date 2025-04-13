@@ -1143,13 +1143,13 @@
         margin-top: 80px;
     }
     .main-menu-collapse {
-        background-color: var(--heading-color);
+        background-color: #333333;
         top: 18px;
         position: relative;
         padding: 30px;
         box-shadow: 0 0 8px 0 rgba(1, 0, 64, 0.07);
         overflow-y: auto;
-        height: calc(100vh - 80px);
+        /* height: calc(100vh - 80px); */
     }
     .header-nav-left-side {
         padding-left: 0;

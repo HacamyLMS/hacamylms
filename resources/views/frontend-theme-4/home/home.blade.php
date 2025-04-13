@@ -6,7 +6,7 @@
 
     <meta name="description" content="{{ __($metaData['meta_description']) }}">
     <meta name="keywords" content="{{ __($metaData['meta_keyword']) }}">
-
+ 
     <!-- Open Graph meta tags for social sharing -->
     <meta property="og:type" content="Learning">
     <meta property="og:title" content="{{ __($metaData['meta_title']) }}">
@@ -42,7 +42,6 @@
     }
     @media screen and (max-width: 991px) {
         .hero-banner {
-            padding: 150px 0 50px !important;
             background-image: none !important;
         }
     }
@@ -312,7 +311,7 @@
                                                         class="course-rating search-instructor-rating w-100 mb-0 d-inline-flex align-items-center justify-content-center">
                                                         <div class="star-ratings">
                                                             <div class="fill-ratings"
-                                                                 style="width: {{ $averate_percent }}%">
+                                                                style="width: {{ $averate_percent }}%">
                                                                 <span>★★★★★</span>
                                                             </div>
                                                             <div class="empty-ratings">
@@ -1258,5 +1257,59 @@
     <script>
         const zai_player = new Plyr('#player');
     </script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const sfnavbarToggler = document.querySelector('.sf-navbar-toggler');
+        const navbarCollapse = document.getElementById('navbarSupportedContent');
+        
+        // Initialize Bootstrap Collapse
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false
+        });
+
+        // Toggle navbar on button click
+        function toggleNavbar(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            bsCollapse.toggle();
+        }
+
+        navbarToggler.addEventListener('click', toggleNavbar);
+        sfnavbarToggler.addEventListener('click', toggleNavbar);
+
+        // Close navbar when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = navbarToggler.contains(event.target) || 
+                                sfnavbarToggler.contains(event.target) || 
+                                navbarCollapse.contains(event.target);
+            
+            if (!isClickInside && navbarCollapse.classList.contains('show')) {
+                bsCollapse.hide();
+            }
+        });
+
+        // Close navbar when clicking links
+        navbarCollapse.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navbarCollapse.classList.contains('show')) {
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // Close navbar on scroll
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (Math.abs(scrollTop - lastScrollTop) > 10 && navbarCollapse.classList.contains('show')) {
+                bsCollapse.hide();
+            }
+            lastScrollTop = scrollTop;
+        }, { passive: true });
+    });
+    </script>
+
     <!-- Video Player js -->
 @endpush

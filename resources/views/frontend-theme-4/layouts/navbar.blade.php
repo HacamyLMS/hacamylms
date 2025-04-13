@@ -17,22 +17,25 @@
                 @endif
                 <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ getImageFile(get_option('app_logo')) }}"
                                                                    alt="Logo"></a>
-                <button class="navbar-toggler" type="button" 
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" 
-                    aria-controls="navbarSupportedContent" 
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
-                </button> 
+                <button class="navbar-toggler sf-navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="main-menu-collapse collapse navbar-collapse" id="navbarSupportedContent">
+
                     <div class="header-nav-left-side me-auto d-flex">
                         <ul class="navbar-nav mb-2 mb-lg-0">
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown d-none d-lg-block">
                                 <a class="nav-link dropdown-toggle" href="#" id="librariesDropdown"
                                    data-bs-toggle="dropdown">
                                     {{ __('Course Categories') }}
                                 </a>
                                 <ul class="dropdown-menu {{ $selectedLanguage->rtl == 1 ? 'dropdown-menu-end' : '' }}">
+                                    <li class="d-none d-lg-block"><a href="{{ route('courses') }}">{{ __('All Courses') }}</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
                                     @foreach ($categories as $category)
                                         <li>
                                             <a href="{{ route('category-courses', $category->slug) }}"
@@ -48,14 +51,12 @@
                                             @endif
                                         </li>
                                     @endforeach
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a href="{{ route('courses') }}">{{ __('All Courses') }}</a></li>
                                 </ul>
                             </li>
+                            <li class="nav-item d-lg-none">
+                                <a class="nav-link" href="{{ route('courses') }}">{{ __('All Courses') }}</a>
+                            </li>
                         </ul>
-
                     </div>
                     <div class="header-nav-right-side d-flex">
                         <ul class="navbar-nav">
