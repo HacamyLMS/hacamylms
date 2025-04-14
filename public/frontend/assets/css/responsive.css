@@ -1144,12 +1144,13 @@
     }
     .main-menu-collapse {
         background-color: #333333;
-        top: 30px;
-        position: relative;
+        top: 69px;
+        position: fixed;
         padding: 30px;
         box-shadow: 0 0 8px 0 rgba(1, 0, 64, 0.07);
-        overflow-y: auto;
-        /* height: calc(100vh - 80px); */
+        /* overflow-y: scroll; */
+        height: calc(100vh - 60px);
+        width: 100%;
     }
     .header-nav-left-side {
         padding-left: 0;
