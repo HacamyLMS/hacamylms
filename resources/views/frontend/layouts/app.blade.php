@@ -348,7 +348,10 @@ $selectedLanguage = selectedLanguage();
   });
   </script>
   @endif
-
+  
+  <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/04/13/22/20250413225252-1Q32AJXX.js"></script>
+    
   <!-- Animate On Scroll Library JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
