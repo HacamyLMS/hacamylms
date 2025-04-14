@@ -53,25 +53,14 @@
 <!-- Page Header End -->
 
 <!-- Contact Page Area Start -->
-<section class="contact-page-area section-t-space">
+<section class="contact-page-area bg-black">
     <div class="container">
         <div class="row">
             <!-- Contact page left side start-->
-            <div class="col-md-6 col-lg-5 bg-white contact-page-left-side">
+            <div class="col-md-6 col-lg-5 bg-white contact-page-left-side" style="border-radius: 15px 0 0 15px;">
 
                 <div class="contact-page-left-side-wrap">
                     <h5 class="contact-form-title font-24 font-semi-bold">{{ __(get_option('get_in_touch_title')) }}</h5>
-
-                    <!-- Contact Info Item Start-->
-                    <div class="contact-info-item d-flex align-items-center">
-                        <div class="flex-shrink-0 contact-icon-img-wrap">
-                            <img src="{{ asset('frontend/assets/img/icons-svg/contact-icon-1.png') }}" alt="feature">
-                        </div>
-                        <div class="flex-grow-1 ms-3 contact-info-content">
-                            <p>{{ __(get_option('contact_us_location')) }}</p>
-                        </div>
-                    </div>
-                    <!-- Contact Info Item End-->
 
                     <!-- Contact Info Item Start-->
                     <div class="contact-info-item d-flex align-items-center">
@@ -97,35 +86,43 @@
                     </div>
                     <!-- Contact Info Item End-->
 
-                    <div class="contact-bottom-content">
-                        <p class="color-gray mt-3">{{ __(get_option('contact_us_description')) }}</p>
-                    </div>
                 </div>
 
             </div>
             <!-- Contact page left side End-->
 
             <!-- Contact page right side start-->
-            <div class="col-md-6 col-lg-7 bg-white contact-page-right">
+            <div class="col-md-6 col-lg-7 bg-white contact-page-right" style="border-radius: 0 15px 15px 0;">
                 <div class="contact-form-area">
                     <h5 class="contact-form-title font-24 font-semi-bold">{{ __(get_option('send_us_msg_title')) }}</h5>
                     <form id="contact-form">
                         <div class="row">
                             <div class="col-md-6 mb-30">
-                                <input type="text" class="form-control" id="inputName" placeholder="{{ __('Your name *') }}">
+                                <input type="text" class="form-control" id="inputName" placeholder="{{ __('Your name *') }}" required>
                             </div>
                             <div class="col-md-6 mb-30">
-                                <input type="email" class="form-control" id="inputEmail" placeholder="{{ __('Your Email *') }}">
+                                <input type="email" class="form-control" id="inputEmail" 
+                                    placeholder="{{ __('Your Email *') }}"
+                                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                    oninput="this.value=this.value.replace(/\s/g,'')"
+                                    title="{{ __('Please enter a valid email address (e.g., user@domain.com)') }}"
+                                    required>
+                                <small class="text-danger email-error" style="display: none;">
+                                    <i class="fas fa-exclamation-triangle"></i> {{ __('Please enter a valid email address') }}
+                                </small>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12 mb-30">
-                                <select id="inputState" class="form-select contact_us_issue_id">
-                                    <option value="">{{__('Select an Issue')}}</option>
+                                <select id="inputState" class="form-select contact_us_issue_id" required>
+                                    <option value="" disabled selected>{{__('Select an Issue *')}}</option>
                                     @foreach($contactUsIssues as $issue)
                                     <option value="{{ $issue->id }}">{{ __($issue->name) }}</option>
                                     @endforeach
                                 </select>
+                                <small class="text-danger issue-error" style="display: none;">
+                                    <i class="fas fa-exclamation-triangle"></i> {{ __('Please select an issue') }}
+                                </small>
                             </div>
                         </div>
                         <div class="row">

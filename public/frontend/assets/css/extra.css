@@ -71,7 +71,7 @@
 
 /*Course watch page no video img start*/
 .course-watch-no-video-img {
-    height: 600px;
+    height: 200px;
     overflow: hidden;
 }
 /*Course watch page no video img end*/
@@ -1312,8 +1312,8 @@
 
 /* PWA Install Button Start */
 .pwa-install-btn {
-    right: 10px;
-    top: 30%;
+    right: 50px;
+    bottom: 10%;
     padding: 7px 10px;
     display: flex;
     border: 1px solid var(--border-color);
@@ -1759,7 +1759,7 @@ End default class
     display: block !important;
 }
 .sf-navbar-toggler {
-    border-color: var(--theme-color);
+    border-color: #fff;
     background-color: var(--theme-color) !important;
 }
 

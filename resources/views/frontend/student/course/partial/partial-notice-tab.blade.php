@@ -6,7 +6,7 @@
                 <!-- If there is no data Show Empty Design Start -->
                 <div class="empty-data d-none">
                     <img src="{{ asset('frontend/assets/img/empty-data-img.png') }}" alt="img" class="img-fluid">
-                    <h5 class="my-3">{{ __('Empty Notice') }}</h5>
+                    <h5 class="my-3">{{ __('No Notice') }}</h5>
                 </div>
                 <!-- If there is no data Show Empty Design End -->
 

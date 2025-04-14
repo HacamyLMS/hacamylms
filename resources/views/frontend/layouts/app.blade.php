@@ -11,6 +11,10 @@
     <meta name="msapplication-TileColor" content="rgba(103, 20, 222,.55)">
     <meta name="theme-color" content="#754FFE">
 
+    
+    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/04/13/22/20250413225252-1Q32AJXX.js"></script>
+    
     @hasSection('meta')
         @yield('meta')
     @else
@@ -130,7 +134,7 @@
     @if(get_option('pwa_enable'))
         <!-- PWA  -->
         <meta name="theme-color"
-              content="{{ empty(get_option('app_theme_color')) ? '#5e3fd7' : get_option('app_theme_color') }}"/>
+              content="{{ empty(get_option('app_theme_color')) ? '#000' : get_option('app_theme_color') }}"/>
         <link rel="apple-touch-icon" href="{{ getImageFile(get_option('app_fav_icon')) }}">
         <link rel="manifest" href="{{ asset('manifest.json') }}">
     @endif
@@ -181,8 +185,8 @@
 <!-- Footer End -->
 
 <!-- PWA Install Button Start -->
-<button class="d-none pwa-install-btn bg-white position-fixed radius-4" id="installApp">
-    <span class="iconify" data-icon="logos:pwa"></span>
+<button class="d-none pwa-install-btn bg-black position-fixed radius-4" id="installApp">
+    <img src="{{ getImageFile(get_option('app_fav_icon')) }}" alt="Install icon" class="me-2" style="width: 20px; height: 20px;"><span class="iconify" style="color: #fff">Install Hacamy</span>
 </button>
 <!-- PWA Install Button End -->
 
@@ -368,6 +372,34 @@ document.addEventListener('DOMContentLoaded', function() {
         @endforeach
     </script>
 @endif
+
+<script>
+    // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // Disable specific key combinations (F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S)
+    document.addEventListener('keydown', function(e) {
+        // Prevent F12 (Inspect)
+        if (e.key === 'F12') {
+            e.preventDefault();
+        }
+        // Prevent Ctrl+Shift+I (Inspect)
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+            e.preventDefault();
+        }
+        // Prevent Ctrl+U (View Source)
+        if (e.ctrlKey && e.key === 'u') {
+            e.preventDefault();
+        }
+        // Prevent Ctrl+S (Save Page)
+        if (e.ctrlKey && e.key === 's') {
+            e.preventDefault();
+        }
+    });
+
+</script>
 
 @if(get_option('pwa_enable'))
     <script src="{{ asset('sw.js') }}"></script>

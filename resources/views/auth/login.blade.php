@@ -12,7 +12,7 @@
                         </video>
                         <form method="POST" action="{{ route('login') }}" style="background-color: #fff; padding: 30px; border-radius: 10px;">
                             <div class="sign-up-top-logo text-center">
-                                <a href="{{ route('main.index') }}"><img src="{{getImageFile(get_option('app_black_logo'))}}" alt="logo"></a>
+                                <a href="{{ route('main.index') }}"><img src="{{getImageFile(get_option('app_black_logo'))}}" alt="logo" style="width: 200px;"></a>
                             </div>
                             @csrf
 
@@ -21,7 +21,10 @@
                             <div class="row mb-20">
                                 <div class="col-md-12">
                                     <label class="label-text-title color-heading font-medium font-16 mb-3">{{__('Email or Phone')}}</label>
-                                    <input type="text" name="email" value="{{old('email')}}" class="form-control email" placeholder="{{ __('Type your email or phone number') }}">
+                                    <input type="text" name="email" value="{{old('email')}}" class="form-control email" 
+                                           placeholder="{{ __('Type your email or phone number') }}"
+                                           pattern="[^\s]+" title="{{ __('Spaces are not allowed') }}"
+                                           oninput="this.value=this.value.replace(/\s/g,'')" required>
                                     @if ($errors->has('email'))
                                         <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('email') }}</span>
                                     @endif
@@ -31,7 +34,11 @@
                                 <div class="col-md-12">
                                     <label class="label-text-title color-heading font-medium font-16 mb-3">{{__('Password')}}</label>
                                     <div class="form-group mb-0 position-relative">
-                                        <input class="form-control password" name="password" value="{{old('password')}}" placeholder="*********" type="password">
+                                        <input class="form-control password" name="password" value="{{old('password')}}" 
+                                               placeholder="*********" type="password"
+                                               pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+                                               title="{{ __('Password must be at least 6 characters with 1 letter and 1 number') }}"
+                                               required>
                                         <span class="toggle cursor fas fa-eye pass-icon"></span>
                                     </div>
 

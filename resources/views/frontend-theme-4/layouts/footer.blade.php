@@ -42,15 +42,12 @@
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-2 offset-lg-2">
                     <div class="footer-widget">
-                        <h6 class="footer-widget-title">{{ __('Company') }}</h6>
+                        <h6 class="footer-widget-title">{{ __('Overview') }}</h6>
                         <div class="footer-links d-flex">
                             <ul>
                                 @foreach ($footerLeftMenus ?? [] as $footerLeftMenu)
-                                    <li><a href="{{ $footerLeftMenu->url }}">{{ __($footerLeftMenu->name) }}</a></li>
+                                    <li><a href="{{ url('/') . $footerLeftMenu->url }}">{{ __($footerLeftMenu->name) }}</a></li>
                                 @endforeach
-                                {{-- <li><a href="{{ route('about') }}">{{ __('About')  }}</a></li>
-                                <li><a href="{{ route('faq') }}">{{__('FAQ')}}</a></li>
-                                <li><a href="{{ route('blogs') }}">{{ __('Blogs') }}</a></li> --}}
                             </ul>
                         </div>
                     </div>
@@ -61,15 +58,9 @@
                         <div class="footer-links d-flex">
                             <ul>
                                 @foreach ($footerRightMenus ?? [] as $footerRightMenu)
-                                    <li><a href="{{ $footerRightMenu->url }}">{{ __($footerRightMenu->name) }}</a>
+                                    <li><a href="{{ url('/') . $footerRightMenu->url }}">{{ __($footerRightMenu->name) }}</a>
                                     </li>
                                 @endforeach
-
-                                {{-- <li><a href="{{ route('contact') }}">{{  __('Contact')  }}</a></li>
-                                <li><a href="{{ route('support-ticket-faq') }}">{{  __('Support')  }}</a></li>
-                                @if (!get_option('private_mode') || !auth()->guest())
-                                <li><a href="{{ route('courses') }}">{{ __('Courses')  }}</a></li>
-                                @endif --}}
                             </ul>
                         </div>
                     </div>
@@ -115,9 +106,9 @@
                 <div class="col-12 col-md-12 col-lg-4 pe-lg-0">
                     <div class="footer-bottom-nav">
                         <ul class="d-flex justify-content-end">
-                            <li><a href="{{ route('instructor') }}">{{ __('Instructor') }}</a></li>
+                            <li><a href="{{ route('contact') }}">{{ __('Organization Signup') }}</a></li>
                             <li><a
-                                    href="{{ route('student.become-an-instructor') }}">{{ __('Become Instructor') }}</a>
+                                    href="{{ route('student.become-an-instructor') }}">{{ __('Sell Courses') }}</a>
                             </li>
                             <li><a href="{{ route('verify_certificate') }}">{{ __('Verify Certificate') }}</a></li>
                         </ul>

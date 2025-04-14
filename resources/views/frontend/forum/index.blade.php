@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="col-12 col-md-12">
                             <div class="page-banner-content forum-banner-content text-center">
-                                <h3 class="page-banner-heading text-white" style="padding-bottom: 80px;">{{ __('Hacamy Forum') }}</h3>
+                                <h3 class="page-banner-heading text-white" style="padding-bottom: 80px;">{{ __('Forum') }}</h3>
                                 <div class="forum-banner-search-ask-wrap d-flex align-items-center justify-content-center">
                                     <div class="input-group position-relative">
                                         <input class="form-control border-0 bg-transparent searchForumBar" type="search"
@@ -63,28 +63,27 @@
         <!-- Special Feature / Forum Categories Area Start -->
         <section class="special-feature-area forum-categories-area section-t-space section-b-85-space bg-white">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-title ">
-                            <h3 class="section-heading">{{ __('Categories') }}</h3>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="row">
                     @foreach ($forumCategories as $forumCategory)
                         <!-- Single Feature Item start-->
-                        <div class="col-md-4">
+                        <div class="col-6 col-md-3">
                             <div class="single-feature-item d-flex align-items-center">
-                                <div class="flex-shrink-0 feature-img-wrap">
+                                <div class="flex-shrink-0 feature-img-wrap" style="padding-right: 10px;">
                                     <a href="{{ route('forum.forumCategoryPosts', $forumCategory->uuid) }}"><img
                                             src="{{ getImageFile($forumCategory->logo) }}" alt="feature" style="max-width: 50px;"></a>
                                 </div>
-                                <div class="flex-grow-1 ms-3 feature-content">
-                                    <h6><a
-                                            href="{{ route('forum.forumCategoryPosts', $forumCategory->uuid) }}">{{ $forumCategory->title }}</a>
+                                <div class="flex-grow-1 feature-content" style="height: 100px; display: flex; flex-direction: column; justify-content: center;">
+                                    <h6>
+                                        <a href="{{ route('forum.forumCategoryPosts', $forumCategory->uuid) }}" 
+                                        class="text-wrap" 
+                                        style="display: inline-block; max-width: 100%; white-space: normal; word-wrap: break-word;">
+                                        {{ Str::limit($forumCategory->title, 15) }}
+                                        </a>
                                     </h6>
-                                    <p>{{ Str::limit($forumCategory->subtitle, 70) }}</p>
+                                    <p class="text-wrap" style="max-width: 100%; white-space: normal; word-wrap: break-word;">
+                                        {{ Str::limit($forumCategory->subtitle, 15) }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +100,7 @@
                 <div class="container">
 
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-6 col-md-3">
                             <div class="single-feature-item d-flex align-items-center bg-transparent">
                                 <div class="flex-shrink-0 feature-img-wrap">
                                     <img src="{{ asset('frontend/assets/img/feature-img/forum-countdown1.png') }}"
@@ -113,7 +112,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-6 col-md-3">
                             <div class="single-feature-item d-flex align-items-center bg-transparent">
                                 <div class="flex-shrink-0 feature-img-wrap">
                                     <img src="{{ asset('frontend/assets/img/feature-img/forum-countdown2.png') }}"
@@ -125,7 +124,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-6 col-md-3">
                             <div class="single-feature-item d-flex align-items-center bg-transparent">
                                 <div class="flex-shrink-0 feature-img-wrap">
                                     <img src="{{ asset('frontend/assets/img/feature-img/forum-countdown3.png') }}"
@@ -137,7 +136,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-6 col-md-3">
                             <div class="single-feature-item d-flex align-items-center bg-transparent">
                                 <div class="flex-shrink-0 feature-img-wrap">
                                     <img src="{{ asset('frontend/assets/img/feature-img/forum-countdown4.png') }}"
@@ -162,8 +161,6 @@
                     <!-- Forum Categories Left Start -->
                     <div class="col-12 col-md-12 col-xl-8">
                         <div class="forum-categories-left">
-                            <h3 class="mb-4">{{ __('Recent Discussions') }}</h3>
-
                             <div class="forum-categories-filter-box d-flex align-items-center">
                                 <select id="inputState" class="form-select color-heading forumCategory">
                                     <option value="">{{ __('All Categories') }}</option>
@@ -222,7 +219,7 @@
                                         </div>
                                     </li>
                                 @endforeach
-                                <li class="forum-link-box-title font-18 color-heading font-medium text-center">
+                                <li class="forum-link-box-title font-18 color-heading font-medium">
                                     <a href="{{ route('forum.forumLeaderboard') }}">{{ __('View All') }} <i
                                             data-feather="arrow-right"></i></a>
                                 </li>

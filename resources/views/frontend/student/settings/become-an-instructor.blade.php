@@ -142,7 +142,7 @@
                             </div>
                             <div class="flex-grow-1 ms-3 counter-content">
                                 <h4 class="count-content" style="color: #fff !important;"><span class="counter">{{ @$total_instructors }}</span>+</h4>
-                                <p class="font-14 font-medium color-gray mt-2" style="color: #fff !important;">{{ __('Instructor') }}</p>
+                                <p class="font-14 font-medium color-gray mt-2" style="color: #fff !important;">{{ __('Tutors') }}</p>
                             </div>
                         </div>
                     </div>
@@ -155,7 +155,7 @@
                                 <img src="{{asset('frontend/assets/img/icons-svg/counter-4.png')}}" alt="img">
                             </div>
                             <div class="flex-grow-1 ms-3 counter-content" style="color: #fff;">
-                                <h4 class="count-content" style="color: #fff !important;"><span class="counter">100</span>%</h4>
+                                <h4 class="count-content" style="color: #fff !important;"><span class="counter">99</span>%</h4>
                                 <p class="font-14 font-medium color-gray mt-2" style="color: #fff !important;">{{ __('Satisfaction') }}</p>
                             </div>
                         </div>
@@ -190,9 +190,9 @@
     <div class="modal fade becomeAnInstructorModal" id="becomeAnInstructor" tabindex="-1" aria-labelledby="becomeAnInstructorLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h6 class="modal-title" id="becomeAnInstructorLabel">{{ __('Submit your application') }}</h6>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header bg-black">
+                    <h6 class="modal-title text-center" id="becomeAnInstructorLabel" style="color: #fff;">{{ __('Switch to Tutor') }}</h6>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <form method="POST" action="{{route('student.save-instructor-info')}}" class="needs-validation" novalidate enctype="multipart/form-data">
@@ -201,88 +201,106 @@
 
                         <div class="row mb-30">
                             <div class="col-md-12">
-                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('First Name')}}</label>
-                                <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Write your first name" value="{{ @Auth::user()->student->first_name }}" required>
+                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('First Name')}} <span class="text-danger">*</span></label>
+                                <input type="text" name="first_name" class="form-control" id="first_name" 
+                                    placeholder="{{__('Write your first name')}}" 
+                                    value="{{ @Auth::user()->student->first_name }}"
+                                    pattern="[^\s]+" 
+                                    oninput="this.value=this.value.replace(/\s/g,'')"
+                                    title="{{ __('Spaces are not allowed') }}"
+                                    required>
                             </div>
-                            @if ($errors->has('first_name'))
-                                <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('first_name') }}</span>
-                            @endif
                         </div>
                         
                         <div class="row mb-30">
                             <div class="col-md-12">
-                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('Last Name')}}</label>
-                                <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Write your last name" value="{{ @Auth::user()->student->last_name }}" required>
+                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('Last Name')}} <span class="text-danger">*</span></label>
+                                <input type="text" name="last_name" class="form-control" id="last_name" 
+                                    placeholder="{{__('Write your last name')}}" 
+                                    value="{{ @Auth::user()->student->last_name }}"
+                                    pattern="[^\s]+" 
+                                    oninput="this.value=this.value.replace(/\s/g,'')"
+                                    title="{{ __('Spaces are not allowed') }}"
+                                    required>
                             </div>
-                            @if ($errors->has('last_name'))
-                                <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('last_name') }}</span>
-                            @endif
                         </div>
 
                         <div class="row mb-30">
                             <div class="col-md-12">
-                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('Account Type')}}</label>
-                                <select class="form-control"  name="account_type">
+                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('Account Type')}} <span class="text-danger">*</span></label>
+                                <select class="form-control" name="account_type" required>
                                     <option value="{{ USER_ROLE_INSTRUCTOR }}">{{ __('Tutor') }}</option>
                                 </select>
                             </div>
-                            @if ($errors->has('account_type'))
-                                <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('account_type') }}</span>
-                            @endif
                         </div>
 
                         <div class="row mb-30">
                             <div class="col-md-12">
-                                <label for="professional_title" class="label-text-title color-heading font-medium font-16 mb-2">{{__('Professional Title')}}</label>
-                                <input type="text" name="professional_title" class="form-control" id="professional_title" placeholder="{{__('Professional Title')}}" value="{{ old('professional_title') }}">
+                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('Professional Title')}} <span class="text-danger">*</span></label>
+                                <input type="text" name="professional_title" class="form-control text-capitalize" 
+                                    id="professional_title" 
+                                    placeholder="{{__('Professional Title')}}" 
+                                    value="{{ old('professional_title') }}"
+                                    oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1).toLowerCase()"
+                                    required>
                             </div>
-                            @if ($errors->has('professional_title'))
-                                <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('professional_title') }}</span>
-                            @endif
                         </div>
 
                         <div class="row mb-30">
                             <div class="col-md-12">
-                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('Phone Number')}}</label>
-                                <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder="{{__('Phone Number')}}" value="{{ old('phone_number') ?? @Auth::user()->student->phone_number }}" required>
+                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('Phone Number')}} <span class="text-danger">*</span></label>
+                                <input type="tel" name="phone_number" class="form-control" id="phone_number" 
+                                    placeholder="{{__('Phone Number')}}" 
+                                    value="{{ old('phone_number') ?? @Auth::user()->student->phone_number }}"
+                                    pattern="[0-9]+" 
+                                    oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                                    title="{{ __('Only numbers are allowed') }}"
+                                    required>
                             </div>
-                            @if ($errors->has('phone_number'))
-                                <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('phone_number') }}</span>
-                            @endif
                         </div>
 
                         <div class="row mb-30">
                             <div class="col-md-12">
-                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('Address')}}</label>
-                                <input type="text" name="address" class="form-control" id="address" placeholder="{{__('Address')}}" value="{{ old('address') ?? @Auth::user()->student->address }}" required>
+                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('Address')}} <span class="text-danger">*</span></label>
+                                <input type="text" name="address" class="form-control" id="address" 
+                                    placeholder="{{__('Address')}}" 
+                                    value="{{ old('address') ?? @Auth::user()->student->address }}"
+                                    required>
                             </div>
-                            @if ($errors->has('address'))
-                                <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('address') }}</span>
-                            @endif
                         </div>
 
                         <div class="row mb-30">
                             <div class="col-md-12">
-                                <label class="label-text-title color-heading font-medium font-16 mb-2">CV</label>
+                                <label class="label-text-title color-heading font-medium font-16 mb-2">CV <span class="text-danger">*</span></label>
                                 <div class="create-assignment-upload-files">
-                                    <input type="file" name="cv_file" accept="application/pdf"  class="form-control" />
-                                    <p class="font-14 color-heading text-center mt-2 color-gray">No file selected (PDF) <span class="d-block">Maximum File Upload Size is <span class="color-heading">5mb</span></span> </p>
+                                    <input type="file" name="cv_file" 
+                                        accept="application/pdf" 
+                                        class="form-control"
+                                        required 
+                                        onchange="validateFileSize(this)"
+                                    />
+                                    <p class="font-14 color-heading text-center mt-2 color-gray">{{ __('Accepted format: PDF only') }} <span class="d-block">{{ __('Maximum File Upload Size is') }} <span class="color-heading">5MB</span></span></p>
                                 </div>
-                                @if ($errors->has('cv_file'))
-                                    <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('cv_file') }}</span>
-                                @endif
                             </div>
                         </div>
 
                         <div class="row mb-30">
                             <div class="col-md-12">
-                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('Bio')}}</label>
-                                <textarea name="about_me" class="form-control" cols="30" rows="10" placeholder="About your self" required>{{ old('about_me') }}</textarea>
+                                <label class="label-text-title color-heading font-medium font-16 mb-2">{{__('Bio')}} <span class="text-danger">*</span></label>
+                                <textarea name="about_me" class="form-control" cols="30" rows="10" 
+                                    placeholder="{{__('About yourself')}}" 
+                                    required>{{ old('about_me') }}</textarea>
                             </div>
-                            @if ($errors->has('about_me'))
-                                <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> {{ $errors->first('about_me') }}</span>
-                            @endif
                         </div>
+
+<script>
+function validateFileSize(input) {
+    if (input.files[0].size > 5242880) { // 5MB = 5242880 bytes
+        alert("{{ __('File is too large. Maximum size is 5MB.') }}");
+        input.value = '';
+    }
+}
+</script>
 
                     </div>
                     <div class="modal-footer d-flex justify-content-center align-items-center">

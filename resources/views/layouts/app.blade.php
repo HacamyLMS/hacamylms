@@ -10,6 +10,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+     
+    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/04/13/22/20250413225252-1Q32AJXX.js"></script>
+    
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -80,30 +84,31 @@
         </main>
     </div>
     <script>
-        // Disable right-click
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
+    // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
 
-        // Disable specific key combinations (F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S)
-        document.addEventListener('keydown', function(e) {
-            // Prevent F12 (Inspect)
-            if (e.key === 'F12') {
-                e.preventDefault();
-            }
-            // Prevent Ctrl+Shift+I (Inspect)
-            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-                e.preventDefault();
-            }
-            // Prevent Ctrl+U (View Source)
-            if (e.ctrlKey && e.key === 'u') {
-                e.preventDefault();
-            }
-            // Prevent Ctrl+S (Save Page)
-            if (e.ctrlKey && e.key === 's') {
-                e.preventDefault();
-            }
-        });
-    </script>
+    // Disable specific key combinations (F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S)
+    document.addEventListener('keydown', function(e) {
+        // Prevent F12 (Inspect)
+        if (e.key === 'F12') {
+            e.preventDefault();
+        }
+        // Prevent Ctrl+Shift+I (Inspect)
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+            e.preventDefault();
+        }
+        // Prevent Ctrl+U (View Source)
+        if (e.ctrlKey && e.key === 'u') {
+            e.preventDefault();
+        }
+        // Prevent Ctrl+S (Save Page)
+        if (e.ctrlKey && e.key === 's') {
+            e.preventDefault();
+        }
+    });
+
+</script>
 </body>
 </html>

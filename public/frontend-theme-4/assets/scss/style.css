@@ -6578,7 +6578,7 @@ input[type=number] {
 }
 @media screen and (max-width: 767px) {
   .testimonial-item-one .author .info {
-    text-align: center;
+    text-align: right !important;
   }
 }
 .testimonial-item-one .author .info .name {

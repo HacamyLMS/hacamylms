@@ -777,8 +777,8 @@
                                                      alt="quote icon"/>
                                             </div>
                                             <div class="info" style="flex: 1; color: #fff">
-                                                <h4 class="name">{{ __(get_option('customer_say_'.$customerSayItem.'_name')) }}</h4>
-                                                <p class="degi">{{ __(get_option('customer_say_'.$customerSayItem.'_position')) }}</p>
+                                                <h4 class="name" style="text-align: right;">{{ __(get_option('customer_say_'.$customerSayItem.'_name')) }}</h4>
+                                                <p class="degi" style="text-align: right;">{{ __(get_option('customer_say_'.$customerSayItem.'_position')) }}</p>
                                             </div>
                                         </div>
                                         <div class="text-content">
@@ -1290,15 +1290,6 @@
             }
         });
 
-        // Close navbar when clicking links
-        navbarCollapse.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navbarCollapse.classList.contains('show')) {
-                    bsCollapse.hide();
-                }
-            });
-        });
-
         // Close navbar on scroll
         let lastScrollTop = 0;
         window.addEventListener('scroll', function() {
@@ -1310,6 +1301,34 @@
         }, { passive: true });
     });
     </script>
+
+<script>
+    // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // Disable specific key combinations (F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S)
+    document.addEventListener('keydown', function(e) {
+        // Prevent F12 (Inspect)
+        if (e.key === 'F12') {
+            e.preventDefault();
+        }
+        // Prevent Ctrl+Shift+I (Inspect)
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+            e.preventDefault();
+        }
+        // Prevent Ctrl+U (View Source)
+        if (e.ctrlKey && e.key === 'u') {
+            e.preventDefault();
+        }
+        // Prevent Ctrl+S (Save Page)
+        if (e.ctrlKey && e.key === 's') {
+            e.preventDefault();
+        }
+    });
+
+</script>
 
     <!-- Video Player js -->
 @endpush
