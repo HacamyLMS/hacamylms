@@ -23,6 +23,8 @@
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -86,6 +88,18 @@
       @yield('content')
     </main>
   </div>
+  
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: true, // whether elements should animate out while scrolling past them
+        duration: 800 // values from 0 to 3000, with step 50ms
+      });
+    });
+  </script>
 </body>
 
 </html>

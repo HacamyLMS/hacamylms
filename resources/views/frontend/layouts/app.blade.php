@@ -15,6 +15,9 @@
   <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
   <script src="https://files.bpcontent.cloud/2025/04/13/22/20250413225252-1Q32AJXX.js"></script>
 
+  <!-- Animate On Scroll Library CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   @hasSection('meta')
   @yield('meta')
   @else
@@ -345,6 +348,18 @@ $selectedLanguage = selectedLanguage();
   });
   </script>
   @endif
+
+  <!-- Animate On Scroll Library JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: true, // whether elements should animate out while scrolling past them
+        duration: 800 // values from 0 to 3000, with step 50ms
+      });
+    });
+  </script>
 
 </body>
 
