@@ -36,7 +36,7 @@
         <!-- If there is no data Show Empty Design Start -->
         <div class="empty-data">
             <img src="{{ asset('frontend/assets/img/empty-data-img.png') }}" alt="img" class="img-fluid">
-            <h5 class="my-3">{{ __('Empty Assignment') }}</h5>
+            <h5 class="my-3">{{ __('No Assignment') }}</h5>
         </div>
         <!-- If there is no data Show Empty Design End -->
     @endif

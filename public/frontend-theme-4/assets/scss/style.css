@@ -3338,8 +3338,8 @@ input[type=number] {
 }
 @media screen and (max-width: 991px) {
   .hero-banner {
-    padding: 9.375rem 0 3.125rem !important;
     background-image: none !important;
+    height: 90vh;
   }
 }
 .hero-banner .instructor-price-cutoff.badge {
@@ -3353,7 +3353,7 @@ input[type=number] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 3rem;
   margin-bottom: 3.25rem;
 }
 @media screen and (max-width: 991px) {
@@ -6578,7 +6578,7 @@ input[type=number] {
 }
 @media screen and (max-width: 767px) {
   .testimonial-item-one .author .info {
-    text-align: center;
+    text-align: right !important;
   }
 }
 .testimonial-item-one .author .info .name {
@@ -7379,12 +7379,12 @@ input[type=number] {
 .landing-header-learning #mainNav .navbar-nav .nav-item .nav-link {
   color: var(--para-text-alt);
 }
-.landing-header-learning #mainNav .navbar-nav .nav-item .nav-link:hover {
+/* .landing-header-learning #mainNav .navbar-nav .nav-item .nav-link:hover {
   background-color: transparent !important;
-}
+} */
 .landing-header-learning .menu-language-btn img {
   max-width: 27px;
-}
+} 
 .landing-header-learning .menu-sign-in-btn .theme-button1 {
   background-color: transparent;
   border-color: #000000;
@@ -7410,12 +7410,27 @@ input[type=number] {
   color: var(--para-text-alt);
 }
 .landing-header-learning .sf-navbar-toggler {
-  border-color: var(--purple);
-  background-color: var(--purple) !important;
+  border-color: #000;
+  background-color: #fff !important;
 }
+
+
+
 @media screen and (max-width: 991px) {
   .landing-header-learning .main-menu-collapse {
-    background-color: var(--main-color);
+    background-color: #333333;
+    display: none;
+  }
+  .landing-header-learning .main-menu-collapse.show {
+    display: block; /* Force show when expanded */
+  }
+  .landing-header-learning #mainNav .navbar-nav .nav-item .nav-link {
+    color: #fff;
+  }
+  .landing-header-learning .menu-sign-in-btn .theme-button1{
+    background-color: #fff !important;
+    border-color: #000000;
+    color: #000000 !important;
   }
 }
 .landing-header-cooking #mainNav.sticky {

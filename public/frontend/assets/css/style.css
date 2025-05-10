@@ -256,7 +256,7 @@ figure {
     background-color: var(--color-green);
 }
 .bg-orange {
-    background-color: var(--orange-color);
+    background-color: #090BB4;
 }
 .bg-light {
     background-color: var(--light-bg);
@@ -1780,7 +1780,7 @@ button:focus {
     line-height: 23px;
     /* text-transform: capitalize; */
     font-weight: 500;
-    color: var(--body-font-color);
+    color: #fff;
     position: relative;
     padding: 0 9px;
     margin-left: 8px;
@@ -1788,6 +1788,8 @@ button:focus {
 .course-tab-nav-wrap .nav-tabs .nav-item.show .nav-link,
 .course-tab-nav-wrap .nav-tabs .nav-link.active {
     color: #000 !important;
+    background-color: #fff !important;
+    padding: 5px !important;
 }
 
 /* Tab navlist css */
@@ -2083,15 +2085,15 @@ button:focus {
     div:nth-child(2)
     .instructor-support-item
     .theme-btn {
-    background-color: var(--orange-color);
-    border-color: var(--orange-color);
+    background-color: #fff;
+    border-color: #090BB4;
 }
 .course-instructor-support-wrap
     div:nth-child(2)
     .instructor-support-item
     .theme-btn:hover {
-    background-color: var(--white-color);
-    color: var(--orange-color) !important;
+    background-color: #090BB4;
+    color: #fff !important;
 }
 
 /*Client Logo Area CSS*/
@@ -2409,7 +2411,7 @@ button:focus {
     margin-bottom: 30px;
 }
 .footer-about img {
-    height: 40px;
+    height: 30px;
 }
 .footer-widget .footer-widget-title {
     color: var(--white-color);
@@ -2525,12 +2527,14 @@ button:focus {
 /*Tab Nav List*/
 .course-single-details-left-content {
     margin-top: -30px;
-    border-radius: 3px 3px 0 0;
+    border-radius: 15px 15px 0 0;
 }
 .course-details-tab-nav-wrap {
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     padding: 18px 0;
     margin-bottom: 0;
+    background-color: #090bb4;
+    border-radius: 15px 15px 0 0;
 }
 .course-details-tab-nav-wrap .tab-nav-list.nav-tabs .nav-link {
     line-height: 20px;
@@ -2538,8 +2542,8 @@ button:focus {
     margin-left: 22px;
 }
 .course-details-tab-nav-wrap .nav-tabs .nav-link.active::after {
-    background: var(--theme-color);
-    top: 37px;
+    background: #fff;
+    height: 10px;
 }
 .nav-tabs .nav-link.active::after {
     content: "";
@@ -3356,9 +3360,7 @@ video#player {
     .course-details-tab-nav-wrap
     .tab-nav-list.nav-tabs
     .nav-link {
-    padding: 0;
-    margin-left: 0;
-    margin-right: 20px;
+    padding: 0 15px;
 }
 .course-watch-page-area.course-single-details-area .tab-pane {
     padding: 30px 0 30px 0 !important;
@@ -6442,11 +6444,12 @@ span.tooltip-show-btn {
 }
 .btn-close {
     border-radius: 50%;
-    border: 1px solid gray;
+    border: 1px solid rgb(255, 255, 255);
     padding: 8px;
     font-size: 13px;
     position: absolute;
     right: 38px;
+    color: #fff;
 }
 /*Common Modal End*/
 
@@ -9019,8 +9022,13 @@ button.youtube-video-overBtn {
 @media screen and (max-width: 1600px) {
     .student-courseDetails-tab{
         overflow-x: auto;
+        scroll-behavior: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #fff #fff;
+        overflow-y: hidden;
     }
     .student-courseDetails-tabItems{
         flex-wrap: nowrap;
+        margin: 0 15px;
     }
 }

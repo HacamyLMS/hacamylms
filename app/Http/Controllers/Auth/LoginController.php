@@ -32,11 +32,14 @@ class LoginController extends Controller
     */
 
     use General;
-    protected function showLoginForm()
+    protected function showLoginForm(Request $request)
     {
         Cookie::queue(Cookie::forget('_uuid_d'));
         $data['pageTitle'] = __('Login');
         $data['title'] = __('Login');
+        if ($request->has('redirect')) {
+            Session::put('url.intended', $request->redirect);
+        }
         return view('auth.login', $data);
     }
     use AuthenticatesUsers;
@@ -134,7 +137,7 @@ class LoginController extends Controller
                 return redirect(route('admin.dashboard'));
 
             } else {
-                return redirect(route('main.index'));
+                return redirect()->intended(route('main.index'));
             }
         }
 

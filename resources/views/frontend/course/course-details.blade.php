@@ -67,7 +67,7 @@
                         <div class="course-single-details-left-content bg-white">
 
                             <!-- Tab panel nav list -->
-                            <div class="course-tab-nav-wrap course-details-tab-nav-wrap d-flex justify-content-between">
+                            <div class="course-tab-nav-wrap course-details-tab-nav-wrap d-flex justify-content-evenly">
                                 <ul class="nav nav-tabs tab-nav-list border-0" id="myTab" role="tablist">
                                     <li class="nav-item" role="presentation">
                                         <a class="nav-link active" id="Overview-tab" data-bs-toggle="tab"
@@ -82,19 +82,9 @@
                                         </li>
                                     @endif
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="Discussion-tab" data-bs-toggle="tab" href="#Discussion"
-                                           role="tab" aria-controls="Discussion"
-                                           aria-selected="false">{{ __('Discussion') }}</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
                                         <a class="nav-link" id="Review-tab" data-bs-toggle="tab" href="#Review"
                                            role="tab" aria-controls="Review"
                                            aria-selected="false">{{ __('Review') }}</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="Instructor-tab" data-bs-toggle="tab" href="#Instructor"
-                                           role="tab" aria-controls="Review"
-                                           aria-selected="false">{{ (count($course->course_instructors->where('status', STATUS_APPROVED)) > 1) ? __('Tutors') : __('Tutor') }}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -256,12 +246,19 @@
                                     </button>
                                 @else
                                     @if($course->status == STATUS_APPROVED)
-                                        <button class="theme-button1 w-100 mb-30 addToCart "
-                                                data-course_id="{{ $course->id }}"
-                                                data-route="{{ route('student.addToCart') }}">
-                                            <span class="msgInfoChange">{{ __('Get Course') }} <i
-                                                    data-feather="arrow-right"></i></span>
-                                        </button>
+                                        @auth
+                                            <button class="theme-button1 w-100 mb-30 addToCart"
+                                                    data-course_id="{{ $course->id }}"
+                                                    data-route="{{ route('student.addToCart') }}">
+                                                <span class="msgInfoChange">{{ __('Get Course') }} <i
+                                                        data-feather="arrow-right"></i></span>
+                                            </button>
+                                        @else
+                                            <a href="{{ route('login', ['redirect' => url()->current()]) }}" 
+                                               class="theme-button1 w-100 mb-30 text-center">
+                                                <span>{{ __('Get Course') }} <i data-feather="arrow-right"></i></span>
+                                            </a>
+                                        @endauth
 
                                         @if($course->learner_accessibility != 'free' && get_option('cashback_system_mode', 0))
                                             <div class="alert alert-success d-flex mb-15">

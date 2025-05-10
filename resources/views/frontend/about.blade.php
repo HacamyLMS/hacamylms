@@ -212,7 +212,7 @@
         </div>
 
         <!-- Client Logo Area start-->
-        <div class="row client-logo-area">
+        <div class="row client-logo-area d-none">
             @foreach($clients as $client)
             <div class="col">
                 <div class="client-logo-item text-center">

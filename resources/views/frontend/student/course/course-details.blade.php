@@ -171,8 +171,8 @@
                         </div>
                     </div>
                     @else
-                    <div class="course-watch-no-video-img">
-                        <img src="{{ getImageFile($course->image) }}" alt="" class="w-100 img-fluid">
+                    <div class="course-watch-no-video-img text-center">
+                        <img src="{{ getImageFile($course->image) }}" alt="" class="img-fluid">
                     </div>
                     @endif
                     @endif
@@ -321,50 +321,25 @@
                     class="col-12 col-md-12 col-lg-12 {{ $course->course_type == COURSE_TYPE_GENERAL ? 'col-xl-7 col-xxl-8' : '' }}">
                     <div class="course-watch-inner-title-wrap d-flex justify-content-between mt-30">
                         <div class="course-watch-inner-title-left-part">
-                            <h4 class="mb-3 lectureName">{{__('Introduction')}}</h4>
-                            <div class="course-watch-enrolled-wrap d-flex">
-                                <ul>
-                                    @foreach($enrolled_students as $enrolled_student)
-                                    <li><img src="{{ getImageFile(@$enrolled_student->user->image_path) }}" alt=""></li>
-                                    @endforeach
-                                </ul>
-                                <div class="enrolled-count font-12 ms-2"><span class="color-heading font-medium">{{
-                                        $total_enrolled_students }}</span> <span
-                                        class="d-block text-uppercase">{{__('Enrolled')}}</span></div>
-                            </div>
-
-                        </div>
-                        <div class="course-watch-inner-title-right-part">
-                            <!-- Button trigger modal -->
-                            <button type="button" class="bg-transparent theme-btn color-heading mb-3"
-                                data-bs-toggle="modal" data-bs-target="#writeReviewModal">{{__('Write a review')}}
-                            </button>
-                            <div class="publish-update-time text-end">
-                                <h6 class="font-14">{{__('Last update')}}</h6>
-                                <p class="font-12">{{ $course->updated_at->format('d M Y') }}</p>
-                            </div>
+                            <h4 class="mb-5 lectureName">{{__('Introduction')}}</h4>
                         </div>
                     </div>
 
                     <div class="course-single-details-left-content mt-0">
 
                         <!-- Tab panel nav list -->
-                        <div class="course-tab-nav-wrap course-details-tab-nav-wrap d-flex justify-content-between student-courseDetails-tab">
+                        <div class="course-tab-nav-wrap course-details-tab-nav-wrap d-flex justify-content-evenly student-courseDetails-tab">
                             <ul class="nav nav-tabs tab-nav-list border-0 student-courseDetails-tabItems" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link text-uppercase {{!$action_type ? 'active' : '' }}"
-                                        id="Overview-tab" data-bs-toggle="tab" href="#Overview" role="tab"
-                                        aria-controls="Overview" aria-selected="true">{{__('Overview')}}</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link text-uppercase" id="Resources-tab" data-bs-toggle="tab"
+                                    <a class="nav-link text-uppercase {{!$action_type ? 'active' : '' }}" 
+                                        id="Resources-tab" data-bs-toggle="tab"
                                         href="#Resources" role="tab" aria-controls="Resources"
                                         aria-selected="true">{{__('Resources')}}</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link text-uppercase" id="Review-tab" data-bs-toggle="tab"
-                                        href="#Review" role="tab" aria-controls="Review"
-                                        aria-selected="false">{{__('Review')}}</a>
+                                    <a class="nav-link text-uppercase" id="Assignment-tab" data-bs-toggle="tab"
+                                        href="#Assignment" role="tab" aria-controls="Quiz"
+                                        aria-selected="false">{{__('Assignments')}}</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link text-uppercase {{$action_type ? 'active' : '' }}" id="Quiz-tab"
@@ -372,29 +347,14 @@
                                         aria-selected="false">{{__('Quiz')}}</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link text-uppercase" id="Assignment-tab" data-bs-toggle="tab"
-                                        href="#Assignment" role="tab" aria-controls="Quiz"
-                                        aria-selected="false">{{__('Assignment')}}</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link text-uppercase" id="Notice-tab" data-bs-toggle="tab"
-                                        href="#Notice" role="tab" aria-controls="Notice"
-                                        aria-selected="false">{{__('Notice')}}</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
                                     <a class="nav-link text-uppercase text-nowrap" id="LiveClass-tab" data-bs-toggle="tab"
                                         href="#LiveClass" role="tab" aria-controls="LiveClass"
                                         aria-selected="false">{{__('Live Class')}}</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link text-uppercase" id="Discussion-tab" data-bs-toggle="tab"
-                                        href="#Discussion" role="tab" aria-controls="Discussion"
-                                        aria-selected="false">{{__('Discussion')}}</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link text-uppercase" id="Certificate-tab" data-bs-toggle="tab"
-                                        href="#Certificate" role="tab" aria-controls="Certificate"
-                                        aria-selected="false">{{__('Certificate')}}</a>
+                                    <a class="nav-link text-uppercase" id="Notice-tab" data-bs-toggle="tab"
+                                        href="#Notice" role="tab" aria-controls="Notice"
+                                        aria-selected="false">{{__('Notice')}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -402,15 +362,11 @@
 
                         <!-- Tab Content-->
                         <div class="tab-content" id="myTabContent">
-                            @include('frontend.student.course.partial.partial-overview-tab')
                             @include('frontend.student.course.partial.partial-resources-tab')
-                            @include('frontend.student.course.partial.partial-review-tab')
                             @include('frontend.student.course.partial.partial-quiz-tab')
                             @include('frontend.student.course.partial.partial-assignment-tab')
                             @include('frontend.student.course.partial.partial-notice-tab')
                             @include('frontend.student.course.partial.partial-liveclass-tab')
-                            @include('frontend.student.course.partial.partial-discussion-tab')
-                            @include('frontend.student.course.partial.partial-certificate-tab')
                         </div>
 
                     </div>
@@ -420,62 +376,6 @@
         </div>
     </section>
     <!-- Course Single Details Area End -->
-
-    <!--Write Review Modal Start-->
-    <div class="modal fade" id="writeReviewModal" tabindex="-1" aria-labelledby="writeReviewModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h6 class="modal-title" id="writeReviewModalLabel">{{__('Write a Review')}}</h6>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="row mb-4">
-                            <div class="col-md-12 text-center">
-                                <div class="btn-group give-rating-group" role="group"
-                                    aria-label="Basic checkbox toggle button group">
-                                    <input type="checkbox" class="btn-check" id="btncheck1" name="rating">
-                                    <label class="give-rating-star" for="btncheck1"><span class="iconify"
-                                            data-icon="bi:star-fill"></span></label>
-
-                                    <input type="checkbox" class="btn-check" id="btncheck2" name="rating">
-                                    <label class="give-rating-star" for="btncheck2"><span class="iconify"
-                                            data-icon="bi:star-fill"></span></label>
-
-                                    <input type="checkbox" class="btn-check" id="btncheck3" name="rating">
-                                    <label class="give-rating-star" for="btncheck3"><span class="iconify"
-                                            data-icon="bi:star-fill"></span></label>
-
-                                    <input type="checkbox" class="btn-check" id="btncheck4" name="rating">
-                                    <label class="give-rating-star" for="btncheck4"><span class="iconify"
-                                            data-icon="bi:star-fill"></span></label>
-
-                                    <input type="checkbox" class="btn-check" id="btncheck5" name="rating">
-                                    <label class="give-rating-star" for="btncheck5"><span class="iconify"
-                                            data-icon="bi:star-fill"></span></label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-30">
-                            <div class="col-md-12">
-                                <label class="font-medium font-15 color-heading">{{__('Feedback')}}</label>
-                                <textarea class="form-control feedback" id="exampleFormControlTextarea1" rows="3"
-                                    placeholder="Please write your feedback here"></textarea>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer d-flex justify-content-between align-items-center">
-                    <button type="button" class="theme-btn theme-button3" data-bs-dismiss="modal">{{__('Cancel')}}</button>
-                    <button type="button" class="theme-btn theme-button1 submitReview">{{__('Submit review')}}</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Write Review Modal End-->
     <div class="row">
         <div class="col-12">
             <div style="overflow: hidden; height: 0;">

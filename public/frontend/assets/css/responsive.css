@@ -198,7 +198,7 @@
         .course-details-tab-nav-wrap
         .nav-tabs
         .nav-link.active::after {
-        top: 17px;
+        top: 45px;
     }
 
     /*Instructor Dashboard*/
@@ -1126,8 +1126,8 @@
 
     /*Menu CSS Start*/
     #mainNav {
-        height: 80px;
-        padding: 21px 0;
+        height: 70px;
+        padding: 0px 0;
     }
     #mainNav .navbar-nav .nav-item .nav-link {
         padding: 0.75em 11px 0.75em 0;
@@ -1143,13 +1143,14 @@
         margin-top: 80px;
     }
     .main-menu-collapse {
-        background-color: var(--heading-color);
-        top: 18px;
-        position: relative;
+        background-color: #333333;
+        top: 69px;
+        position: fixed;
         padding: 30px;
         box-shadow: 0 0 8px 0 rgba(1, 0, 64, 0.07);
-        overflow-y: auto;
-        height: calc(100vh - 80px);
+        /* overflow-y: scroll; */
+        height: calc(100vh - 60px);
+        width: 100%;
     }
     .header-nav-left-side {
         padding-left: 0;
@@ -1226,9 +1227,9 @@
     .single-feature-item {
         flex-direction: column;
     }
-    .feature-content {
+    /* .feature-content {
         margin: 25px 0 0 0 !important;
-    }
+    } */
     .direction-rtl .feature-content {
         margin-right: 0 !important;
     }
@@ -1566,7 +1567,10 @@
     }
     .course-tab-nav-wrap .nav-tabs .nav-item.show .nav-link,
     .course-tab-nav-wrap .nav-tabs .nav-link.active {
-        color: var(--theme-color) !important;
+        color: #000 !important;
+        border: solid 1px #fff;
+        background-color: #fff !important;
+        padding: 2px !important;
     }
     /* Course Watch Tabs */
 
@@ -1599,7 +1603,6 @@
     /* Forum Pages */
     .forum-banner-search-ask-wrap {
         flex-direction: column;
-        align-items: flex-start !important;
     }
     .forum-banner-search-ask-wrap p {
         padding: 10px 0 !important;
@@ -1808,7 +1811,7 @@
     }
     .sign-up-left-content,
     .sign-up-right-content {
-        min-height: auto;
+        /* min-height: auto; */
         height: auto;
     }
     .sign-up-bottom-img img {
@@ -1820,6 +1823,10 @@
     .sign-up-right-content form {
         margin-right: 0;
         padding: 30px;
+    }
+    .removebrigu{
+        border-radius: 0px !important;
+        background-color: #fff;
     }
     .direction-rtl .sign-up-right-content form {
         margin-left: 0;
